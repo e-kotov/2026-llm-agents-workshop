@@ -70,7 +70,7 @@ ENV CODE_EXTENSIONSDIR="/opt/share/code-server"
 ENV CODE_USERDATADIR="/home/${NB_USER}/.local/share/code-server"
 ENV CODE_WORKINGDIR="/home/${NB_USER}/project"
 ENV NVM_DIR="/home/${NB_USER}/.nvm"
-ENV PATH="/home/${NB_USER}/.local/bin:/home/${NB_USER}/.nvm/versions/node/v24.15.0/bin:/home/${NB_USER}/.cargo/bin:${PATH}"
+ENV PATH="/home/${NB_USER}/.local/bin:/home/${NB_USER}/.nvm/versions/node/default/bin:/home/${NB_USER}/.cargo/bin:${PATH}"
 
 # 4. User-level installations (Node, NPM packages, Python tools, Extensions)
 USER ${NB_USER}
@@ -79,7 +79,8 @@ WORKDIR /home/${NB_USER}
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash && \
     . $NVM_DIR/nvm.sh && \
     nvm install 24 && \
-    nvm use 24 && \
+    nvm alias default 24 && \
+    ln -s $(nvm which 24 | sed 's/\/bin\/node//') $NVM_DIR/versions/node/default && \
     npm install -g opencode-ai @google/gemini-cli @mariozechner/pi-coding-agent @openai/codex codeburn && \
     npm cache clean --force && \
     # Install aider

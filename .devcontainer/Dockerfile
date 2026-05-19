@@ -129,7 +129,7 @@ ENV NVM_DIR="/home/$USERNAME/.nvm"
 RUN echo "alias nca-nvidia='NCA_PROVIDER=openai OPENAI_BASE_URL=\${NCA_PROVIDER_OPENAI_BASE_URL} NCA_MODEL=\${NCA_PROVIDER_OPENAI_MODEL} nca'" >> /home/$USERNAME/.bashrc
 
 # Ensure all tools are in the PATH for the user session
-ENV PATH="/home/$USERNAME/.local/bin:/home/$USERNAME/miniforge3/bin:/home/$USERNAME/.pixi/bin:/home/$USERNAME/.cargo/bin:$NVM_DIR/versions/node/v24.15.0/bin:${PATH}"
+ENV PATH="/home/$USERNAME/.local/bin:/home/$USERNAME/miniforge3/bin:/home/$USERNAME/.pixi/bin:/home/$USERNAME/.cargo/bin:$NVM_DIR/versions/node/default/bin:${PATH}"
 
 # Install all CLI tools in a single layer to minimize metadata and clean caches
 RUN curl -fsSL -o /tmp/miniforge.sh https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh && \
@@ -141,7 +141,8 @@ RUN curl -fsSL -o /tmp/miniforge.sh https://github.com/conda-forge/miniforge/rel
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash && \
     . $NVM_DIR/nvm.sh && \
     nvm install 24 && \
-    nvm use 24 && \
+    nvm alias default 24 && \
+    ln -s $(nvm which 24 | sed 's/\/bin\/node//') $NVM_DIR/versions/node/default && \
     nvm cache clear && \
     npm install -g \
         opencode-ai \
