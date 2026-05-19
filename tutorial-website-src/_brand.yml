@@ -1,0 +1,53 @@
+meta:
+  name: "LLM Agents Workshop 2026"
+
+color:
+  palette:
+    # Primary Workshop Colors
+    workshop-dark-green: "#0A7878"   # R:10 G:120 B:120 (Dark Green/Teal)
+    workshop-dark-blue: "#08445F"    # R:8 G:68 B:95
+    workshop-bright-blue: "#00B1EB"  # R:0 G:177 B:235
+    workshop-sage: "#88BCAB"
+    workshop-orange: "#EF7D00"
+    workshop-maroon: "#8E203B"
+    workshop-green: "#22B473"
+    workshop-light: "#F8F9FA"
+    
+    # Mapping for automated use
+    blue: workshop-dark-blue
+    green: workshop-dark-green
+    light: workshop-light
+
+  primary: workshop-dark-green
+  secondary: workshop-bright-blue
+  success: workshop-green
+  danger: workshop-maroon
+  warning: workshop-orange
+  background: "#ffffff"
+  foreground: "#343a40"
+
+typography:
+  fonts:
+    - family: "Roboto"
+      source: google
+      weight: [300, 400, 500, 700]
+  base: 
+    family: "Roboto, Arial, Helvetica, sans-serif"
+    size: 1.15rem
+  headings:
+    family: "Roboto, Arial, Helvetica, sans-serif"
+    weight: 700
+
+# COLOR PALETTE REFERENCE (from images provided)
+# Basis:
+# Dark Blue: #08445F (R:8 G:68 B:95)
+# Sage: #88BCAB (R:136 G:188 B:171)
+# Bright Blue: #00B1EB (R:0 G:177 B:235)
+# Dark Green: #0A7878 (R:10 G:120 B:120)
+# Teal: #12B7B5 (R:18 G:183 B:181)
+# Dusty Teal: #129BB5 (R:18 G:155 B:181)
+# Mid Green: #22B473 (R:34 G:180 B:115)
+# Deep Navy/Teal: #005869 (R:0 G:88 B:105)
+# Maroon: #8E203B (R:142 G:32 B:59)
+# Orange: #EF7D00 (R:239 G:125 B:0)
+# Purple: #3E2C51 (R:62 G:44 B:81)

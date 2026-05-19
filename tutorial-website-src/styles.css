@@ -1,0 +1,77 @@
+/*-- scss:defaults --*/
+/* Brand settings are automatically handled by _brand.yml */
+
+/*-- scss:rules --*/
+
+/* Centering the content column and keeping it narrow */
+#quarto-content.quarto-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+main.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Navbar styling overrides */
+.navbar .navbar-container, 
+.navbar .container-fluid {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar-title, .navbar-brand {
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+/* Sidebar styling overrides */
+.sidebar nav {
+  font-size: 0.95rem;
+  padding-top: 1.5rem;
+}
+
+.sidebar-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Search box styling */
+#quarto-search {
+  margin-bottom: 1.5rem;
+}
+
+/* Heading styling to match Fastai look */
+h1.title {
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.3rem;
+  margin-top: 2rem;
+}
+
+/* Pagination (footer navigation) */
+.page-navigation {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+/* Page footer */
+.footer {
+  border-top: 1px solid #eee;
+  margin-top: 4rem;
+}
+
+.nav-footer {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 0;
+}

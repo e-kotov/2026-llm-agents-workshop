@@ -1,0 +1,19 @@
+---
+title: "02: Security & Sandboxing"
+---
+
+# 02: Security & Sandboxing
+
+LLM agents can be powerful, but they also introduce new security risks.
+
+## Risks
+
+- Data Leakage
+- Unsafe Code Execution
+- Unintended Modifications
+
+## Mitigation Strategies
+
+- Containerization (Docker)
+- Sandboxing
+- Workflow Isolation
