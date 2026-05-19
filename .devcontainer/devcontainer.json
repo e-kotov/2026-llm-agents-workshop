@@ -9,7 +9,8 @@
 			"settings": {
 				"r.rterm.linux": "/home/vscode/.cargo/bin/arf",
 				"r.rterm.option": [],
-				"r.bracketedPaste": true
+				"r.bracketedPaste": true,
+				"terminal.integrated.defaultProfile.linux": "fish"
 			},
 			"extensions": [
 				"sst-dev.opencode",
