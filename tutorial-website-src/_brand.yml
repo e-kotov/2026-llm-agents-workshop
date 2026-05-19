@@ -13,6 +13,12 @@ color:
     workshop-green: "#22B473"
     workshop-light: "#F8F9FA"
     
+    # Obsidian Editorial Palette
+    obsidian-bg: "#0f1111"
+    paper-fg: "#f0f2f2"
+    obsidian-surface: "#161919"
+    obsidian-border: "#2a2d2d"
+    
     # Mapping for automated use
     blue: workshop-dark-blue
     green: workshop-dark-green
@@ -23,8 +29,12 @@ color:
   success: workshop-green
   danger: workshop-maroon
   warning: workshop-orange
-  background: "#ffffff"
-  foreground: "#343a40"
+  background:
+    light: "#ffffff"
+    dark: obsidian-bg
+  foreground:
+    light: "#343a40"
+    dark: paper-fg
 
 typography:
   fonts:

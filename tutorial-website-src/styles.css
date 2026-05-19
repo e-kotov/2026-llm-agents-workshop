@@ -43,7 +43,7 @@ main.content {
   margin-bottom: 1.5rem;
 }
 
-/* Heading styling to match Fastai look */
+/* Heading styling */
 h1.title {
   font-size: 2.5rem;
   margin-top: 0.5rem;
@@ -75,3 +75,152 @@ h2 {
   margin-right: auto;
   padding: 2rem 0;
 }
+
+/* Search Highlights - Light Mode */
+.search-result-highlight, 
+mark {
+  background-color: #fff3cd !important;
+  color: #856404 !important;
+  padding: 0 0.1rem;
+  border-radius: 2px;
+}
+
+
+/* ==========================================================================
+   OBSIDIAN EDITORIAL DARK MODE
+   Using robust selectors that Quarto applies when dark mode is toggled
+   ========================================================================== */
+
+/* 1. Global Background and Text */
+body.quarto-dark,
+body.quarto-dark .quarto-container,
+body.quarto-dark main.content {
+  background-color: #0f1111 !important;
+  color: #ffffff !important; /* Pure white for maximum contrast */
+}
+
+/* 2. Fix all text elements that might inherit dim colors */
+body.quarto-dark p,
+body.quarto-dark li,
+body.quarto-dark span:not(.nav-link),
+body.quarto-dark section {
+  color: #ffffff !important;
+}
+
+/* 3. Sidebar - High Contrast Editorial look */
+body.quarto-dark .quarto-secondary-nav, 
+body.quarto-dark #quarto-sidebar,
+body.quarto-dark .sidebar,
+body.quarto-dark #quarto-margin-sidebar {
+  background-color: #161919 !important;
+  color: #ffffff !important;
+  border-right: 1px solid #2a2d2d !important;
+}
+
+/* 4. Sidebar links and text */
+body.quarto-dark .sidebar-item-text,
+body.quarto-dark .sidebar-link,
+body.quarto-dark .sidebar-title {
+  color: #ffffff !important;
+}
+
+/* 5. Navbar Polish */
+body.quarto-dark .navbar,
+body.quarto-dark .navbar-container {
+  background-color: #0A7878 !important; /* Keep brand green */
+}
+
+body.quarto-dark .navbar-nav .nav-link,
+body.quarto-dark .navbar-nav .nav-link i,
+body.quarto-dark .quarto-navigation-tool i {
+  color: #ffffff !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+/* Search Input & Icon Visibility */
+body.quarto-dark .quarto-search-input,
+body.quarto-dark .aa-Input,
+body.quarto-dark .search-input {
+  background-color: #242727 !important;
+  border: 1px solid #333c3c !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important; /* Some browsers need this for inputs */
+}
+
+body.quarto-dark .quarto-search-input::placeholder,
+body.quarto-dark .aa-Input::placeholder {
+  color: #a0a8a8 !important;
+  opacity: 1 !important;
+}
+
+body.quarto-dark .quarto-search-input-wrapper i,
+body.quarto-dark .quarto-search-input-wrapper svg,
+body.quarto-dark .quarto-search-input-wrapper::before,
+body.quarto-dark #quarto-search .bi-search,
+body.quarto-dark .aa-SubmitIcon,
+body.quarto-dark .search-icon {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  opacity: 1 !important;
+  filter: brightness(0) invert(1) !important; /* Forces any dark icon/image to white */
+}
+
+/* 6. Headings */
+body.quarto-dark h1, 
+body.quarto-dark h2, 
+body.quarto-dark h3, 
+body.quarto-dark h4 {
+  color: #ffffff !important;
+  border-color: #333c3c !important;
+}
+
+/* 7. Links - Brighter Blue for accessibility */
+body.quarto-dark a {
+  color: #33c7ff !important;
+  text-decoration: underline;
+}
+
+body.quarto-dark .navbar-brand,
+body.quarto-dark .navbar-title {
+  text-decoration: none !important;
+}
+
+body.quarto-dark a:hover {
+  color: #ffffff !important;
+}
+
+/* 8. Table of Contents */
+body.quarto-dark #TOC ul li a {
+  color: #a0a8a8 !important;
+}
+
+body.quarto-dark #TOC ul li a.active {
+  color: #33c7ff !important;
+  border-left-color: #33c7ff !important;
+}
+
+/* 9. Borders and Code */
+body.quarto-dark hr, 
+body.quarto-dark .footer, 
+body.quarto-dark .page-navigation {
+  border-color: #333c3c !important;
+}
+
+body.quarto-dark pre, 
+body.quarto-dark code {
+  background-color: #1a1c1c !important;
+  color: #33c7ff !important;
+  border: 1px solid #333c3c !important;
+  }
+
+  /* Search Highlights - Dark Mode */
+  body.quarto-dark .search-result-highlight, 
+  body.quarto-dark mark {
+  background-color: #0A7878 !important; /* Brand Dark Green */
+  color: #ffffff !important;
+  padding: 0 0.1rem;
+  border-radius: 2px;
+  }
+
+

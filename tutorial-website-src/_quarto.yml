@@ -8,6 +8,10 @@ website:
   description: "Beyond the Chatbox: LLM Coding and Research Agents for Academics"
   repo-url: https://github.com/e-kotov/2026-llm-agents-workshop
   repo-actions: [edit, issue]
+  open-graph:
+    title: "Beyond the Chatbox"
+    description: "LLM Coding and Research Agents for Academics"
+    image: media/workshop-ad.png
   
   navbar:
     background: "#0A7878" # Explicitly use the dark green hex to override theme defaults
@@ -51,7 +55,10 @@ website:
 
 format:
   html:
-    theme: [cosmo, styles.css]
+    theme:
+      light: [cosmo, styles.css]
+      dark: [cosmo, styles.css]
+    mainfont: "Roboto, Arial, Helvetica, sans-serif"
     page-layout: article
     toc: true
     toc-location: right
@@ -65,6 +72,41 @@ format:
     back-to-top: true
     title-block-banner: false
     link-external-icon: true
+    link-external-newwindow: true
+    link-external-filter: 'github\.com/e-kotov'
+    code-overflow: wrap
+    mermaid:
+      theme: neutral
+    include-in-header:
+      - text: |
+          <meta name="DC.Type" content="WebPage">
+      - file: media/analytics.html
 
 execute:
   freeze: true
+
+citation:
+  type: webpage
+  title: "Beyond the Chatbox: LLM Coding and Research Agents for Academics"
+  url: https://github.com/e-kotov/2026-llm-agents-workshop
+google-scholar: true
+
+authors:
+  - name: Egor Kotov
+    url: https://www.ekotov.pro/
+    orcid: 0000-0001-6690-5345
+    affiliations:
+      - ref: mpidr
+      - ref: upf
+
+affiliations:
+  - id: mpidr
+    name: Max Planck Institute for Demographic Research
+    city: Rostock
+    country: Germany
+    url: https://www.demogr.mpg.de/en
+  - id: upf
+    name: Universitat Pompeu Fabra
+    city: Barcelona
+    country: Spain
+    url: https://www.upf.edu/en/web/politiques/home
