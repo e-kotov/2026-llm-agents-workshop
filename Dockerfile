@@ -1,1 +1,0 @@
-FROM ghcr.io/e-kotov/2026-llm-agents-workshop:latest
