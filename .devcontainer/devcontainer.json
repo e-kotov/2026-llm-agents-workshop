@@ -1,0 +1,27 @@
+{
+	"name": "LLM Agents Workshop 2026",
+	"image": "ghcr.io/e-kotov/2026-llm-agents-workshop:devcontainer",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+	"workspaceFolder": "/workspace",
+	"remoteUser": "vscode",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"r.rterm.linux": "/home/vscode/.cargo/bin/arf",
+				"r.rterm.option": [],
+				"r.bracketedPaste": true
+			},
+			"extensions": [
+				"sst-dev.opencode",
+				"alefragnani.project-manager",
+				"ms-vscode.live-server",
+				"posit.air-vscode",
+				"posit.shiny",
+				"quarto.quarto",
+				"reditorsupport.r",
+				"reditorsupport.r-syntax",
+				"tomoki1207.pdf"
+			]
+		}
+	}
+}
