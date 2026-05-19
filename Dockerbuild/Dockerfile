@@ -8,34 +8,97 @@ ENV RENV_CONFIG_REPOS_OVERRIDE="https://p3m.dev/cran/__linux__/noble/latest"
 # 1. System prerequisites, P3M configuration, and directory setup (Root)
 USER root
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    atop \
+    bashtop \
+    ca-certificates \
     cmake \
     curl \
+    default-libmysqlclient-dev \
+    dialog \
+    fish \
+    gdal-bin \
+    gh \
     git \
+    glances \
+    gnupg \
     gsfonts \
     htop \
+    lbzip2 \
+    libcairo2-dev \
+    libcurl4-openssl-dev \
     libdbus-1-dev \
+    libfftw3-dev \
+    libfontconfig1-dev \
+    libfreetype6-dev \
+    libfribidi-dev \
+    libgdal-dev \
+    libgeos-dev \
+    libgit2-dev \
+    libgl1-mesa-dev \
     libglpk-dev \
+    libglu1-mesa-dev \
+    libgsl-dev \
+    libharfbuzz-dev \
+    libhdf4-alt-dev \
+    libhdf5-dev \
     libicu-dev \
+    libjpeg-dev \
+    libjq-dev \
+    lfm \
     libleptonica-dev \
     libmagick++-dev \
     libmbedtls-dev \
+    libnetcdf-dev \
     libnode-dev \
     libomp-dev \
+    libpng-dev \
     libpoppler-cpp-dev \
+    libpq-dev \
+    libproj-dev \
+    libprotobuf-dev \
+    libsasl2-dev \
     libsecret-1-dev \
     libsodium-dev \
+    libsqlite3-dev \
+    libssh2-1-dev \
     libssl-dev \
     libtesseract-dev \
+    libtiff-dev \
+    libudunits2-dev \
     libuv1-dev \
     libwebp-dev \
+    libxml2-dev \
+    libxtst6 \
+    libzmq3-dev \
     make \
+    mc \
+    micro \
+    nano \
+    ncdu \
+    netcdf-bin \
+    nmon \
     openssh-client \
+    p7zip-full \
+    p7zip-rar \
     poppler-data \
+    protobuf-compiler \
     python3-pip \
     python3-venv \
+    screen \
     smem \
+    sqlite3 \
+    sudo \
     tesseract-ocr-eng \
+    tk-dev \
+    tmux \
+    tree \
+    unixodbc-dev \
+    wget \
+    xdg-utils \
+    xz-utils \
     zlib1g-dev && \
+    # Set fish as default shell
+    usermod -s /usr/bin/fish ${NB_USER} && \
     # Install Quarto
     curl -LO https://quarto.org/download/latest/quarto-linux-amd64.deb && \
     dpkg -i quarto-linux-amd64.deb && \

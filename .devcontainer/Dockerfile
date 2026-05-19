@@ -13,14 +13,35 @@ ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    sudo \
-    curl \
-    git \
-    wget \
+    atop \
+    bashtop \
     ca-certificates \
+    curl \
+    dialog \
+    fish \
+    gh \
+    git \
+    glances \
+    gnupg \
+    htop \
+    lfm \
+    mc \
+    micro \
+    nano \
+    ncdu \
+    nmon \
+    openssh-client \
+    p7zip-full \
+    p7zip-rar \
+    screen \
+    sudo \
+    tmux \
+    tree \
+    wget \
+    xdg-utils \
     xz-utils \
     && groupadd --gid $USER_GID $USERNAME \
-    && useradd --uid $USER_UID --gid $USER_GID -m -s /bin/bash $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -m -s /usr/bin/fish $USERNAME \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -31,7 +52,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     default-libmysqlclient-dev \
     gdal-bin \
     gsfonts \
-    htop \
     lbzip2 \
     libcairo2-dev \
     libcurl4-openssl-dev \
@@ -55,6 +75,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libjq-dev \
     libleptonica-dev \
     libmagick++-dev \
+    libmbedtls-dev \
     libnetcdf-dev \
     libnode-dev \
     libomp-dev \
@@ -64,6 +85,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libproj-dev \
     libprotobuf-dev \
     libsasl2-dev \
+    # libsecret-1-dev is for keyring r package
     libsecret-1-dev \
     libsodium-dev \
     libsqlite3-dev \
@@ -76,14 +98,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libwebp-dev \
     libxml2-dev \
     libxtst6 \
+    libzmq3-dev \
     make \
     netcdf-bin \
-    openssh-client \
+    poppler-data \
     protobuf-compiler \
     python3-pip \
     python3-venv \
     smem \
     sqlite3 \
+    tesseract-ocr-eng \
     tk-dev \
     unixodbc-dev \
     zlib1g-dev \
