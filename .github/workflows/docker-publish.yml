@@ -108,5 +108,5 @@ jobs:
         run: |
           docker buildx imagetools create \
             -t ${{ env.REGISTRY }}/${IMAGE_NAME}:latest \
-            $(printf '${{ env.REGISTRY }}/${IMAGE_NAME}@sha256:%s ' *)
+            $(printf "${{ env.REGISTRY }}/${IMAGE_NAME}@sha256:%s " *)
         working-directory: /tmp/digests
