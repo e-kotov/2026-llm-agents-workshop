@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>02: Security &amp; Sandboxing – Beyond the Chatbox</title>
+<title>01: Introduction to LLM Agents – Beyond the Chatbox</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-intro-to-agents.html" rel="prev">
+<link href="./20-security-sandboxing.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -45,9 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-40a41c45bcd4f253dc92efebaed341ab.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-f736ddf6b36c22864dabe85b5a534329.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-40a41c45bcd4f253dc92efebaed341ab.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-4f446250d2bb6cc7a151367d604a87ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-dfb262e855b434930d896448b82c798a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-4f446250d2bb6cc7a151367d604a87ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -96,8 +97,10 @@ ul.task-list li input[type="checkbox"] {
 
 <meta property="og:title" content="Beyond the Chatbox">
 <meta property="og:description" content="LLM Coding and Research Agents for Academics">
-<meta property="og:image" content="media/workshop-ad.png">
+<meta property="og:image" content="https://e-kotov.github.io/2026-llm-agents-workshop/media/workshop-ad.png">
 <meta property="og:site_name" content="Beyond the Chatbox">
+<meta property="og:image:height" content="545">
+<meta property="og:image:width" content="1000">
 <meta name="citation_title" content="Beyond the Chatbox: LLM Coding and Research Agents for Academics">
 <meta name="citation_author" content="Egor Kotov">
 <meta name="citation_fulltext_html_url" content="https://github.com/e-kotov/2026-llm-agents-workshop">
@@ -304,7 +307,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./02-security-sandboxing.html">02: Security &amp; Sandboxing</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./10-intro-to-agents.html">01: Introduction to LLM Agents</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -341,14 +344,32 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-intro-to-agents.html" class="sidebar-item-text sidebar-link">
+  <a href="./10-intro-to-agents.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">01: Introduction to LLM Agents</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-security-sandboxing.html" class="sidebar-item-text sidebar-link active">
+  <a href="./20-security-sandboxing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">02: Security &amp; Sandboxing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./30-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">30: Environment Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./40-workspace.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">40: The Workshop Workspace</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./50-agent-interactions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">50: Interacting with the Agents</span></a>
   </div>
 </li>
       </ul>
@@ -380,21 +401,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#security-sandboxing" id="toc-security-sandboxing" class="nav-link active" data-scroll-target="#security-sandboxing">02: Security &amp; Sandboxing</a>
+  <li><a href="#introduction-to-llm-agents" id="toc-introduction-to-llm-agents" class="nav-link active" data-scroll-target="#introduction-to-llm-agents">01: Introduction to LLM Agents</a>
   <ul class="collapse">
-  <li><a href="#risks" id="toc-risks" class="nav-link" data-scroll-target="#risks">Risks</a></li>
-  <li><a href="#mitigation-strategies" id="toc-mitigation-strategies" class="nav-link" data-scroll-target="#mitigation-strategies">Mitigation Strategies</a></li>
+  <li><a href="#what-is-an-llm-agent" id="toc-what-is-an-llm-agent" class="nav-link" data-scroll-target="#what-is-an-llm-agent">What is an LLM Agent?</a>
+  <ul class="collapse">
+  <li><a href="#key-characteristics" id="toc-key-characteristics" class="nav-link" data-scroll-target="#key-characteristics">Key Characteristics</a></li>
+  </ul></li>
+  <li><a href="#why-use-agents-for-research" id="toc-why-use-agents-for-research" class="nav-link" data-scroll-target="#why-use-agents-for-research">Why Use Agents for Research?</a></li>
+  <li><a href="#ready-to-try" id="toc-ready-to-try" class="nav-link" data-scroll-target="#ready-to-try">Ready to Try?</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/02-security-sandboxing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/10-intro-to-agents.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./02-security-sandboxing.html">02: Security &amp; Sandboxing</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./10-intro-to-agents.html">01: Introduction to LLM Agents</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">02: Security &amp; Sandboxing</h1>
+<h1 class="title">01: Introduction to LLM Agents</h1>
 </div>
 
 
@@ -431,24 +456,28 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="security-sandboxing" class="level1">
-<h1>02: Security &amp; Sandboxing</h1>
-<p>LLM agents can be powerful, but they also introduce new security risks.</p>
-<section id="risks" class="level2">
-<h2 class="anchored" data-anchor-id="risks">Risks</h2>
+<section id="introduction-to-llm-agents" class="level1">
+<h1>01: Introduction to LLM Agents</h1>
+<p>This section covers the basics of what LLM agents are and how they differ from standard chat interfaces.</p>
+<section id="what-is-an-llm-agent" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-an-llm-agent">What is an LLM Agent?</h2>
+<p>Unlike a standard LLM chat (like ChatGPT or Gemini web interface), an <strong>agent</strong> is a system that uses an LLM as its “reasoning engine” to perform tasks by interacting with the world.</p>
+<section id="key-characteristics" class="level3">
+<h3 class="anchored" data-anchor-id="key-characteristics">Key Characteristics</h3>
 <ul>
-<li>Data Leakage</li>
-<li>Unsafe Code Execution</li>
-<li>Unintended Modifications</li>
+<li><strong>Tool Use</strong>: Agents can use tools such as search engines, calculators, or terminal commands.</li>
+<li><strong>Autonomy</strong>: They can break down a complex goal into smaller steps and execute them sequentially.</li>
+<li><strong>Feedback Loop</strong>: They can observe the output of a tool (e.g., a compiler error) and adjust their next action accordingly.</li>
 </ul>
 </section>
-<section id="mitigation-strategies" class="level2">
-<h2 class="anchored" data-anchor-id="mitigation-strategies">Mitigation Strategies</h2>
-<ul>
-<li>Containerization (Docker)</li>
-<li>Sandboxing</li>
-<li>Workflow Isolation</li>
-</ul>
+</section>
+<section id="why-use-agents-for-research" class="level2">
+<h2 class="anchored" data-anchor-id="why-use-agents-for-research">Why Use Agents for Research?</h2>
+<p>In academic research, agents can: - <strong>Automate Data Cleaning</strong>: Write and run scripts to fix inconsistencies in large datasets. - <strong>Literature Review</strong>: Search, summarize, and synthesize findings from hundreds of papers. - <strong>Reproducible Analysis</strong>: Generate documented code that follows best practices.</p>
+</section>
+<section id="ready-to-try" class="level2">
+<h2 class="anchored" data-anchor-id="ready-to-try">Ready to Try?</h2>
+<p>To see these concepts in action, head over to the <a href="./30-setup.html">Environment Setup</a> where we will prepare our workspace.</p>
 
 
 </section>
@@ -551,7 +580,7 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("github\.com/e-kotov");
+        var filterRegex = new RegExp("https:\/\/e-kotov\.github\.io\/2026-llm-agents-workshop\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -887,11 +916,14 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./01-intro-to-agents.html" class="pagination-link" aria-label="01: Introduction to LLM Agents">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">01: Introduction to LLM Agents</span>
+      <a href="./index.html" class="pagination-link" aria-label="Beyond the Chatbox">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Beyond the Chatbox</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./20-security-sandboxing.html" class="pagination-link" aria-label="02: Security &amp; Sandboxing">
+        <span class="nav-page-text">02: Security &amp; Sandboxing</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -908,7 +940,7 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/02-security-sandboxing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/10-intro-to-agents.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

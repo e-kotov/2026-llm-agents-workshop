@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Beyond the Chatbox</title>
+<title>02: Security &amp; Sandboxing – Beyond the Chatbox</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./10-intro-to-agents.html" rel="next">
+<link href="./30-setup.html" rel="next">
+<link href="./10-intro-to-agents.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -48,9 +49,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-4f446250d2bb6cc7a151367d604a87ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-dfb262e855b434930d896448b82c798a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-4f446250d2bb6cc7a151367d604a87ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -309,7 +307,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./index.html">Beyond the Chatbox</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./20-security-sandboxing.html">02: Security &amp; Sandboxing</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -340,7 +338,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Beyond the Chatbox</span></a>
   </div>
 </li>
@@ -352,7 +350,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./20-security-sandboxing.html" class="sidebar-item-text sidebar-link">
+  <a href="./20-security-sandboxing.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">02: Security &amp; Sandboxing</span></a>
   </div>
 </li>
@@ -403,25 +401,32 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a>
+  <li><a href="#security-sandboxing" id="toc-security-sandboxing" class="nav-link active" data-scroll-target="#security-sandboxing">02: Security &amp; Sandboxing</a>
   <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a>
+  <li><a href="#common-risks" id="toc-common-risks" class="nav-link" data-scroll-target="#common-risks">Common Risks</a>
   <ul class="collapse">
-  <li><a href="#workshop-details" id="toc-workshop-details" class="nav-link" data-scroll-target="#workshop-details">Workshop Details</a></li>
+  <li><a href="#unsafe-code-execution" id="toc-unsafe-code-execution" class="nav-link" data-scroll-target="#unsafe-code-execution">Unsafe Code Execution</a></li>
+  <li><a href="#data-leakage" id="toc-data-leakage" class="nav-link" data-scroll-target="#data-leakage">Data Leakage</a></li>
+  <li><a href="#environment-pollution" id="toc-environment-pollution" class="nav-link" data-scroll-target="#environment-pollution">Environment Pollution</a></li>
   </ul></li>
-  <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract</a></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#mitigation-strategies" id="toc-mitigation-strategies" class="nav-link" data-scroll-target="#mitigation-strategies">Mitigation Strategies</a>
+  <ul class="collapse">
+  <li><a href="#containerization-docker" id="toc-containerization-docker" class="nav-link" data-scroll-target="#containerization-docker">Containerization (Docker)</a></li>
+  <li><a href="#managed-environments-github-codespaces" id="toc-managed-environments-github-codespaces" class="nav-link" data-scroll-target="#managed-environments-github-codespaces">Managed Environments (GitHub Codespaces)</a></li>
+  <li><a href="#the-human-in-the-loop" id="toc-the-human-in-the-loop" class="nav-link" data-scroll-target="#the-human-in-the-loop">The “Human in the Loop”</a></li>
+  </ul></li>
+  <li><a href="#practice-safe-coding" id="toc-practice-safe-coding" class="nav-link" data-scroll-target="#practice-safe-coding">Practice Safe Coding</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/20-security-sandboxing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./index.html">Beyond the Chatbox</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./20-security-sandboxing.html">02: Security &amp; Sandboxing</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Beyond the Chatbox</h1>
+<h1 class="title">02: Security &amp; Sandboxing</h1>
 </div>
 
 
@@ -458,43 +463,42 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="section" class="level1">
-<h1></h1>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="media/workshop-ad.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="© Image generated by Google Gemini | Nanobanana"><img src="media/workshop-ad.png" class="img-fluid figure-img" alt="© Image generated by Google Gemini | Nanobanana"></a></p>
-<figcaption>© Image generated by Google Gemini | Nanobanana</figcaption>
-</figure>
-</div>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>This interactive tutorial and workshop provides a practical introduction to using large language models (LLMs) in coding agents, featuring applied examples in population research. It is oragnized by <a href="https://www.ekotov.pro">Egor Kotov</a> with support from the <a href="https://www.demogr.mpg.de/en/">Max Planck Institute for Demographic Research</a>.</p>
-<section id="workshop-details" class="level3">
-<h3 class="anchored" data-anchor-id="workshop-details">Workshop Details</h3>
-<ul>
-<li><strong>Date:</strong> June 03, 2026</li>
-<li><strong>Time:</strong> 13:30-16:30</li>
-<li><strong>Location:</strong> Complesso Belmeloro, room “Lab O”, <a href="https://maps.app.goo.gl/dBrui9tWr6nRudbE7">Via Beniamino Andreatta, 8, 40126 Bologna BO, Italy</a></li>
-</ul>
+<section id="security-sandboxing" class="level1">
+<h1>02: Security &amp; Sandboxing</h1>
+<p>Using coding agents involves granting them the ability to execute code on your machine. This introduces several security and integrity risks that must be managed.</p>
+<section id="common-risks" class="level2">
+<h2 class="anchored" data-anchor-id="common-risks">Common Risks</h2>
+<section id="unsafe-code-execution" class="level3">
+<h3 class="anchored" data-anchor-id="unsafe-code-execution">Unsafe Code Execution</h3>
+<p>An agent might generate code that deletes files, installs malicious packages, or opens network vulnerabilities, especially if it “hallucinates” a solution or misinterprets a command.</p>
+</section>
+<section id="data-leakage" class="level3">
+<h3 class="anchored" data-anchor-id="data-leakage">Data Leakage</h3>
+<p>When you provide an agent with access to your files, it might send sensitive data (API keys, personal identifiers, unpublished research) to the LLM provider’s servers for processing.</p>
+</section>
+<section id="environment-pollution" class="level3">
+<h3 class="anchored" data-anchor-id="environment-pollution">Environment Pollution</h3>
+<p>Agents might install many dependencies or modify system configurations, making your research environment unstable or non-reproducible.</p>
 </section>
 </section>
-<section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>The software industry has been enjoying these benefits for over a year now, with even top software engineers now having AI assistants generate a vast majority of their code. Now, the tools for agentic coding are mature enough for anyone to master.</p>
-<p>Unlike many educational materials in this field, this workshop will also address the new vectors of attack that novice users might expose themselves to by using coding agents blindly. We will cover key security risks associated with agentic systems, including data leakage, unsafe code execution, and unintended modifications to analysis code and research materials. To mitigate these risks, we will introduce accessible strategies such as containerization, sandboxing, and workflow isolation.</p>
-<p>Participants will also see how the agents themselves can assist in setting up and using these protective tools to improve transparency and reproducibility. The workshop will combine short demonstrations with applied examples relevant to population research. Participants are encouraged to bring their own projects or ideas, which we will use to explore how LLM agents can be integrated into real research workflows. For those without a project, guided exercises and example tasks will be provided.</p>
+<section id="mitigation-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="mitigation-strategies">Mitigation Strategies</h2>
+<section id="containerization-docker" class="level3">
+<h3 class="anchored" data-anchor-id="containerization-docker">Containerization (Docker)</h3>
+<p>By running the agent inside a container, you limit its access to your host machine’s files and resources.</p>
 </section>
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
-<p>To get started with the workshop materials, please navigate through the sections in the navigation bar on the left or with pagination links in the bottom.</p>
-<p>If you are attending the workshop or want to follow along with the exercises, we recommend using the provided <strong>GitHub Codespaces</strong> environment.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://github.com/codespaces/badge.svg" class="img-fluid figure-img"></p>
-<figcaption>Open in GitHub Codespaces</figcaption>
-</figure>
-</div>
-<p>For detailed setup instructions and your first exercises, please proceed to the <a href="./30-setup.html">Environment Setup</a> page.</p>
+<section id="managed-environments-github-codespaces" class="level3">
+<h3 class="anchored" data-anchor-id="managed-environments-github-codespaces">Managed Environments (GitHub Codespaces)</h3>
+<p>Using a temporary, cloud-based environment like Codespaces provides a “disposable” workspace where you can safely experiment without risking your local setup.</p>
+</section>
+<section id="the-human-in-the-loop" class="level3">
+<h3 class="anchored" data-anchor-id="the-human-in-the-loop">The “Human in the Loop”</h3>
+<p>Never allow an agent to execute code autonomously without a review step. Tools like <strong>Aider</strong> or <strong>Gemini CLI</strong> often prompt for confirmation before running critical commands.</p>
+</section>
+</section>
+<section id="practice-safe-coding" class="level2">
+<h2 class="anchored" data-anchor-id="practice-safe-coding">Practice Safe Coding</h2>
+<p>Our <a href="./30-setup.html">Environment Setup</a> is hosted entirely within a secure GitHub Codespace to ensure your experiments are isolated. Let’s head there now to start exploring.</p>
 
 
 </section>
@@ -933,10 +937,13 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./10-intro-to-agents.html" class="pagination-link" aria-label="01: Introduction to LLM Agents">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">01: Introduction to LLM Agents</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./10-intro-to-agents.html" class="pagination-link" aria-label="01: Introduction to LLM Agents">
-        <span class="nav-page-text">01: Introduction to LLM Agents</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./30-setup.html" class="pagination-link" aria-label="30: Environment Setup">
+        <span class="nav-page-text">30: Environment Setup</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -954,7 +961,7 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/20-security-sandboxing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -967,38 +974,6 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"fade","descPosition":"top","loop":false,"openEffect":"fade","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

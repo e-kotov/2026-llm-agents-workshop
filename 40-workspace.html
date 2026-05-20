@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Beyond the Chatbox</title>
+<title>40: The Workshop Workspace – Beyond the Chatbox</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./10-intro-to-agents.html" rel="next">
+<link href="./50-agent-interactions.html" rel="next">
+<link href="./30-setup.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -48,9 +49,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-4f446250d2bb6cc7a151367d604a87ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-dfb262e855b434930d896448b82c798a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-4f446250d2bb6cc7a151367d604a87ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -309,7 +307,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./index.html">Beyond the Chatbox</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./40-workspace.html">40: The Workshop Workspace</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -340,7 +338,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Beyond the Chatbox</span></a>
   </div>
 </li>
@@ -364,7 +362,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./40-workspace.html" class="sidebar-item-text sidebar-link">
+  <a href="./40-workspace.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">40: The Workshop Workspace</span></a>
   </div>
 </li>
@@ -403,25 +401,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a>
-  <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a>
-  <ul class="collapse">
-  <li><a href="#workshop-details" id="toc-workshop-details" class="nav-link" data-scroll-target="#workshop-details">Workshop Details</a></li>
-  </ul></li>
-  <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract</a></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
-  </ul></li>
+  <li><a href="#workspace-structure" id="toc-workspace-structure" class="nav-link active" data-scroll-target="#workspace-structure">Workspace Structure</a></li>
+  <li><a href="#the-sandbox-boundary" id="toc-the-sandbox-boundary" class="nav-link" data-scroll-target="#the-sandbox-boundary">The Sandbox Boundary</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/40-workspace.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./index.html">Beyond the Chatbox</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./40-workspace.html">40: The Workshop Workspace</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Beyond the Chatbox</h1>
+<h1 class="title">40: The Workshop Workspace</h1>
 </div>
 
 
@@ -458,46 +450,42 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="section" class="level1">
-<h1></h1>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="media/workshop-ad.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="© Image generated by Google Gemini | Nanobanana"><img src="media/workshop-ad.png" class="img-fluid figure-img" alt="© Image generated by Google Gemini | Nanobanana"></a></p>
-<figcaption>© Image generated by Google Gemini | Nanobanana</figcaption>
-</figure>
-</div>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>This interactive tutorial and workshop provides a practical introduction to using large language models (LLMs) in coding agents, featuring applied examples in population research. It is oragnized by <a href="https://www.ekotov.pro">Egor Kotov</a> with support from the <a href="https://www.demogr.mpg.de/en/">Max Planck Institute for Demographic Research</a>.</p>
-<section id="workshop-details" class="level3">
-<h3 class="anchored" data-anchor-id="workshop-details">Workshop Details</h3>
+<p>Once your environment is ready, you will find a dedicated space for your work. Understanding the structure of this workspace is crucial for maintaining security and reproducibility.</p>
+<section id="workspace-structure" class="level2">
+<h2 class="anchored" data-anchor-id="workspace-structure">Workspace Structure</h2>
+<p>The root directory contains several key folders:</p>
 <ul>
-<li><strong>Date:</strong> June 03, 2026</li>
-<li><strong>Time:</strong> 13:30-16:30</li>
-<li><strong>Location:</strong> Complesso Belmeloro, room “Lab O”, <a href="https://maps.app.goo.gl/dBrui9tWr6nRudbE7">Via Beniamino Andreatta, 8, 40126 Bologna BO, Italy</a></li>
+<li><code>userspace/</code>: This is your personal sandbox.
+<ul>
+<li><code>userspace/examples/</code>: contains pre-built examples that we will explore together.</li>
+<li><code>userspace/projects/</code>: This is where you can start your own research projects or experiments.</li>
+</ul></li>
+<li><code>data/</code>: Contains shared datasets for the workshop exercises.</li>
+<li><code>tutorial-website-src/</code>: The source code for this website (if you want to see how it’s built!).</li>
 </ul>
 </section>
-</section>
-<section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>The software industry has been enjoying these benefits for over a year now, with even top software engineers now having AI assistants generate a vast majority of their code. Now, the tools for agentic coding are mature enough for anyone to master.</p>
-<p>Unlike many educational materials in this field, this workshop will also address the new vectors of attack that novice users might expose themselves to by using coding agents blindly. We will cover key security risks associated with agentic systems, including data leakage, unsafe code execution, and unintended modifications to analysis code and research materials. To mitigate these risks, we will introduce accessible strategies such as containerization, sandboxing, and workflow isolation.</p>
-<p>Participants will also see how the agents themselves can assist in setting up and using these protective tools to improve transparency and reproducibility. The workshop will combine short demonstrations with applied examples relevant to population research. Participants are encouraged to bring their own projects or ideas, which we will use to explore how LLM agents can be integrated into real research workflows. For those without a project, guided exercises and example tasks will be provided.</p>
-</section>
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
-<p>To get started with the workshop materials, please navigate through the sections in the navigation bar on the left or with pagination links in the bottom.</p>
-<p>If you are attending the workshop or want to follow along with the exercises, we recommend using the provided <strong>GitHub Codespaces</strong> environment.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://github.com/codespaces/badge.svg" class="img-fluid figure-img"></p>
-<figcaption>Open in GitHub Codespaces</figcaption>
-</figure>
+<section id="the-sandbox-boundary" class="level2">
+<h2 class="anchored" data-anchor-id="the-sandbox-boundary">The Sandbox Boundary</h2>
+<p>As we discussed in <a href="./20-security-sandboxing.html">Security &amp; Sandboxing</a>, the <code>userspace/</code> directory is designed to be your primary work area.</p>
+<div class="callout callout-style-simple callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>For detailed setup instructions and your first exercises, please proceed to the <a href="./30-setup.html">Environment Setup</a> page.</p>
-
-
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Best Practice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When instructing an agent to create or modify files, always specify a path within <code>userspace/projects/</code>. This keeps your experimental code isolated from the core workshop materials.</p>
+</div>
+</div>
 </section>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<p>Now that you understand where to work, let’s learn how to <a href="./50-agent-interactions.html">Interact with the Agents</a>.</p>
+
+
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{kotov,
@@ -933,10 +921,13 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./30-setup.html" class="pagination-link" aria-label="30: Environment Setup">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">30: Environment Setup</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./10-intro-to-agents.html" class="pagination-link" aria-label="01: Introduction to LLM Agents">
-        <span class="nav-page-text">01: Introduction to LLM Agents</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./50-agent-interactions.html" class="pagination-link" aria-label="50: Interacting with the Agents">
+        <span class="nav-page-text">50: Interacting with the Agents</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -954,7 +945,7 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/40-workspace.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -967,38 +958,6 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"fade","descPosition":"top","loop":false,"openEffect":"fade","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

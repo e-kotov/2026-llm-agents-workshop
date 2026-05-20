@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>01: Introduction to LLM Agents – Beyond the Chatbox</title>
+<title>30: Environment Setup – Beyond the Chatbox</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02-security-sandboxing.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./40-workspace.html" rel="next">
+<link href="./20-security-sandboxing.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,9 +46,12 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-40a41c45bcd4f253dc92efebaed341ab.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-f736ddf6b36c22864dabe85b5a534329.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-40a41c45bcd4f253dc92efebaed341ab.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-4f446250d2bb6cc7a151367d604a87ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-dfb262e855b434930d896448b82c798a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-4f446250d2bb6cc7a151367d604a87ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -97,8 +100,10 @@ ul.task-list li input[type="checkbox"] {
 
 <meta property="og:title" content="Beyond the Chatbox">
 <meta property="og:description" content="LLM Coding and Research Agents for Academics">
-<meta property="og:image" content="media/workshop-ad.png">
+<meta property="og:image" content="https://e-kotov.github.io/2026-llm-agents-workshop/media/workshop-ad.png">
 <meta property="og:site_name" content="Beyond the Chatbox">
+<meta property="og:image:height" content="545">
+<meta property="og:image:width" content="1000">
 <meta name="citation_title" content="Beyond the Chatbox: LLM Coding and Research Agents for Academics">
 <meta name="citation_author" content="Egor Kotov">
 <meta name="citation_fulltext_html_url" content="https://github.com/e-kotov/2026-llm-agents-workshop">
@@ -305,7 +310,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./01-intro-to-agents.html">01: Introduction to LLM Agents</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./30-setup.html">30: Environment Setup</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -342,14 +347,32 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-intro-to-agents.html" class="sidebar-item-text sidebar-link active">
+  <a href="./10-intro-to-agents.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01: Introduction to LLM Agents</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-security-sandboxing.html" class="sidebar-item-text sidebar-link">
+  <a href="./20-security-sandboxing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">02: Security &amp; Sandboxing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./30-setup.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">30: Environment Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./40-workspace.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">40: The Workshop Workspace</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./50-agent-interactions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">50: Interacting with the Agents</span></a>
   </div>
 </li>
       </ul>
@@ -381,20 +404,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-llm-agents" id="toc-introduction-to-llm-agents" class="nav-link active" data-scroll-target="#introduction-to-llm-agents">01: Introduction to LLM Agents</a>
+  <li><a href="#launching-codespaces" id="toc-launching-codespaces" class="nav-link active" data-scroll-target="#launching-codespaces">Launching Codespaces</a></li>
+  <li><a href="#managing-your-session-usage" id="toc-managing-your-session-usage" class="nav-link" data-scroll-target="#managing-your-session-usage">Managing Your Session &amp; Usage</a>
   <ul class="collapse">
-  <li><a href="#key-concepts" id="toc-key-concepts" class="nav-link" data-scroll-target="#key-concepts">Key Concepts</a></li>
+  <li><a href="#monthly-free-quotas-2026" id="toc-monthly-free-quotas-2026" class="nav-link" data-scroll-target="#monthly-free-quotas-2026">Monthly Free Quotas (2026)</a></li>
   </ul></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/01-intro-to-agents.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/30-setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./01-intro-to-agents.html">01: Introduction to LLM Agents</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./30-setup.html">30: Environment Setup</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">01: Introduction to LLM Agents</h1>
+<h1 class="title">30: Environment Setup</h1>
 </div>
 
 
@@ -431,23 +456,93 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction-to-llm-agents" class="level1">
-<h1>01: Introduction to LLM Agents</h1>
-<p>This section covers the basics of what LLM agents are and how they differ from standard chat interfaces.</p>
-<section id="key-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="key-concepts">Key Concepts</h2>
-<ul>
-<li>Agency and Autonomy</li>
-<li>Tool Use</li>
-<li>Feedback Loops</li>
-<li>Code Generation vs.&nbsp;Execution</li>
-</ul>
+<p>To ensure a consistent and secure experience, we recommend using the provided GitHub Codespaces environment.</p>
+<section id="launching-codespaces" class="level2">
+<h2 class="anchored" data-anchor-id="launching-codespaces">Launching Codespaces</h2>
+<ol type="1">
+<li>Navigate to the <a href="https://github.com/e-kotov/2026-llm-agents-workshop">workshop repository</a>.</li>
+<li>Click on the <strong>“Open in GitHub Codespaces”</strong> button.</li>
+</ol>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>If you are launching it manually, click the <strong>Code</strong> button, select the <strong>Codespaces</strong> tab, and click <strong>Create codespace on main</strong>.</p>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/github-start-codespace.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Launch in GitHub Codespaces"><img src="media/github-start-codespace.png" class="img-fluid figure-img" alt="Launch in GitHub Codespaces"></a></p>
+<figcaption>Launch in GitHub Codespaces</figcaption>
+</figure>
+</div>
+</section>
+<section id="managing-your-session-usage" class="level2">
+<h2 class="anchored" data-anchor-id="managing-your-session-usage">Managing Your Session &amp; Usage</h2>
+<p>GitHub Codespaces provides a generous free tier, but it is important to understand how “Core Hours” are consumed to avoid running out of credits.</p>
+<section id="monthly-free-quotas-2026" class="level3">
+<h3 class="anchored" data-anchor-id="monthly-free-quotas-2026">Monthly Free Quotas (2026)</h3>
+<p>The following quotas apply to personal accounts.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Account Type</th>
+<th style="text-align: left;">Actual Usage Hours</th>
+<th style="text-align: left;">Storage (per month)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>GitHub Free</strong></td>
+<td style="text-align: left;"><strong>60 hours</strong></td>
+<td style="text-align: left;"><strong>15 GB</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>GitHub Pro</strong></td>
+<td style="text-align: left;"><strong>90 hours</strong></td>
+<td style="text-align: left;"><strong>20 GB</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>You can monitor your real-time usage and remaining balance at any time:</p>
+<ol type="1">
+<li>Go to your <a href="https://github.com/settings/billing/summary">GitHub Settings &gt; Billing and plans</a>.</li>
+<li>Look for the <strong>Codespaces</strong> section under <strong>Usage this month</strong> or try this direct link: <a href="https://github.com/settings/billing/usage?period=3&amp;group=2&amp;query=product:codespaces">GitHub Codespaces Usage</a>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="media/github-stop-devcontainer-codespace.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Stop GitHub Codespace"><img src="media/github-stop-devcontainer-codespace.png" class="img-fluid figure-img" alt="Stop GitHub Codespace"></a></p>
+<figcaption>Stop GitHub Codespace</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<p>Now that your environment is ready, let’s explore the <a href="./40-workspace.html">Workshop Workspace</a>.</p>
 
 
 </section>
-</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{kotov,
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>While the <a href="https://docs.github.com/en/billing/concepts/product-billing/github-codespaces#free-quota">official billing documentation</a> lists these as 120 and 180 <strong>core hours</strong>, the minimum instance size is 2 CPU cores. This means every 1 hour of real-time work consumes 2 core hours, resulting in the actual limits shown below. <strong>Storage Persistence</strong>: Storage (15GB/20GB) is consumed even when the codespace is <strong>stopped</strong>. To save your storage quota, <strong>delete</strong> codespaces you no longer need.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{kotov,
   author = {Kotov, Egor},
   title = {Beyond the {Chatbox:} {LLM} {Coding} and {Research} {Agents}
     for {Academics}},
@@ -544,7 +639,7 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("github\.com/e-kotov");
+        var filterRegex = new RegExp("https:\/\/e-kotov\.github\.io\/2026-llm-agents-workshop\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -880,13 +975,13 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Beyond the Chatbox">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Beyond the Chatbox</span>
+      <a href="./20-security-sandboxing.html" class="pagination-link" aria-label="02: Security &amp; Sandboxing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">02: Security &amp; Sandboxing</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-security-sandboxing.html" class="pagination-link" aria-label="02: Security &amp; Sandboxing">
-        <span class="nav-page-text">02: Security &amp; Sandboxing</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./40-workspace.html" class="pagination-link" aria-label="40: The Workshop Workspace">
+        <span class="nav-page-text">40: The Workshop Workspace</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -904,7 +999,7 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/01-intro-to-agents.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/30-setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -917,6 +1012,38 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"fade","descPosition":"top","loop":false,"openEffect":"fade","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
