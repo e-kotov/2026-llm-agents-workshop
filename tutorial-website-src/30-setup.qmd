@@ -1,0 +1,49 @@
+---
+title: "30: Environment Setup"
+---
+
+To ensure a consistent and secure experience, we recommend using the provided GitHub Codespaces environment.
+
+## Launching Codespaces
+
+1.  Navigate to the [workshop repository](https://github.com/e-kotov/2026-llm-agents-workshop).
+2.  Click on the **"Open in GitHub Codespaces"** button.
+
+::: {.callout-note}
+If you are launching it manually, click the **Code** button, select the **Codespaces** tab, and click **Create codespace on main**.
+:::
+
+![Launch in GitHub Codespaces](media/github-start-codespace.png)
+
+## Managing Your Session & Usage
+
+GitHub Codespaces provides a generous free tier, but it is important to understand how "Core Hours" are consumed to avoid running out of credits.
+
+### Monthly Free Quotas (2026)
+
+The following quotas apply to personal accounts.^[While the [official billing documentation](https://docs.github.com/en/billing/concepts/product-billing/github-codespaces#free-quota) lists these as 120 and 180 **core hours**, the minimum instance size is 2 CPU cores. This means every 1 hour of real-time work consumes 2 core hours, resulting in the actual limits shown below. 
+**Storage Persistence**: Storage (15GB/20GB) is consumed even when the codespace is **stopped**. To save your storage quota, **delete** codespaces you no longer need.]
+
+| Account Type | Actual Usage Hours | Storage (per month) |
+| :--- | :--- | :--- |
+| **GitHub Free** | **60 hours** | **15 GB** |
+| **GitHub Pro** | **90 hours** | **20 GB** |
+
+
+
+
+
+::: {.callout-tip}
+
+You can monitor your real-time usage and remaining balance at any time:
+
+1. Go to your [GitHub Settings > Billing and plans](https://github.com/settings/billing/summary).
+2. Look for the **Codespaces** section under **Usage this month** or try this direct link: [GitHub Codespaces Usage](https://github.com/settings/billing/usage?period=3&group=2&query=product:codespaces).
+
+:::
+
+![Stop GitHub Codespace](media/github-stop-devcontainer-codespace.png)
+
+## Next Steps
+
+Now that your environment is ready, let's explore the [Workshop Workspace](40-workspace.qmd).

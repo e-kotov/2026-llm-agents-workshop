@@ -1,0 +1,28 @@
+---
+title: "01: Introduction to LLM Agents"
+---
+
+# 01: Introduction to LLM Agents
+
+This section covers the basics of what LLM agents are and how they differ from standard chat interfaces.
+
+## What is an LLM Agent?
+
+Unlike a standard LLM chat (like ChatGPT or Gemini web interface), an **agent** is a system that uses an LLM as its "reasoning engine" to perform tasks by interacting with the world.
+
+### Key Characteristics
+
+- **Tool Use**: Agents can use tools such as search engines, calculators, or terminal commands.
+- **Autonomy**: They can break down a complex goal into smaller steps and execute them sequentially.
+- **Feedback Loop**: They can observe the output of a tool (e.g., a compiler error) and adjust their next action accordingly.
+
+## Why Use Agents for Research?
+
+In academic research, agents can:
+- **Automate Data Cleaning**: Write and run scripts to fix inconsistencies in large datasets.
+- **Literature Review**: Search, summarize, and synthesize findings from hundreds of papers.
+- **Reproducible Analysis**: Generate documented code that follows best practices.
+
+## Ready to Try?
+
+To see these concepts in action, head over to the [Environment Setup](30-setup.qmd) where we will prepare our workspace.

@@ -54,6 +54,11 @@ website:
 
 format:
   html:
+    lightbox:
+      match: auto
+      effect: fade
+      desc-position: top
+    callout-appearance: simple
     theme:
       light: [cosmo, styles.css]
       dark: [cosmo, styles.css]
@@ -72,7 +77,7 @@ format:
     title-block-banner: false
     link-external-icon: true
     link-external-newwindow: true
-    link-external-filter: 'github\.com/e-kotov'
+    # link-external-filter: 'ekotov\.pro'
     code-overflow: wrap
     mermaid:
       theme: neutral

@@ -1,0 +1,28 @@
+---
+title: "40: The Workshop Workspace"
+---
+
+Once your environment is ready, you will find a dedicated space for your work. Understanding the structure of this workspace is crucial for maintaining security and reproducibility.
+
+## Workspace Structure
+
+The root directory contains several key folders:
+
+- `userspace/`: This is your personal sandbox.
+  - `userspace/examples/`: contains pre-built examples that we will explore together.
+  - `userspace/projects/`: This is where you can start your own research projects or experiments.
+- `data/`: Contains shared datasets for the workshop exercises.
+- `tutorial-website-src/`: The source code for this website (if you want to see how it's built!).
+
+## The Sandbox Boundary
+
+As we discussed in [Security & Sandboxing](20-security-sandboxing.qmd), the `userspace/` directory is designed to be your primary work area. 
+
+::: {.callout-important}
+### Best Practice
+When instructing an agent to create or modify files, always specify a path within `userspace/projects/`. This keeps your experimental code isolated from the core workshop materials.
+:::
+
+## Next Steps
+
+Now that you understand where to work, let's learn how to [Interact with the Agents](50-agent-interactions.qmd).

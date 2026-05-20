@@ -29,3 +29,9 @@ Participants will also see how the agents themselves can assist in setting up an
 ## Getting Started
 
 To get started with the workshop materials, please navigate through the sections in the navigation bar on the left or with pagination links in the bottom.
+
+If you are attending the workshop or want to follow along with the exercises, we recommend using the provided **GitHub Codespaces** environment.
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=e-kotov/2026-llm-agents-workshop)
+
+For detailed setup instructions and your first exercises, please proceed to the [Environment Setup](30-setup.qmd) page.

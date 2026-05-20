@@ -1,0 +1,33 @@
+---
+title: "02: Security & Sandboxing"
+---
+
+# 02: Security & Sandboxing
+
+Using coding agents involves granting them the ability to execute code on your machine. This introduces several security and integrity risks that must be managed.
+
+## Common Risks
+
+### Unsafe Code Execution
+An agent might generate code that deletes files, installs malicious packages, or opens network vulnerabilities, especially if it "hallucinates" a solution or misinterprets a command.
+
+### Data Leakage
+When you provide an agent with access to your files, it might send sensitive data (API keys, personal identifiers, unpublished research) to the LLM provider's servers for processing.
+
+### Environment Pollution
+Agents might install many dependencies or modify system configurations, making your research environment unstable or non-reproducible.
+
+## Mitigation Strategies
+
+### Containerization (Docker)
+By running the agent inside a container, you limit its access to your host machine's files and resources.
+
+### Managed Environments (GitHub Codespaces)
+Using a temporary, cloud-based environment like Codespaces provides a "disposable" workspace where you can safely experiment without risking your local setup.
+
+### The "Human in the Loop"
+Never allow an agent to execute code autonomously without a review step. Tools like **Aider** or **Gemini CLI** often prompt for confirmation before running critical commands.
+
+## Practice Safe Coding
+
+Our [Environment Setup](30-setup.qmd) is hosted entirely within a secure GitHub Codespace to ensure your experiments are isolated. Let's head there now to start exploring.
