@@ -114,9 +114,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # 2.1 Install Quarto
-RUN curl -LO https://quarto.org/download/latest/quarto-linux-amd64.deb && \
-    sudo dpkg -i quarto-linux-amd64.deb && \
-    rm quarto-linux-amd64.deb
+RUN QUARTO_ARCH=$(dpkg --print-architecture) && \
+    curl -LO https://quarto.org/download/latest/quarto-linux-${QUARTO_ARCH}.deb && \
+    sudo dpkg -i quarto-linux-${QUARTO_ARCH}.deb && \
+    rm quarto-linux-${QUARTO_ARCH}.deb
 
 # 3. Configure Posit Public Package Manager for binary packages
 RUN . /etc/os-release && \

@@ -100,9 +100,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     # Set fish as default shell
     usermod -s /usr/bin/fish ${NB_USER} && \
     # Install Quarto
-    curl -LO https://quarto.org/download/latest/quarto-linux-amd64.deb && \
-    dpkg -i quarto-linux-amd64.deb && \
-    rm quarto-linux-amd64.deb && \
+    QUARTO_ARCH=$(dpkg --print-architecture) && \
+    curl -LO https://quarto.org/download/latest/quarto-linux-${QUARTO_ARCH}.deb && \
+    dpkg -i quarto-linux-${QUARTO_ARCH}.deb && \
+    rm quarto-linux-${QUARTO_ARCH}.deb && \
     # Configure Posit Public Package Manager for binary packages
     . /etc/os-release && \
     echo "options(repos = c(CRAN = \"https://p3m.dev/cran/__linux__/${VERSION_CODENAME}/latest\"))" >> /usr/lib/R/etc/Rprofile.site && \
