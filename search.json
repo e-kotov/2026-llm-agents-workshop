@@ -147,7 +147,7 @@
     "href": "10-intro-to-agents.html",
     "title": "01: Introduction to LLM Agents",
     "section": "",
-    "text": "This section covers the basics of what LLM agents are and how they differ from standard chat interfaces.\n\n\nUnlike a standard LLM chat (like ChatGPT or Gemini web interface), an agent is a system that uses an LLM as its “reasoning engine” to perform tasks by interacting with the world.\n\n\n\nTool Use: Agents can use tools such as search engines, calculators, or terminal commands.\nAutonomy: They can break down a complex goal into smaller steps and execute them sequentially.\nFeedback Loop: They can observe the output of a tool (e.g., a compiler error) and adjust their next action accordingly.\n\n\n\n\n\nIn academic research, agents can: - Automate Data Cleaning: Write and run scripts to fix inconsistencies in large datasets. - Literature Review: Search, summarize, and synthesize findings from hundreds of papers. - Reproducible Analysis: Generate documented code that follows best practices.\n\n\n\nTo see these concepts in action, head over to the Environment Setup where we will prepare our workspace.",
+    "text": "This section covers the basics of what LLM agents are and how they differ from standard chat interfaces.\n\n\nUnlike a standard LLM chat (like ChatGPT or Gemini web interface), an agent is a system that uses an LLM as its “reasoning engine” to perform tasks by interacting with the world.\n\n\n\nTool Use: Agents can use tools such as search engines, calculators, or terminal commands.\nAutonomy: They can break down a complex goal into smaller steps and execute them sequentially.\nFeedback Loop: They can observe the output of a tool (e.g., a compiler error) and adjust their next action accordingly.\n\n\n\n\n\nIn academic research, agents can: - Automate Data Cleaning: Write and run scripts to fix inconsistencies in large datasets. - Literature Review: Search, summarize, and synthesize findings from hundreds of papers. - Reproducible Analysis: Generate documented code that follows best practices.\n\n\n\nSee models comparison",
     "crumbs": [
       "Workshop",
       "01: Introduction to LLM Agents"
@@ -176,11 +176,11 @@
     ]
   },
   {
-    "objectID": "10-intro-to-agents.html#ready-to-try",
-    "href": "10-intro-to-agents.html#ready-to-try",
+    "objectID": "10-intro-to-agents.html#models",
+    "href": "10-intro-to-agents.html#models",
     "title": "01: Introduction to LLM Agents",
     "section": "",
-    "text": "To see these concepts in action, head over to the Environment Setup where we will prepare our workspace.",
+    "text": "See models comparison",
     "crumbs": [
       "Workshop",
       "01: Introduction to LLM Agents"
