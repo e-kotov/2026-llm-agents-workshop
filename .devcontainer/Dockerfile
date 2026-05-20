@@ -157,7 +157,8 @@ RUN echo "alias nca-nvidia='NCA_PROVIDER=openai OPENAI_BASE_URL=\${NCA_PROVIDER_
 ENV PATH="/home/$USERNAME/.local/bin:/home/$USERNAME/miniforge3/bin:/home/$USERNAME/.pixi/bin:/home/$USERNAME/.cargo/bin:$NVM_DIR/versions/node/default/bin:${PATH}"
 
 # Install all CLI tools in a single layer to minimize metadata and clean caches
-RUN curl -fsSL -o /tmp/miniforge.sh https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh && \
+RUN mkdir -p /home/$USERNAME/.config/fish && \
+    curl -fsSL -o /tmp/miniforge.sh https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh && \
     bash /tmp/miniforge.sh -b -p /home/$USERNAME/miniforge3 && \
     rm /tmp/miniforge.sh && \
     /home/$USERNAME/miniforge3/bin/conda init bash && \
@@ -185,6 +186,8 @@ RUN curl -fsSL -o /tmp/miniforge.sh https://github.com/conda-forge/miniforge/rel
     (curl -fsSL https://nca-cli.com/install | bash || echo "NCA CLI not available for this architecture, skipping.") && \
     # Install pixi (defaults to ~/.pixi/bin)
     curl -fsSL https://pixi.sh/install.sh | bash && \
+    # Install Antigravity CLI
+    curl -fsSL https://antigravity.google/cli/install.sh | bash && \
     # Install arf console to user's home directory
     curl --proto '=https' --tlsv1.2 -LsSf https://github.com/eitsupi/arf/releases/latest/download/arf-console-installer.sh | CARGO_HOME=/home/$USERNAME/.cargo sh && \
     # Install aider

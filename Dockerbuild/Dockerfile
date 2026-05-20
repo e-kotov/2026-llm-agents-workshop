@@ -140,7 +140,8 @@ ENV PATH="/home/${NB_USER}/.local/bin:/home/${NB_USER}/.nvm/versions/node/defaul
 USER ${NB_USER}
 WORKDIR /home/${NB_USER}
 
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash && \
+RUN mkdir -p /home/${NB_USER}/.config/fish && \
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash && \
     . $NVM_DIR/nvm.sh && \
     nvm install 24 && \
     nvm alias default 24 && \
@@ -150,6 +151,8 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | b
     # Install aider
     python3 -m pip install --user aider-install && \
     aider-install --yes && \
+    # Install Antigravity CLI
+    curl -fsSL https://antigravity.google/cli/install.sh | bash && \
     # Extension management
     code-server --extensions-dir ${CODE_EXTENSIONSDIR} --uninstall-extension saoudrizwan.claude-dev || true && \
     code-server --extensions-dir ${CODE_EXTENSIONSDIR} --uninstall-extension cline.cline || true && \
