@@ -35,6 +35,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     p7zip-rar \
     screen \
     sudo \
+    time \
     tmux \
     tree \
     wget \

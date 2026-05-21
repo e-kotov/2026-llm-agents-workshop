@@ -89,6 +89,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     sqlite3 \
     sudo \
     tesseract-ocr-eng \
+    time \
     tk-dev \
     tmux \
     tree \
@@ -159,6 +160,7 @@ RUN mkdir -p /home/${NB_USER}/.config/fish && \
     for ext in \
         sst-dev.opencode \
         alefragnani.project-manager \
+        FedaykinDev.openchamber \
         ms-vscode.live-server \
         posit.air-vscode \
         posit.shiny \

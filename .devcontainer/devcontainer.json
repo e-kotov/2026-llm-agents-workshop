@@ -15,6 +15,7 @@
 			"extensions": [
 				"sst-dev.opencode",
 				"alefragnani.project-manager",
+				"FedaykinDev.openchamber",
 				"ms-vscode.live-server",
 				"posit.air-vscode",
 				"posit.shiny",
