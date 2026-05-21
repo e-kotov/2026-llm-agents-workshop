@@ -19,6 +19,7 @@ website:
       - icon: github
         href: https://github.com/e-kotov/2026-llm-agents-workshop
         aria-label: GitHub
+        target: _blank
   
   sidebar:
     id: "main"
@@ -41,9 +42,11 @@ website:
     center:
       - text: "CC-BY-SA 4.0"
         href: https://creativecommons.org/licenses/by-sa/4.0/
+        target: _blank
     right: 
       - icon: github
         href: https://github.com/e-kotov/2026-llm-agents-workshop
+        target: _blank
 
   page-navigation: true
   reader-mode: true
