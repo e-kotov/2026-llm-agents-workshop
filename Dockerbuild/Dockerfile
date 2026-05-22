@@ -158,8 +158,9 @@ RUN mkdir -p /home/${NB_USER}/.config/fish && \
     code-server --extensions-dir ${CODE_EXTENSIONSDIR} --uninstall-extension saoudrizwan.claude-dev || true && \
     code-server --extensions-dir ${CODE_EXTENSIONSDIR} --uninstall-extension cline.cline || true && \
     for ext in \
+        AbdulkaderSafi.file-explorer \
         sst-dev.opencode \
-        alefragnani.project-manager \
+        chrisdias.vscode-opennewinstance \
         FedaykinDev.openchamber \
         ms-vscode.live-server \
         posit.air-vscode \

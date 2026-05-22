@@ -13,8 +13,9 @@
 				"terminal.integrated.defaultProfile.linux": "fish"
 			},
 			"extensions": [
+				"AbdulkaderSafi.file-explorer",
 				"sst-dev.opencode",
-				"alefragnani.project-manager",
+				"chrisdias.vscode-opennewinstance",
 				"FedaykinDev.openchamber",
 				"ms-vscode.live-server",
 				"posit.air-vscode",
