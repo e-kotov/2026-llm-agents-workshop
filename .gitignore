@@ -25,3 +25,5 @@ Thumbs.db
 # Workspace
 workspace/project/*
 !workspace/project/.gitkeep
+
+/.luarc.json
