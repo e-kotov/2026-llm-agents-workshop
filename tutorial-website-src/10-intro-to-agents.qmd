@@ -1,8 +1,7 @@
 ---
-title: "01: Introduction to LLM Agents"
+title: "Introduction to LLM Agents"
 ---
 
-# 01: Introduction to LLM Agents
 
 This section covers the basics of what LLM agents are and how they differ from standard chat interfaces.
 
@@ -26,3 +25,9 @@ In academic research, agents can:
 ## Models
 
 [See models comparison](https://artificialanalysis.ai/?cost=cost-breakdown&output-tokens=intelligence-vs-output-tokens&models=gpt-5-5-high%2Cgemini-3-pro-low%2Cgemini-3-5-flash%2Cgemini-3-1-pro-preview%2Cclaude-opus-4-7%2Cclaude-sonnet-4-6-adaptive%2Cdeepseek-v4-flash-high%2Cminimax-m2-7%2Cnvidia-nemotron-3-super-120b-a12b%2Cqwen3-5-397b-a17b%2Cqwen3-5-122b-a10b%2Cqwen3-6-35b-a3b%2Cqwen3-6-27b%2Cqwen3-6-plus%2Cgemini-3-pro%2Cminimax-m2-5%2Cglm-4-5-air)
+
+---
+
+## Next Steps
+
+Now that you know what agents are, let's look at [Security & Sandboxing](20-security-sandboxing.qmd).

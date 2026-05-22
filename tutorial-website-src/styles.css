@@ -3,23 +3,112 @@
 
 /*-- scss:rules --*/
 
-/* Centering the content column and keeping it narrow */
+/* Centering and Grid behavior */
 #quarto-content.quarto-container {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
-main.content {
-  max-width: 800px;
-  margin: 0 auto;
+/* Heading section numbering style */
+.header-section-number {
+  color: #adb5bd !important; /* Light gray (Bootstrap gray-500) */
+  font-weight: 400;
+  margin-right: 0.5rem;
+}
+
+/* Teaser preview effect for folded content (placed inside <summary>) */
+.teaser-preview {
+  display: block;
+  opacity: 0.3;
+  max-height: 2.8em; /* Exactly 2 lines (line-height 1.4 * 2) */
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 95%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 95%);
+  margin-top: 0.5rem;
+  font-weight: normal;
+  font-size: 0.95em;
+  line-height: 1.4;
+  color: var(--quarto-body-color) !important; /* Force body color */
+  text-decoration: none !important; /* Ensure no underline */
+  cursor: text; /* Signal this is normal text */
+  pointer-events: auto; /* Catch mouse to prevent summary interaction */
+  transition: all 0.3s ease;
+}
+
+/* Teaser body copy inside details (hidden when closed, shown when open) */
+.teaser-body {
+  display: none;
+}
+
+details[open] .teaser-body {
+  display: block;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Hide the summary teaser preview when the fold is open */
+details[open] summary .teaser-preview {
+  display: none !important;
+}
+
+/* Base summary reset - make the container itself non-interactive */
+summary {
+  cursor: default !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  outline: none;
+}
+
+summary:hover {
+  text-decoration: none !important;
+}
+
+/* The actual clickable title */
+.summary-title {
+  cursor: pointer;
+  color: #0A7878;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 0.2rem 0;
+}
+
+.summary-title:hover {
+  color: #086363;
+}
+
+/* Ensure teaser never gets an underline, even when parent elements are hovered */
+summary .teaser-preview,
+summary:hover .teaser-preview,
+.summary-title:hover ~ .teaser-preview {
+  text-decoration: none !important;
+}
+
+/* Remove the separator line between summary and body in callouts/details */
+details[open] summary {
+  border-bottom: none !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Ensure the body text starts immediately after the summary with no extra gap */
+details[open] > p:first-of-type,
+details[open] > div:first-of-type {
+  margin-top: 0 !important;
+  padding-top: 0.5rem !important;
 }
 
 /* Navbar styling overrides */
 .navbar .navbar-container, 
 .navbar .container-fluid {
-  max-width: 1200px;
+  max-width: 1600px; /* Match the main container width */
   margin-left: auto;
   margin-right: auto;
+  padding-left: 1.5rem; /* Standard Quarto sidebar alignment */
+}
+
+.navbar-brand {
+  margin-left: 0;
 }
 
 .navbar-title, .navbar-brand {
@@ -224,3 +313,61 @@ body.quarto-dark code {
   }
 
 
+/* Details and Summary folding elements styling */
+details {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0 2rem 0;
+  background-color: #f8f9fa;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+details:hover {
+  border-color: #0A7878;
+}
+
+body.quarto-dark details {
+  border-color: #333c3c !important;
+  background-color: #161919 !important;
+}
+
+body.quarto-dark details:hover {
+  border-color: #33c7ff !important;
+}
+
+details summary {
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  color: #0A7878;
+  user-select: none;
+}
+
+body.quarto-dark details summary {
+  color: #33c7ff !important;
+}
+
+details summary:hover {
+  text-decoration: underline;
+}
+
+details[open] {
+  border-color: #0A7878;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+body.quarto-dark details[open] {
+  border-color: #33c7ff !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+details[open] summary {
+  margin-bottom: 1rem;
+  border-bottom: 1px dashed #dee2e6;
+  padding-bottom: 0.5rem;
+}
+
+body.quarto-dark details[open] summary {
+  border-bottom-color: #333c3c !important;
+}

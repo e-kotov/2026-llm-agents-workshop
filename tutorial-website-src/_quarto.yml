@@ -1,8 +1,14 @@
 project:
-  type: website
+  type: book
   brand: _brand.yml
 
-website:
+
+number-sections: true
+number-depth: 3
+
+csl: apa.csl
+
+book:
   title: "Beyond the Chatbox"
   description: "Beyond the Chatbox: LLM Coding and Research Agents for Academics"
   repo-url: https://github.com/e-kotov/2026-llm-agents-workshop
@@ -13,28 +19,27 @@ website:
     image: media/workshop-ad.png
   
   navbar:
-    background: "#0A7878" # Explicitly use the dark green hex to override theme defaults
+    background: "#0A7878"
     search: false
-    right:
-      - icon: github
-        href: https://github.com/e-kotov/2026-llm-agents-workshop
-        aria-label: GitHub
-        target: _blank
+    # right:
+    #   - icon: github
+    #     href: https://github.com/e-kotov/2026-llm-agents-workshop
+    #     aria-label: GitHub
+    #     target: _blank
   
   sidebar:
     id: "main"
     style: "docked"
     search: true
     collapse-level: 2
-    contents:
-      - section: "Workshop"
-        contents:
-          - index.qmd
-          - auto: "[0-9][0-9]-*.qmd"
-      - section: "Resources"
-        contents:
-          - text: "Workshop Workspace"
-            href: "https://github.com/e-kotov/2026-llm-agents-workshop/tree/main/workspace"
+
+  chapters:
+    - index.qmd
+    - 10-intro-to-agents.qmd
+    - 20-security-sandboxing.qmd
+    - 30-setup.qmd
+    - 40-workspace.qmd
+    - 50-agent-interactions.qmd
 
   page-footer:
     border: true
@@ -70,7 +75,11 @@ format:
     toc: true
     toc-location: right
     toc-title: "On this page"
-    number-sections: false
+    number-sections: true
+    grid:
+      body-width: 950px
+      margin-width: 300px
+      sidebar-width: 300px
     code-fold: show
     code-summary: "Show the code"
     code-tools: false
@@ -80,14 +89,17 @@ format:
     title-block-banner: false
     link-external-icon: true
     link-external-newwindow: true
-    # link-external-filter: 'ekotov\.pro'
     code-overflow: wrap
     mermaid:
       theme: neutral
     include-in-header:
       - text: |
           <meta name="DC.Type" content="WebPage">
-      - file: media/analytics.html
+          <script src="scripts/details-fold.js" defer></script>
+      - file: scripts/analytics.html
+  typst:
+    filters:
+      - scripts/trigger-fix.lua
 
 execute:
   freeze: true
@@ -96,6 +108,7 @@ citation:
   type: webpage
   title: "Beyond the Chatbox: LLM Coding and Research Agents for Academics"
   url: https://github.com/e-kotov/2026-llm-agents-workshop
+  issued: 2026
 google-scholar: true
 
 authors:

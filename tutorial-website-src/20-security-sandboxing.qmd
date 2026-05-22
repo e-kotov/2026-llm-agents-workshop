@@ -1,8 +1,7 @@
 ---
-title: "02: Security & Sandboxing"
+title: "Security & Sandboxing"
 ---
 
-# 02: Security & Sandboxing
 
 Using coding agents involves granting them the ability to execute code on your machine. This introduces several security and integrity risks that must be managed.
 

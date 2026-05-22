@@ -1,5 +1,5 @@
 ---
-title: "40: The Workshop Workspace"
+title: "The Workshop Workspace"
 ---
 
 Once your environment is ready, you will find a dedicated space for your work. Understanding the structure of this workspace is crucial for maintaining security and reproducibility.

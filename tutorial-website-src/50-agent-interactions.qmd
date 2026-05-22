@@ -1,5 +1,5 @@
 ---
-title: "50: Interacting with the Agents"
+title: "Interacting with the Agents"
 ---
 
 In this environment, you have access to several world-class coding agents. You can interact with them via the terminal or integrated VS Code extensions.
