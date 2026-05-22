@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Beyond the Chatbox: LLM Coding and Research Agents for Academics">
 
-<title>02: Security &amp; Sandboxing – Beyond the Chatbox</title>
+<title>2&nbsp; Security &amp; Sandboxing – Beyond the Chatbox</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -46,9 +47,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4f446250d2bb6cc7a151367d604a87ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-dfb262e855b434930d896448b82c798a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-4f446250d2bb6cc7a151367d604a87ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-722a3a75eca1cf58baeb6a90b119f172.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-90d1aa749c74e9b4c80b1b68a8a43fdc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-722a3a75eca1cf58baeb6a90b119f172.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -93,16 +94,18 @@ ul.task-list li input[type="checkbox"] {
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
 <meta name="DC.Type" content="WebPage">
+<script src="scripts/details-fold.js" defer=""></script>
 
 
 <meta property="og:title" content="Beyond the Chatbox">
 <meta property="og:description" content="LLM Coding and Research Agents for Academics">
-<meta property="og:image" content="https://e-kotov.github.io/2026-llm-agents-workshop/media/workshop-ad.png">
+<meta property="og:image" content="media/workshop-ad.png">
 <meta property="og:site_name" content="Beyond the Chatbox">
-<meta property="og:image:height" content="545">
-<meta property="og:image:width" content="1000">
 <meta name="citation_title" content="Beyond the Chatbox: LLM Coding and Research Agents for Academics">
 <meta name="citation_author" content="Egor Kotov">
+<meta name="citation_publication_date" content="2026">
+<meta name="citation_cover_date" content="2026">
+<meta name="citation_year" content="2026">
 <meta name="citation_fulltext_html_url" content="https://github.com/e-kotov/2026-llm-agents-workshop">
 <meta name="citation_language" content="en">
 </head>
@@ -280,19 +283,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Beyond the Chatbox</span>
     </a>
   </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/e-kotov/2026-llm-agents-workshop" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
+        <div class="quarto-navbar-tools tools-wide tools-end">
+    <a href="https://github.com/e-kotov/2026-llm-agents-workshop" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
@@ -307,7 +299,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./20-security-sandboxing.html">02: Security &amp; Sandboxing</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./20-security-sandboxing.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Security &amp; Sandboxing</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -327,70 +319,42 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Workshop</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beyond the Chatbox</span></a>
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10-intro-to-agents.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01: Introduction to LLM Agents</span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to LLM Agents</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./20-security-sandboxing.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">02: Security &amp; Sandboxing</span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Security &amp; Sandboxing</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./30-setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">30: Environment Setup</span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Environment Setup</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./40-workspace.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">40: The Workshop Workspace</span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Workshop Workspace</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./50-agent-interactions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">50: Interacting with the Agents</span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Interacting with the Agents</span></span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Resources</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://github.com/e-kotov/2026-llm-agents-workshop/tree/main/workspace" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Workshop Workspace</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -401,22 +365,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#security-sandboxing" id="toc-security-sandboxing" class="nav-link active" data-scroll-target="#security-sandboxing">02: Security &amp; Sandboxing</a>
+  <li><a href="#common-risks" id="toc-common-risks" class="nav-link active" data-scroll-target="#common-risks"><span class="header-section-number">2.1</span> Common Risks</a>
   <ul class="collapse">
-  <li><a href="#common-risks" id="toc-common-risks" class="nav-link" data-scroll-target="#common-risks">Common Risks</a>
+  <li><a href="#unsafe-code-execution" id="toc-unsafe-code-execution" class="nav-link" data-scroll-target="#unsafe-code-execution"><span class="header-section-number">2.1.1</span> Unsafe Code Execution</a></li>
+  <li><a href="#data-leakage" id="toc-data-leakage" class="nav-link" data-scroll-target="#data-leakage"><span class="header-section-number">2.1.2</span> Data Leakage</a></li>
+  <li><a href="#environment-pollution" id="toc-environment-pollution" class="nav-link" data-scroll-target="#environment-pollution"><span class="header-section-number">2.1.3</span> Environment Pollution</a></li>
+  </ul></li>
+  <li><a href="#mitigation-strategies" id="toc-mitigation-strategies" class="nav-link" data-scroll-target="#mitigation-strategies"><span class="header-section-number">2.2</span> Mitigation Strategies</a>
   <ul class="collapse">
-  <li><a href="#unsafe-code-execution" id="toc-unsafe-code-execution" class="nav-link" data-scroll-target="#unsafe-code-execution">Unsafe Code Execution</a></li>
-  <li><a href="#data-leakage" id="toc-data-leakage" class="nav-link" data-scroll-target="#data-leakage">Data Leakage</a></li>
-  <li><a href="#environment-pollution" id="toc-environment-pollution" class="nav-link" data-scroll-target="#environment-pollution">Environment Pollution</a></li>
+  <li><a href="#containerization-docker" id="toc-containerization-docker" class="nav-link" data-scroll-target="#containerization-docker"><span class="header-section-number">2.2.1</span> Containerization (Docker)</a></li>
+  <li><a href="#managed-environments-github-codespaces" id="toc-managed-environments-github-codespaces" class="nav-link" data-scroll-target="#managed-environments-github-codespaces"><span class="header-section-number">2.2.2</span> Managed Environments (GitHub Codespaces)</a></li>
+  <li><a href="#the-human-in-the-loop" id="toc-the-human-in-the-loop" class="nav-link" data-scroll-target="#the-human-in-the-loop"><span class="header-section-number">2.2.3</span> The “Human in the Loop”</a></li>
   </ul></li>
-  <li><a href="#mitigation-strategies" id="toc-mitigation-strategies" class="nav-link" data-scroll-target="#mitigation-strategies">Mitigation Strategies</a>
-  <ul class="collapse">
-  <li><a href="#containerization-docker" id="toc-containerization-docker" class="nav-link" data-scroll-target="#containerization-docker">Containerization (Docker)</a></li>
-  <li><a href="#managed-environments-github-codespaces" id="toc-managed-environments-github-codespaces" class="nav-link" data-scroll-target="#managed-environments-github-codespaces">Managed Environments (GitHub Codespaces)</a></li>
-  <li><a href="#the-human-in-the-loop" id="toc-the-human-in-the-loop" class="nav-link" data-scroll-target="#the-human-in-the-loop">The “Human in the Loop”</a></li>
-  </ul></li>
-  <li><a href="#practice-safe-coding" id="toc-practice-safe-coding" class="nav-link" data-scroll-target="#practice-safe-coding">Practice Safe Coding</a></li>
-  </ul></li>
+  <li><a href="#practice-safe-coding" id="toc-practice-safe-coding" class="nav-link" data-scroll-target="#practice-safe-coding"><span class="header-section-number">2.3</span> Practice Safe Coding</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/20-security-sandboxing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -424,9 +385,9 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./20-security-sandboxing.html">02: Security &amp; Sandboxing</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">02: Security &amp; Sandboxing</h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Security &amp; Sandboxing</span></h1>
 </div>
 
 
@@ -463,58 +424,45 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="security-sandboxing" class="level1">
-<h1>02: Security &amp; Sandboxing</h1>
 <p>Using coding agents involves granting them the ability to execute code on your machine. This introduces several security and integrity risks that must be managed.</p>
-<section id="common-risks" class="level2">
-<h2 class="anchored" data-anchor-id="common-risks">Common Risks</h2>
-<section id="unsafe-code-execution" class="level3">
-<h3 class="anchored" data-anchor-id="unsafe-code-execution">Unsafe Code Execution</h3>
+<section id="common-risks" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="common-risks"><span class="header-section-number">2.1</span> Common Risks</h2>
+<section id="unsafe-code-execution" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="unsafe-code-execution"><span class="header-section-number">2.1.1</span> Unsafe Code Execution</h3>
 <p>An agent might generate code that deletes files, installs malicious packages, or opens network vulnerabilities, especially if it “hallucinates” a solution or misinterprets a command.</p>
 </section>
-<section id="data-leakage" class="level3">
-<h3 class="anchored" data-anchor-id="data-leakage">Data Leakage</h3>
+<section id="data-leakage" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="data-leakage"><span class="header-section-number">2.1.2</span> Data Leakage</h3>
 <p>When you provide an agent with access to your files, it might send sensitive data (API keys, personal identifiers, unpublished research) to the LLM provider’s servers for processing.</p>
 </section>
-<section id="environment-pollution" class="level3">
-<h3 class="anchored" data-anchor-id="environment-pollution">Environment Pollution</h3>
+<section id="environment-pollution" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="environment-pollution"><span class="header-section-number">2.1.3</span> Environment Pollution</h3>
 <p>Agents might install many dependencies or modify system configurations, making your research environment unstable or non-reproducible.</p>
 </section>
 </section>
-<section id="mitigation-strategies" class="level2">
-<h2 class="anchored" data-anchor-id="mitigation-strategies">Mitigation Strategies</h2>
-<section id="containerization-docker" class="level3">
-<h3 class="anchored" data-anchor-id="containerization-docker">Containerization (Docker)</h3>
+<section id="mitigation-strategies" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="mitigation-strategies"><span class="header-section-number">2.2</span> Mitigation Strategies</h2>
+<section id="containerization-docker" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="containerization-docker"><span class="header-section-number">2.2.1</span> Containerization (Docker)</h3>
 <p>By running the agent inside a container, you limit its access to your host machine’s files and resources.</p>
 </section>
-<section id="managed-environments-github-codespaces" class="level3">
-<h3 class="anchored" data-anchor-id="managed-environments-github-codespaces">Managed Environments (GitHub Codespaces)</h3>
+<section id="managed-environments-github-codespaces" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="managed-environments-github-codespaces"><span class="header-section-number">2.2.2</span> Managed Environments (GitHub Codespaces)</h3>
 <p>Using a temporary, cloud-based environment like Codespaces provides a “disposable” workspace where you can safely experiment without risking your local setup.</p>
 </section>
-<section id="the-human-in-the-loop" class="level3">
-<h3 class="anchored" data-anchor-id="the-human-in-the-loop">The “Human in the Loop”</h3>
+<section id="the-human-in-the-loop" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="the-human-in-the-loop"><span class="header-section-number">2.2.3</span> The “Human in the Loop”</h3>
 <p>Never allow an agent to execute code autonomously without a review step. Tools like <strong>Aider</strong> or <strong>Gemini CLI</strong> often prompt for confirmation before running critical commands.</p>
 </section>
 </section>
-<section id="practice-safe-coding" class="level2">
-<h2 class="anchored" data-anchor-id="practice-safe-coding">Practice Safe Coding</h2>
+<section id="practice-safe-coding" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="practice-safe-coding"><span class="header-section-number">2.3</span> Practice Safe Coding</h2>
 <p>Our <a href="./30-setup.html">Environment Setup</a> is hosted entirely within a secure GitHub Codespace to ensure your experiments are isolated. Let’s head there now to start exploring.</p>
 
 
 </section>
-</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{kotov,
-  author = {Kotov, Egor},
-  title = {Beyond the {Chatbox:} {LLM} {Coding} and {Research} {Agents}
-    for {Academics}},
-  url = {https://github.com/e-kotov/2026-llm-agents-workshop},
-  langid = {en}
-}
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-kotov" class="csl-entry quarto-appendix-citeas" role="listitem">
-Kotov, Egor. n.d. <span>“Beyond the Chatbox: LLM Coding and Research
-Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-agents-workshop">https://github.com/e-kotov/2026-llm-agents-workshop</a>.
-</div></div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -601,7 +549,7 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/e-kotov\.github\.io\/2026-llm-agents-workshop\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -937,13 +885,13 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./10-intro-to-agents.html" class="pagination-link" aria-label="01: Introduction to LLM Agents">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">01: Introduction to LLM Agents</span>
+      <a href="./10-intro-to-agents.html" class="pagination-link" aria-label="Introduction to LLM Agents">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to LLM Agents</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./30-setup.html" class="pagination-link" aria-label="30: Environment Setup">
-        <span class="nav-page-text">30: Environment Setup</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./30-setup.html" class="pagination-link" aria-label="Environment Setup">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Environment Setup</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,310 +1,292 @@
 [
   {
-    "objectID": "30-setup.html",
-    "href": "30-setup.html",
-    "title": "30: Environment Setup",
-    "section": "",
-    "text": "To ensure a consistent and secure experience, we recommend using the provided GitHub Codespaces environment.",
-    "crumbs": [
-      "Workshop",
-      "30: Environment Setup"
-    ]
-  },
-  {
-    "objectID": "30-setup.html#launching-codespaces",
-    "href": "30-setup.html#launching-codespaces",
-    "title": "30: Environment Setup",
-    "section": "Launching Codespaces",
-    "text": "Launching Codespaces\n\nNavigate to the workshop repository.\nClick on the “Open in GitHub Codespaces” button.\n\n\n\n\n\n\n\nIf you are launching it manually, click the Code button, select the Codespaces tab, and click Create codespace on main.\n\n\n\n\n\n\nLaunch in GitHub Codespaces",
-    "crumbs": [
-      "Workshop",
-      "30: Environment Setup"
-    ]
-  },
-  {
-    "objectID": "30-setup.html#managing-your-session-usage",
-    "href": "30-setup.html#managing-your-session-usage",
-    "title": "30: Environment Setup",
-    "section": "Managing Your Session & Usage",
-    "text": "Managing Your Session & Usage\nGitHub Codespaces provides a generous free tier, but it is important to understand how “Core Hours” are consumed to avoid running out of credits.\n\nMonthly Free Quotas (2026)\nThe following quotas apply to personal accounts.1\n\n\n\nAccount Type\nActual Usage Hours\nStorage (per month)\n\n\n\n\nGitHub Free\n60 hours\n15 GB\n\n\nGitHub Pro\n90 hours\n20 GB\n\n\n\n\n\n\n\n\n\nYou can monitor your real-time usage and remaining balance at any time:\n\nGo to your GitHub Settings &gt; Billing and plans.\nLook for the Codespaces section under Usage this month or try this direct link: GitHub Codespaces Usage.\n\n\n\n\n\n\n\nStop GitHub Codespace",
-    "crumbs": [
-      "Workshop",
-      "30: Environment Setup"
-    ]
-  },
-  {
-    "objectID": "30-setup.html#next-steps",
-    "href": "30-setup.html#next-steps",
-    "title": "30: Environment Setup",
-    "section": "Next Steps",
-    "text": "Next Steps\nNow that your environment is ready, let’s explore the Workshop Workspace.",
-    "crumbs": [
-      "Workshop",
-      "30: Environment Setup"
-    ]
-  },
-  {
-    "objectID": "30-setup.html#footnotes",
-    "href": "30-setup.html#footnotes",
-    "title": "30: Environment Setup",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nWhile the official billing documentation lists these as 120 and 180 core hours, the minimum instance size is 2 CPU cores. This means every 1 hour of real-time work consumes 2 core hours, resulting in the actual limits shown below. Storage Persistence: Storage (15GB/20GB) is consumed even when the codespace is stopped. To save your storage quota, delete codespaces you no longer need.↩︎",
-    "crumbs": [
-      "Workshop",
-      "30: Environment Setup"
-    ]
-  },
-  {
-    "objectID": "40-workspace.html",
-    "href": "40-workspace.html",
-    "title": "40: The Workshop Workspace",
-    "section": "",
-    "text": "Once your environment is ready, you will find a dedicated space for your work. Understanding the structure of this workspace is crucial for maintaining security and reproducibility.",
-    "crumbs": [
-      "Workshop",
-      "40: The Workshop Workspace"
-    ]
-  },
-  {
-    "objectID": "40-workspace.html#workspace-structure",
-    "href": "40-workspace.html#workspace-structure",
-    "title": "40: The Workshop Workspace",
-    "section": "Workspace Structure",
-    "text": "Workspace Structure\nThe root directory contains several key folders:\n\nuserspace/: This is your personal sandbox.\n\nuserspace/examples/: contains pre-built examples that we will explore together.\nuserspace/projects/: This is where you can start your own research projects or experiments.\n\ndata/: Contains shared datasets for the workshop exercises.\ntutorial-website-src/: The source code for this website (if you want to see how it’s built!).",
-    "crumbs": [
-      "Workshop",
-      "40: The Workshop Workspace"
-    ]
-  },
-  {
-    "objectID": "40-workspace.html#the-sandbox-boundary",
-    "href": "40-workspace.html#the-sandbox-boundary",
-    "title": "40: The Workshop Workspace",
-    "section": "The Sandbox Boundary",
-    "text": "The Sandbox Boundary\nAs we discussed in Security & Sandboxing, the userspace/ directory is designed to be your primary work area.\n\n\n\n\n\n\nImportantBest Practice\n\n\n\nWhen instructing an agent to create or modify files, always specify a path within userspace/projects/. This keeps your experimental code isolated from the core workshop materials.",
-    "crumbs": [
-      "Workshop",
-      "40: The Workshop Workspace"
-    ]
-  },
-  {
-    "objectID": "40-workspace.html#next-steps",
-    "href": "40-workspace.html#next-steps",
-    "title": "40: The Workshop Workspace",
-    "section": "Next Steps",
-    "text": "Next Steps\nNow that you understand where to work, let’s learn how to Interact with the Agents.",
-    "crumbs": [
-      "Workshop",
-      "40: The Workshop Workspace"
-    ]
-  },
-  {
-    "objectID": "20-security-sandboxing.html",
-    "href": "20-security-sandboxing.html",
-    "title": "02: Security & Sandboxing",
-    "section": "",
-    "text": "Using coding agents involves granting them the ability to execute code on your machine. This introduces several security and integrity risks that must be managed.\n\n\n\n\nAn agent might generate code that deletes files, installs malicious packages, or opens network vulnerabilities, especially if it “hallucinates” a solution or misinterprets a command.\n\n\n\nWhen you provide an agent with access to your files, it might send sensitive data (API keys, personal identifiers, unpublished research) to the LLM provider’s servers for processing.\n\n\n\nAgents might install many dependencies or modify system configurations, making your research environment unstable or non-reproducible.\n\n\n\n\n\n\nBy running the agent inside a container, you limit its access to your host machine’s files and resources.\n\n\n\nUsing a temporary, cloud-based environment like Codespaces provides a “disposable” workspace where you can safely experiment without risking your local setup.\n\n\n\nNever allow an agent to execute code autonomously without a review step. Tools like Aider or Gemini CLI often prompt for confirmation before running critical commands.\n\n\n\n\nOur Environment Setup is hosted entirely within a secure GitHub Codespace to ensure your experiments are isolated. Let’s head there now to start exploring.",
-    "crumbs": [
-      "Workshop",
-      "02: Security & Sandboxing"
-    ]
-  },
-  {
-    "objectID": "20-security-sandboxing.html#common-risks",
-    "href": "20-security-sandboxing.html#common-risks",
-    "title": "02: Security & Sandboxing",
-    "section": "",
-    "text": "An agent might generate code that deletes files, installs malicious packages, or opens network vulnerabilities, especially if it “hallucinates” a solution or misinterprets a command.\n\n\n\nWhen you provide an agent with access to your files, it might send sensitive data (API keys, personal identifiers, unpublished research) to the LLM provider’s servers for processing.\n\n\n\nAgents might install many dependencies or modify system configurations, making your research environment unstable or non-reproducible.",
-    "crumbs": [
-      "Workshop",
-      "02: Security & Sandboxing"
-    ]
-  },
-  {
-    "objectID": "20-security-sandboxing.html#mitigation-strategies",
-    "href": "20-security-sandboxing.html#mitigation-strategies",
-    "title": "02: Security & Sandboxing",
-    "section": "",
-    "text": "By running the agent inside a container, you limit its access to your host machine’s files and resources.\n\n\n\nUsing a temporary, cloud-based environment like Codespaces provides a “disposable” workspace where you can safely experiment without risking your local setup.\n\n\n\nNever allow an agent to execute code autonomously without a review step. Tools like Aider or Gemini CLI often prompt for confirmation before running critical commands.",
-    "crumbs": [
-      "Workshop",
-      "02: Security & Sandboxing"
-    ]
-  },
-  {
-    "objectID": "20-security-sandboxing.html#practice-safe-coding",
-    "href": "20-security-sandboxing.html#practice-safe-coding",
-    "title": "02: Security & Sandboxing",
-    "section": "",
-    "text": "Our Environment Setup is hosted entirely within a secure GitHub Codespace to ensure your experiments are isolated. Let’s head there now to start exploring.",
-    "crumbs": [
-      "Workshop",
-      "02: Security & Sandboxing"
-    ]
-  },
-  {
-    "objectID": "10-intro-to-agents.html",
-    "href": "10-intro-to-agents.html",
-    "title": "01: Introduction to LLM Agents",
-    "section": "",
-    "text": "This section covers the basics of what LLM agents are and how they differ from standard chat interfaces.\n\n\nUnlike a standard LLM chat (like ChatGPT or Gemini web interface), an agent is a system that uses an LLM as its “reasoning engine” to perform tasks by interacting with the world.\n\n\n\nTool Use: Agents can use tools such as search engines, calculators, or terminal commands.\nAutonomy: They can break down a complex goal into smaller steps and execute them sequentially.\nFeedback Loop: They can observe the output of a tool (e.g., a compiler error) and adjust their next action accordingly.\n\n\n\n\n\nIn academic research, agents can: - Automate Data Cleaning: Write and run scripts to fix inconsistencies in large datasets. - Literature Review: Search, summarize, and synthesize findings from hundreds of papers. - Reproducible Analysis: Generate documented code that follows best practices.\n\n\n\nSee models comparison",
-    "crumbs": [
-      "Workshop",
-      "01: Introduction to LLM Agents"
-    ]
-  },
-  {
-    "objectID": "10-intro-to-agents.html#what-is-an-llm-agent",
-    "href": "10-intro-to-agents.html#what-is-an-llm-agent",
-    "title": "01: Introduction to LLM Agents",
-    "section": "",
-    "text": "Unlike a standard LLM chat (like ChatGPT or Gemini web interface), an agent is a system that uses an LLM as its “reasoning engine” to perform tasks by interacting with the world.\n\n\n\nTool Use: Agents can use tools such as search engines, calculators, or terminal commands.\nAutonomy: They can break down a complex goal into smaller steps and execute them sequentially.\nFeedback Loop: They can observe the output of a tool (e.g., a compiler error) and adjust their next action accordingly.",
-    "crumbs": [
-      "Workshop",
-      "01: Introduction to LLM Agents"
-    ]
-  },
-  {
-    "objectID": "10-intro-to-agents.html#why-use-agents-for-research",
-    "href": "10-intro-to-agents.html#why-use-agents-for-research",
-    "title": "01: Introduction to LLM Agents",
-    "section": "",
-    "text": "In academic research, agents can: - Automate Data Cleaning: Write and run scripts to fix inconsistencies in large datasets. - Literature Review: Search, summarize, and synthesize findings from hundreds of papers. - Reproducible Analysis: Generate documented code that follows best practices.",
-    "crumbs": [
-      "Workshop",
-      "01: Introduction to LLM Agents"
-    ]
-  },
-  {
-    "objectID": "10-intro-to-agents.html#models",
-    "href": "10-intro-to-agents.html#models",
-    "title": "01: Introduction to LLM Agents",
-    "section": "",
-    "text": "See models comparison",
-    "crumbs": [
-      "Workshop",
-      "01: Introduction to LLM Agents"
-    ]
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Beyond the Chatbox",
     "section": "",
-    "text": "© Image generated by Google Gemini | Nanobanana\n\n\n\n\nThis interactive tutorial and workshop provides a practical introduction to using large language models (LLMs) in coding agents, featuring applied examples in population research. It is oragnized by Egor Kotov with support from the Max Planck Institute for Demographic Research.\n\n\n\nDate: June 03, 2026\nTime: 13:30-16:30\nLocation: Complesso Belmeloro, room “Lab O”, Via Beniamino Andreatta, 8, 40126 Bologna BO, Italy\n\n\n\n\n\nThe software industry has been enjoying these benefits for over a year now, with even top software engineers now having AI assistants generate a vast majority of their code. Now, the tools for agentic coding are mature enough for anyone to master.\nUnlike many educational materials in this field, this workshop will also address the new vectors of attack that novice users might expose themselves to by using coding agents blindly. We will cover key security risks associated with agentic systems, including data leakage, unsafe code execution, and unintended modifications to analysis code and research materials. To mitigate these risks, we will introduce accessible strategies such as containerization, sandboxing, and workflow isolation.\nParticipants will also see how the agents themselves can assist in setting up and using these protective tools to improve transparency and reproducibility. The workshop will combine short demonstrations with applied examples relevant to population research. Participants are encouraged to bring their own projects or ideas, which we will use to explore how LLM agents can be integrated into real research workflows. For those without a project, guided exercises and example tasks will be provided.\n\n\n\nTo get started with the workshop materials, please navigate through the sections in the navigation bar on the left or with pagination links in the bottom.\nIf you are attending the workshop or want to follow along with the exercises, we recommend using the provided GitHub Codespaces environment.\n\n\n\nOpen in GitHub Codespaces\n\n\nFor detailed setup instructions and your first exercises, please proceed to the Environment Setup page.",
+    "text": "Introduction",
     "crumbs": [
-      "Workshop",
-      "Beyond the Chatbox"
+      "Introduction"
     ]
   },
   {
     "objectID": "index.html#overview",
     "href": "index.html#overview",
     "title": "Beyond the Chatbox",
-    "section": "",
-    "text": "This interactive tutorial and workshop provides a practical introduction to using large language models (LLMs) in coding agents, featuring applied examples in population research. It is oragnized by Egor Kotov with support from the Max Planck Institute for Demographic Research.\n\n\n\nDate: June 03, 2026\nTime: 13:30-16:30\nLocation: Complesso Belmeloro, room “Lab O”, Via Beniamino Andreatta, 8, 40126 Bologna BO, Italy",
+    "section": "Overview",
+    "text": "Overview\nThis interactive tutorial and workshop provides a practical introduction to using large language models (LLMs) in coding agents, featuring applied examples in population research. It is oragnized by Egor Kotov with support from the Max Planck Institute for Demographic Research.",
     "crumbs": [
-      "Workshop",
-      "Beyond the Chatbox"
+      "Introduction"
     ]
   },
   {
-    "objectID": "index.html#abstract",
-    "href": "index.html#abstract",
+    "objectID": "index.html#workshop-details",
+    "href": "index.html#workshop-details",
     "title": "Beyond the Chatbox",
-    "section": "",
-    "text": "The software industry has been enjoying these benefits for over a year now, with even top software engineers now having AI assistants generate a vast majority of their code. Now, the tools for agentic coding are mature enough for anyone to master.\nUnlike many educational materials in this field, this workshop will also address the new vectors of attack that novice users might expose themselves to by using coding agents blindly. We will cover key security risks associated with agentic systems, including data leakage, unsafe code execution, and unintended modifications to analysis code and research materials. To mitigate these risks, we will introduce accessible strategies such as containerization, sandboxing, and workflow isolation.\nParticipants will also see how the agents themselves can assist in setting up and using these protective tools to improve transparency and reproducibility. The workshop will combine short demonstrations with applied examples relevant to population research. Participants are encouraged to bring their own projects or ideas, which we will use to explore how LLM agents can be integrated into real research workflows. For those without a project, guided exercises and example tasks will be provided.",
+    "section": "Workshop Details",
+    "text": "Workshop Details\n\nDate: June 03, 2026\nTime: 13:30-16:30\nLocation: Complesso Belmeloro, room “Lab O”, Via Beniamino Andreatta, 8, 40126 Bologna BO, Italy\n\n\n\nAbstract The software industry has been enjoying the benefits of coding agents for over a year now, with even top software engineers now having AI assistants generate a vast majority of their code. Now, the tools for agentic coding are mature enough for anyone to try.\n\nUnlike many educational materials in this field, this workshop will also address the new vectors of attack that novice users might expose themselves to by using coding agents blindly. We will cover key security risks associated with agentic systems, including data leakage, unsafe code execution, and unintended modifications to analysis code and research materials. To mitigate these risks, we will introduce accessible strategies such as containerization, sandboxing, and workflow isolation.\nParticipants will also see how the agents themselves can assist in setting up and using these protective tools to improve transparency and reproducibility. The workshop will combine short demonstrations with applied examples relevant to population research. Participants are encouraged to bring their own projects or ideas, which we will use to explore how LLM agents can be integrated into real research workflows. For those without a project, guided exercises and example tasks will be provided.",
     "crumbs": [
-      "Workshop",
-      "Beyond the Chatbox"
+      "Introduction"
     ]
   },
   {
-    "objectID": "index.html#getting-started",
-    "href": "index.html#getting-started",
+    "objectID": "index.html#before-the-workshop-accounts-setup",
+    "href": "index.html#before-the-workshop-accounts-setup",
     "title": "Beyond the Chatbox",
-    "section": "",
-    "text": "To get started with the workshop materials, please navigate through the sections in the navigation bar on the left or with pagination links in the bottom.\nIf you are attending the workshop or want to follow along with the exercises, we recommend using the provided GitHub Codespaces environment.\n\n\n\nOpen in GitHub Codespaces\n\n\nFor detailed setup instructions and your first exercises, please proceed to the Environment Setup page.",
+    "section": "Before the Workshop: Accounts & Setup",
+    "text": "Before the Workshop: Accounts & Setup\nTo make the most of our hands-on sessions, please complete the following steps before the workshop on June 3, 2026.\n\n\n\n\n\n\nImportant🔒 Data Privacy & Security Warning\n\n\n\nFree tiers for these LLM services typically use your prompts and uploaded code for model training. Do not use these tools on private, sensitive, or proprietary research data! Only use public or non-sensitive datasets during the workshop and for general testing.\n\n\n\n1. Recommended Accounts to Register\nPlease sign up for the following services in advance to ensure you have enough free model usage quota during the exercises:\n\nGoogle Account (A personal/secondary account is perfect) — Used for Gemini CLI and Antigravity CLI. No credit card is required.\nOpenCode Zen (opencode.ai/zen) — Gives you free model access via the OpenCode agent. You can view the list of available models and details on OpenCode Zen pricing/documentation.\nOpenRouter (openrouter.ai) — Allows accessing a wide variety of models. You’ll need to generate a free API Key after registering, which can be used to access their catalog of free models.\nOptional: NVIDIA NIM/Build (build.nvidia.com) — Offers free preview models (note: account activation requires SMS verification via a mobile phone number).\n\n\n\n\n\n\n\nIf you have a subscription to another LLM service (such as OpenAI ChatGPT Plus, Claude Pro, Gemini Advanced, or Mistral) and prefer to use it during the workshop, please feel free to do so. However, our guided exercises will focus on the tools listed above to ensure everyone has access to the same models and features.\nThe skills you will learn here are highly transferable to other AI coding assistants, though setup steps and specific features may vary by provider. Please refer to the documentation of your chosen agent for setup instructions, and don’t hesitate to ask the agent itself how to configure it for your desired models and features.\n\n\n\n\n\n\n\n\n\nWarningAPI & Account Safety Warning\n\n\n\nDo NOT attempt to authenticate your Google or Anthropic (Claude) accounts directly within OpenCode. Their terms of service prohibit use of quota based subscriptions in third-party clients, and doing so can result in your accounts being permanently banned. OpenAI is currently a bit more flexible on this at the time of writing, but always verify provider policies.\n\n\n\n\n\n2. Coding Agents We Will Use (and Why)\nThe coding agents are already pre-installed and configured inside the workshop’s Docker container / Codespaces environment. We will focus on:\n\nGoogle Antigravity CLI (and its predecessor Gemini CLI)\n\nWhy: It provides a free daily quota to test cutting-edge models (like Gemini 3.5 Flash, Gemini 3.1 Pro, and Claude 3.5 Sonnet) directly from your Google account.\n\nOpenCode CLI\n\nWhy: A flexible, open-source-friendly agent that can connect to multiple backends. We will use it with free models from OpenCode Zen, OpenRouter, and NVIDIA NIM to show how easy it is to switch between different model providers without vendor lock-in.\n\n\n\n\n\n\n\n\nWhat is CLI? It stands for “Command Line Interface” and means that you will interact with the agent by typing commands in a terminal (similar to your R console), rather than through a graphical user interface (GUI). This allows for more flexibility and control over the agent’s behavior, as well as easier integration into coding workflows. This also gives you better insight into how the agent works under the hood, which is important for understanding its capabilities and limitations. You are of course free to use the same agents through their graphical interfaces too. We are also limited by the current tutorial environment and tools that are free to use. In our tutorial environment Gemini and Antigravity are only available as CLI, OpenCode is aslo CLI, but you will learn how to run it in graphical mode as well.\n\n\n\n\nTo get started with the workshop materials, please navigate through the sections in the navigation bar on the left or with pagination links in the bottom.",
     "crumbs": [
-      "Workshop",
-      "Beyond the Chatbox"
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "10-intro-to-agents.html",
+    "href": "10-intro-to-agents.html",
+    "title": "1  Introduction to LLM Agents",
+    "section": "",
+    "text": "1.1 What is an LLM Agent?\nThis section covers the basics of what LLM agents are and how they differ from standard chat interfaces.\nUnlike a standard LLM chat (like ChatGPT or Gemini web interface), an agent is a system that uses an LLM as its “reasoning engine” to perform tasks by interacting with the world.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to LLM Agents</span>"
+    ]
+  },
+  {
+    "objectID": "10-intro-to-agents.html#what-is-an-llm-agent",
+    "href": "10-intro-to-agents.html#what-is-an-llm-agent",
+    "title": "1  Introduction to LLM Agents",
+    "section": "",
+    "text": "1.1.1 Key Characteristics\n\nTool Use: Agents can use tools such as search engines, calculators, or terminal commands.\nAutonomy: They can break down a complex goal into smaller steps and execute them sequentially.\nFeedback Loop: They can observe the output of a tool (e.g., a compiler error) and adjust their next action accordingly.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to LLM Agents</span>"
+    ]
+  },
+  {
+    "objectID": "10-intro-to-agents.html#why-use-agents-for-research",
+    "href": "10-intro-to-agents.html#why-use-agents-for-research",
+    "title": "1  Introduction to LLM Agents",
+    "section": "1.2 Why Use Agents for Research?",
+    "text": "1.2 Why Use Agents for Research?\nIn academic research, agents can: - Automate Data Cleaning: Write and run scripts to fix inconsistencies in large datasets. - Literature Review: Search, summarize, and synthesize findings from hundreds of papers. - Reproducible Analysis: Generate documented code that follows best practices.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to LLM Agents</span>"
+    ]
+  },
+  {
+    "objectID": "10-intro-to-agents.html#models",
+    "href": "10-intro-to-agents.html#models",
+    "title": "1  Introduction to LLM Agents",
+    "section": "1.3 Models",
+    "text": "1.3 Models\nSee models comparison",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to LLM Agents</span>"
+    ]
+  },
+  {
+    "objectID": "10-intro-to-agents.html#next-steps",
+    "href": "10-intro-to-agents.html#next-steps",
+    "title": "1  Introduction to LLM Agents",
+    "section": "1.4 Next Steps",
+    "text": "1.4 Next Steps\nNow that you know what agents are, let’s look at Security & Sandboxing.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to LLM Agents</span>"
+    ]
+  },
+  {
+    "objectID": "20-security-sandboxing.html",
+    "href": "20-security-sandboxing.html",
+    "title": "2  Security & Sandboxing",
+    "section": "",
+    "text": "2.1 Common Risks\nUsing coding agents involves granting them the ability to execute code on your machine. This introduces several security and integrity risks that must be managed.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Security & Sandboxing</span>"
+    ]
+  },
+  {
+    "objectID": "20-security-sandboxing.html#common-risks",
+    "href": "20-security-sandboxing.html#common-risks",
+    "title": "2  Security & Sandboxing",
+    "section": "",
+    "text": "2.1.1 Unsafe Code Execution\nAn agent might generate code that deletes files, installs malicious packages, or opens network vulnerabilities, especially if it “hallucinates” a solution or misinterprets a command.\n\n\n2.1.2 Data Leakage\nWhen you provide an agent with access to your files, it might send sensitive data (API keys, personal identifiers, unpublished research) to the LLM provider’s servers for processing.\n\n\n2.1.3 Environment Pollution\nAgents might install many dependencies or modify system configurations, making your research environment unstable or non-reproducible.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Security & Sandboxing</span>"
+    ]
+  },
+  {
+    "objectID": "20-security-sandboxing.html#mitigation-strategies",
+    "href": "20-security-sandboxing.html#mitigation-strategies",
+    "title": "2  Security & Sandboxing",
+    "section": "2.2 Mitigation Strategies",
+    "text": "2.2 Mitigation Strategies\n\n2.2.1 Containerization (Docker)\nBy running the agent inside a container, you limit its access to your host machine’s files and resources.\n\n\n2.2.2 Managed Environments (GitHub Codespaces)\nUsing a temporary, cloud-based environment like Codespaces provides a “disposable” workspace where you can safely experiment without risking your local setup.\n\n\n2.2.3 The “Human in the Loop”\nNever allow an agent to execute code autonomously without a review step. Tools like Aider or Gemini CLI often prompt for confirmation before running critical commands.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Security & Sandboxing</span>"
+    ]
+  },
+  {
+    "objectID": "20-security-sandboxing.html#practice-safe-coding",
+    "href": "20-security-sandboxing.html#practice-safe-coding",
+    "title": "2  Security & Sandboxing",
+    "section": "2.3 Practice Safe Coding",
+    "text": "2.3 Practice Safe Coding\nOur Environment Setup is hosted entirely within a secure GitHub Codespace to ensure your experiments are isolated. Let’s head there now to start exploring.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Security & Sandboxing</span>"
+    ]
+  },
+  {
+    "objectID": "30-setup.html",
+    "href": "30-setup.html",
+    "title": "3  Environment Setup",
+    "section": "",
+    "text": "3.1 🛠️ Launching the Environment\nTo ensure a consistent, secure, and hassle-free experience, we will use a pre-configured cloud-based development environment. We will use GitHub Codespaces.\nTo launch the Codespaces environment manually from the GitHub interface, follow these steps:",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Environment Setup</span>"
+    ]
+  },
+  {
+    "objectID": "30-setup.html#launching-the-environment",
+    "href": "30-setup.html#launching-the-environment",
+    "title": "3  Environment Setup",
+    "section": "",
+    "text": "Navigate to the workshop repository.\nClick the green Code button in the top right.\nSelect the Codespaces tab.\nClick Create codespace on main (or click the ... menu to configure machine size).\n\n\n\n\nLaunch in GitHub Codespaces\n\n\n\n\n\n\n\n\nNote🔒 Free & Secure Environment\n\n\n\n\nIt is 100% Free: GitHub provides a generous free tier of 60 hours of Codespaces usage per month for every personal account. No credit card, billing info, or payment is required.\nIt is Completely Secure: The environment runs inside a secure, isolated container (virtual machine) in the cloud. It does not touch your physical computer, install any local files, or run any software on your machine. It belongs to you and it is also mostly safe to enter your account data (e.g. Google account, especialy if secondary or test account, API keys, other accounts for subscription services or services we will use during the workshop) without worrying about security or privacy issues.\n\n\n\n\n3.1.1 💤 Auto-Pause & Resume\nTo save your free hours, the environment automatically pauses after 30 minutes of inactivity. When you restart it, your files, open tabs, and terminal history are fully preserved—just like waking up a laptop from sleep (though you may need to restart any active terminal commands or running applications).",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Environment Setup</span>"
+    ]
+  },
+  {
+    "objectID": "30-setup.html#managing-your-session-quotas",
+    "href": "30-setup.html#managing-your-session-quotas",
+    "title": "3  Environment Setup",
+    "section": "3.2 📊 Managing Your Session & Quotas",
+    "text": "3.2 📊 Managing Your Session & Quotas\nGitHub Codespaces provides a generous free tier, but it is important to understand how usage is consumed to avoid running out of credits.\n\n3.2.1 Monthly Free Quotas (2026)\nThe following quotas apply to personal accounts.1\n\n\n\nAccount Type\nActual Usage Hours\nStorage (per month)\n\n\n\n\nGitHub Free\n60 hours\n15 GB\n\n\nGitHub Pro\n90 hours\n20 GB\n\n\n\n\n\n\n\n\n\nWarning💾 Storage Persistence Quota\n\n\n\nStorage (15GB/20GB) is consumed even when the codespace is stopped. To save your storage quota, make sure to delete codespaces you no longer need at github.com/codespaces once the workshop is fully over.\n\n\n\n\n3.2.2 Checking Remaining Quota\n\n\n\n\n\n\nYou can monitor your real-time usage and remaining balance at any time:\n\nGo to your GitHub Settings &gt; Billing and plans.\nLook for the Codespaces section under Usage this month or try this direct link: GitHub Codespaces Usage.\n\n\n\n\n\n\n3.2.3 Stopping Your Session Manually\nWhen you are done with a session, you can stop the codespace manually to instantly stop consuming usage hours:\n\n\n\nStop GitHub Codespace",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Environment Setup</span>"
+    ]
+  },
+  {
+    "objectID": "30-setup.html#next-steps",
+    "href": "30-setup.html#next-steps",
+    "title": "3  Environment Setup",
+    "section": "3.3 Next Steps",
+    "text": "3.3 Next Steps\nNow that your environment is ready, let’s explore the Workshop Workspace.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Environment Setup</span>"
+    ]
+  },
+  {
+    "objectID": "30-setup.html#footnotes",
+    "href": "30-setup.html#footnotes",
+    "title": "3  Environment Setup",
+    "section": "",
+    "text": "While the official billing documentation lists these as 120 and 180 core hours, the minimum instance size is 2 CPU cores. This means every 1 hour of real-time work consumes 2 core hours, resulting in the actual limits shown below.↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Environment Setup</span>"
+    ]
+  },
+  {
+    "objectID": "40-workspace.html",
+    "href": "40-workspace.html",
+    "title": "4  The Workshop Workspace",
+    "section": "",
+    "text": "4.1 Workspace Structure\nOnce your environment is ready, you will find a dedicated space for your work. Understanding the structure of this workspace is crucial for maintaining security and reproducibility.\nThe root directory contains several key folders:",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>The Workshop Workspace</span>"
+    ]
+  },
+  {
+    "objectID": "40-workspace.html#workspace-structure",
+    "href": "40-workspace.html#workspace-structure",
+    "title": "4  The Workshop Workspace",
+    "section": "",
+    "text": "userspace/: This is your personal sandbox.\n\nuserspace/examples/: contains pre-built examples that we will explore together.\nuserspace/projects/: This is where you can start your own research projects or experiments.\n\ndata/: Contains shared datasets for the workshop exercises.\ntutorial-website-src/: The source code for this website (if you want to see how it’s built!).",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>The Workshop Workspace</span>"
+    ]
+  },
+  {
+    "objectID": "40-workspace.html#the-sandbox-boundary",
+    "href": "40-workspace.html#the-sandbox-boundary",
+    "title": "4  The Workshop Workspace",
+    "section": "4.2 The Sandbox Boundary",
+    "text": "4.2 The Sandbox Boundary\nAs we discussed in Security & Sandboxing, the userspace/ directory is designed to be your primary work area.\n\n\n\n\n\n\nImportantBest Practice\n\n\n\nWhen instructing an agent to create or modify files, always specify a path within userspace/projects/. This keeps your experimental code isolated from the core workshop materials.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>The Workshop Workspace</span>"
+    ]
+  },
+  {
+    "objectID": "40-workspace.html#next-steps",
+    "href": "40-workspace.html#next-steps",
+    "title": "4  The Workshop Workspace",
+    "section": "4.3 Next Steps",
+    "text": "4.3 Next Steps\nNow that you understand where to work, let’s learn how to Interact with the Agents.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>The Workshop Workspace</span>"
     ]
   },
   {
     "objectID": "50-agent-interactions.html",
     "href": "50-agent-interactions.html",
-    "title": "50: Interacting with the Agents",
+    "title": "5  Interacting with the Agents",
     "section": "",
-    "text": "In this environment, you have access to several world-class coding agents. You can interact with them via the terminal or integrated VS Code extensions.",
+    "text": "5.1 Available CLI Agents\nIn this environment, you have access to several world-class coding agents. You can interact with them via the terminal or integrated VS Code extensions.",
     "crumbs": [
-      "Workshop",
-      "50: Interacting with the Agents"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Interacting with the Agents</span>"
     ]
   },
   {
     "objectID": "50-agent-interactions.html#available-cli-agents",
     "href": "50-agent-interactions.html#available-cli-agents",
-    "title": "50: Interacting with the Agents",
-    "section": "Available CLI Agents",
-    "text": "Available CLI Agents\n\nAider: A powerful pair-programming tool that works directly with your git repository. Run aider in the terminal.\nGemini CLI: Interactive chat with Google’s Gemini models. Run gemini-chat.\nClaude CLI: Direct access to Anthropic’s Claude models. Run claude.\nNCA (Nim Coding Agent): Optimized for speed and specific tasks. Run nca.",
+    "title": "5  Interacting with the Agents",
+    "section": "",
+    "text": "Aider: A powerful pair-programming tool that works directly with your git repository. Run aider in the terminal.\nGemini CLI: Interactive chat with Google’s Gemini models. Run gemini-chat.\nClaude CLI: Direct access to Anthropic’s Claude models. Run claude.\nNCA (Nim Coding Agent): Optimized for speed and specific tasks. Run nca.",
     "crumbs": [
-      "Workshop",
-      "50: Interacting with the Agents"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Interacting with the Agents</span>"
     ]
   },
   {
     "objectID": "50-agent-interactions.html#exercise-1-exploring-data-with-gemini",
     "href": "50-agent-interactions.html#exercise-1-exploring-data-with-gemini",
-    "title": "50: Interacting with the Agents",
-    "section": "Exercise 1: Exploring Data with Gemini",
-    "text": "Exercise 1: Exploring Data with Gemini\nTry asking Gemini to help you understand the shared datasets. Open your terminal and run:\ngemini-chat \"List the files in the data/ directory and give me a brief summary of the columns in the first CSV file you find.\"",
+    "title": "5  Interacting with the Agents",
+    "section": "5.2 Exercise 1: Exploring Data with Gemini",
+    "text": "5.2 Exercise 1: Exploring Data with Gemini\nTry asking Gemini to help you understand the shared datasets. Open your terminal and run:\ngemini-chat \"List the files in the data/ directory and give me a brief summary of the columns in the first CSV file you find.\"",
     "crumbs": [
-      "Workshop",
-      "50: Interacting with the Agents"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Interacting with the Agents</span>"
     ]
   },
   {
     "objectID": "50-agent-interactions.html#exercise-2-pair-programming-with-aider",
     "href": "50-agent-interactions.html#exercise-2-pair-programming-with-aider",
-    "title": "50: Interacting with the Agents",
-    "section": "Exercise 2: Pair Programming with Aider",
-    "text": "Exercise 2: Pair Programming with Aider\nAider is excellent for editing existing code or starting new scripts. Let’s try creating a script in your userspace/projects/ folder:\n\nOpen the terminal.\nRun aider userspace/projects/analysis.py.\nInside the Aider chat, type: &gt; “Read data/sample_data.csv and create a plot of the population trends by year.”",
+    "title": "5  Interacting with the Agents",
+    "section": "5.3 Exercise 2: Pair Programming with Aider",
+    "text": "5.3 Exercise 2: Pair Programming with Aider\nAider is excellent for editing existing code or starting new scripts. Let’s try creating a script in your userspace/projects/ folder:\n\nOpen the terminal.\nRun aider userspace/projects/analysis.py.\nInside the Aider chat, type: &gt; “Read data/sample_data.csv and create a plot of the population trends by year.”",
     "crumbs": [
-      "Workshop",
-      "50: Interacting with the Agents"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Interacting with the Agents</span>"
     ]
   },
   {
     "objectID": "50-agent-interactions.html#exercise-3-rapid-prototyping-with-nca",
     "href": "50-agent-interactions.html#exercise-3-rapid-prototyping-with-nca",
-    "title": "50: Interacting with the Agents",
-    "section": "Exercise 3: Rapid Prototyping with NCA",
-    "text": "Exercise 3: Rapid Prototyping with NCA\nIf you need a quick script or a one-liner, nca is very efficient:\nnca \"Write a python one-liner to count the number of rows in data/sample_data.csv\"",
+    "title": "5  Interacting with the Agents",
+    "section": "5.4 Exercise 3: Rapid Prototyping with NCA",
+    "text": "5.4 Exercise 3: Rapid Prototyping with NCA\nIf you need a quick script or a one-liner, nca is very efficient:\nnca \"Write a python one-liner to count the number of rows in data/sample_data.csv\"",
     "crumbs": [
-      "Workshop",
-      "50: Interacting with the Agents"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Interacting with the Agents</span>"
     ]
   },
   {
     "objectID": "50-agent-interactions.html#security-best-practices-reminder",
     "href": "50-agent-interactions.html#security-best-practices-reminder",
-    "title": "50: Interacting with the Agents",
-    "section": "Security & Best Practices Reminder",
-    "text": "Security & Best Practices Reminder\nAs discussed in Security & Sandboxing, always remember:\n\nWork within userspace/: This ensures your experiments are isolated.\nReview Agent Code: Never execute code generated by an agent without reviewing it first.\nProtect Sensitive Data: Do not provide agents with access to private credentials or sensitive personal data.",
+    "title": "5  Interacting with the Agents",
+    "section": "5.5 Security & Best Practices Reminder",
+    "text": "5.5 Security & Best Practices Reminder\nAs discussed in Security & Sandboxing, always remember:\n\nWork within userspace/: This ensures your experiments are isolated.\nReview Agent Code: Never execute code generated by an agent without reviewing it first.\nProtect Sensitive Data: Do not provide agents with access to private credentials or sensitive personal data.",
     "crumbs": [
-      "Workshop",
-      "50: Interacting with the Agents"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Interacting with the Agents</span>"
     ]
   },
   {
     "objectID": "50-agent-interactions.html#next-steps",
     "href": "50-agent-interactions.html#next-steps",
-    "title": "50: Interacting with the Agents",
-    "section": "Next Steps",
-    "text": "Next Steps\nNow that you are comfortable with the agents, let’s move on to the guided examples (coming soon).",
+    "title": "5  Interacting with the Agents",
+    "section": "5.6 Next Steps",
+    "text": "5.6 Next Steps\nNow that you are comfortable with the agents, let’s move on to the guided examples (coming soon).",
     "crumbs": [
-      "Workshop",
-      "50: Interacting with the Agents"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Interacting with the Agents</span>"
     ]
   }
 ]

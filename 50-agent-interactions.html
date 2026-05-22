@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Beyond the Chatbox: LLM Coding and Research Agents for Academics">
 
-<title>50: Interacting with the Agents – Beyond the Chatbox</title>
+<title>5&nbsp; Interacting with the Agents – Beyond the Chatbox</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -80,9 +81,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4f446250d2bb6cc7a151367d604a87ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-dfb262e855b434930d896448b82c798a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-4f446250d2bb6cc7a151367d604a87ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-722a3a75eca1cf58baeb6a90b119f172.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-90d1aa749c74e9b4c80b1b68a8a43fdc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-722a3a75eca1cf58baeb6a90b119f172.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -127,16 +128,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
 <meta name="DC.Type" content="WebPage">
+<script src="scripts/details-fold.js" defer=""></script>
 
 
 <meta property="og:title" content="Beyond the Chatbox">
 <meta property="og:description" content="LLM Coding and Research Agents for Academics">
-<meta property="og:image" content="https://e-kotov.github.io/2026-llm-agents-workshop/media/workshop-ad.png">
+<meta property="og:image" content="media/workshop-ad.png">
 <meta property="og:site_name" content="Beyond the Chatbox">
-<meta property="og:image:height" content="545">
-<meta property="og:image:width" content="1000">
 <meta name="citation_title" content="Beyond the Chatbox: LLM Coding and Research Agents for Academics">
 <meta name="citation_author" content="Egor Kotov">
+<meta name="citation_publication_date" content="2026">
+<meta name="citation_cover_date" content="2026">
+<meta name="citation_year" content="2026">
 <meta name="citation_fulltext_html_url" content="https://github.com/e-kotov/2026-llm-agents-workshop">
 <meta name="citation_language" content="en">
 </head>
@@ -314,19 +317,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <span class="navbar-title">Beyond the Chatbox</span>
     </a>
   </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/e-kotov/2026-llm-agents-workshop" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
+        <div class="quarto-navbar-tools tools-wide tools-end">
+    <a href="https://github.com/e-kotov/2026-llm-agents-workshop" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
@@ -341,7 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./50-agent-interactions.html">50: Interacting with the Agents</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./50-agent-interactions.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Interacting with the Agents</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -361,70 +353,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Workshop</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beyond the Chatbox</span></a>
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10-intro-to-agents.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01: Introduction to LLM Agents</span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to LLM Agents</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./20-security-sandboxing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02: Security &amp; Sandboxing</span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Security &amp; Sandboxing</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./30-setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">30: Environment Setup</span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Environment Setup</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./40-workspace.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">40: The Workshop Workspace</span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Workshop Workspace</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./50-agent-interactions.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">50: Interacting with the Agents</span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Interacting with the Agents</span></span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Resources</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://github.com/e-kotov/2026-llm-agents-workshop/tree/main/workspace" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Workshop Workspace</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -435,12 +399,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#available-cli-agents" id="toc-available-cli-agents" class="nav-link active" data-scroll-target="#available-cli-agents">Available CLI Agents</a></li>
-  <li><a href="#exercise-1-exploring-data-with-gemini" id="toc-exercise-1-exploring-data-with-gemini" class="nav-link" data-scroll-target="#exercise-1-exploring-data-with-gemini">Exercise 1: Exploring Data with Gemini</a></li>
-  <li><a href="#exercise-2-pair-programming-with-aider" id="toc-exercise-2-pair-programming-with-aider" class="nav-link" data-scroll-target="#exercise-2-pair-programming-with-aider">Exercise 2: Pair Programming with Aider</a></li>
-  <li><a href="#exercise-3-rapid-prototyping-with-nca" id="toc-exercise-3-rapid-prototyping-with-nca" class="nav-link" data-scroll-target="#exercise-3-rapid-prototyping-with-nca">Exercise 3: Rapid Prototyping with NCA</a></li>
-  <li><a href="#security-best-practices-reminder" id="toc-security-best-practices-reminder" class="nav-link" data-scroll-target="#security-best-practices-reminder">Security &amp; Best Practices Reminder</a></li>
-  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
+  <li><a href="#available-cli-agents" id="toc-available-cli-agents" class="nav-link active" data-scroll-target="#available-cli-agents"><span class="header-section-number">5.1</span> Available CLI Agents</a></li>
+  <li><a href="#exercise-1-exploring-data-with-gemini" id="toc-exercise-1-exploring-data-with-gemini" class="nav-link" data-scroll-target="#exercise-1-exploring-data-with-gemini"><span class="header-section-number">5.2</span> Exercise 1: Exploring Data with Gemini</a></li>
+  <li><a href="#exercise-2-pair-programming-with-aider" id="toc-exercise-2-pair-programming-with-aider" class="nav-link" data-scroll-target="#exercise-2-pair-programming-with-aider"><span class="header-section-number">5.3</span> Exercise 2: Pair Programming with Aider</a></li>
+  <li><a href="#exercise-3-rapid-prototyping-with-nca" id="toc-exercise-3-rapid-prototyping-with-nca" class="nav-link" data-scroll-target="#exercise-3-rapid-prototyping-with-nca"><span class="header-section-number">5.4</span> Exercise 3: Rapid Prototyping with NCA</a></li>
+  <li><a href="#security-best-practices-reminder" id="toc-security-best-practices-reminder" class="nav-link" data-scroll-target="#security-best-practices-reminder"><span class="header-section-number">5.5</span> Security &amp; Best Practices Reminder</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps"><span class="header-section-number">5.6</span> Next Steps</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/50-agent-interactions.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -448,9 +412,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./50-agent-interactions.html">50: Interacting with the Agents</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">50: Interacting with the Agents</h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Interacting with the Agents</span></h1>
 </div>
 
 
@@ -488,8 +452,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>In this environment, you have access to several world-class coding agents. You can interact with them via the terminal or integrated VS Code extensions.</p>
-<section id="available-cli-agents" class="level2">
-<h2 class="anchored" data-anchor-id="available-cli-agents">Available CLI Agents</h2>
+<section id="available-cli-agents" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="available-cli-agents"><span class="header-section-number">5.1</span> Available CLI Agents</h2>
 <ul>
 <li><strong>Aider</strong>: A powerful pair-programming tool that works directly with your git repository. Run <code>aider</code> in the terminal.</li>
 <li><strong>Gemini CLI</strong>: Interactive chat with Google’s Gemini models. Run <code>gemini-chat</code>.</li>
@@ -497,13 +461,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>NCA (Nim Coding Agent)</strong>: Optimized for speed and specific tasks. Run <code>nca</code>.</li>
 </ul>
 </section>
-<section id="exercise-1-exploring-data-with-gemini" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1-exploring-data-with-gemini">Exercise 1: Exploring Data with Gemini</h2>
+<section id="exercise-1-exploring-data-with-gemini" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="exercise-1-exploring-data-with-gemini"><span class="header-section-number">5.2</span> Exercise 1: Exploring Data with Gemini</h2>
 <p>Try asking Gemini to help you understand the shared datasets. Open your terminal and run:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gemini-chat</span> <span class="st">"List the files in the data/ directory and give me a brief summary of the columns in the first CSV file you find."</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="exercise-2-pair-programming-with-aider" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2-pair-programming-with-aider">Exercise 2: Pair Programming with Aider</h2>
+<section id="exercise-2-pair-programming-with-aider" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="exercise-2-pair-programming-with-aider"><span class="header-section-number">5.3</span> Exercise 2: Pair Programming with Aider</h2>
 <p>Aider is excellent for editing existing code or starting new scripts. Let’s try creating a script in your <code>userspace/projects/</code> folder:</p>
 <ol type="1">
 <li>Open the terminal.</li>
@@ -511,13 +475,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Inside the Aider chat, type: &gt; “Read data/sample_data.csv and create a plot of the population trends by year.”</li>
 </ol>
 </section>
-<section id="exercise-3-rapid-prototyping-with-nca" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3-rapid-prototyping-with-nca">Exercise 3: Rapid Prototyping with NCA</h2>
+<section id="exercise-3-rapid-prototyping-with-nca" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="exercise-3-rapid-prototyping-with-nca"><span class="header-section-number">5.4</span> Exercise 3: Rapid Prototyping with NCA</h2>
 <p>If you need a quick script or a one-liner, <code>nca</code> is very efficient:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nca</span> <span class="st">"Write a python one-liner to count the number of rows in data/sample_data.csv"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="security-best-practices-reminder" class="level2">
-<h2 class="anchored" data-anchor-id="security-best-practices-reminder">Security &amp; Best Practices Reminder</h2>
+<section id="security-best-practices-reminder" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="security-best-practices-reminder"><span class="header-section-number">5.5</span> Security &amp; Best Practices Reminder</h2>
 <p>As discussed in <a href="./20-security-sandboxing.html">Security &amp; Sandboxing</a>, always remember:</p>
 <ul>
 <li><strong>Work within <code>userspace/</code></strong>: This ensures your experiments are isolated.</li>
@@ -525,24 +489,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Protect Sensitive Data</strong>: Do not provide agents with access to private credentials or sensitive personal data.</li>
 </ul>
 </section>
-<section id="next-steps" class="level2">
-<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<section id="next-steps" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="next-steps"><span class="header-section-number">5.6</span> Next Steps</h2>
 <p>Now that you are comfortable with the agents, let’s move on to the <a href="60-guided-examples.qmd">guided examples</a> (coming soon).</p>
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{kotov,
-  author = {Kotov, Egor},
-  title = {Beyond the {Chatbox:} {LLM} {Coding} and {Research} {Agents}
-    for {Academics}},
-  url = {https://github.com/e-kotov/2026-llm-agents-workshop},
-  langid = {en}
-}
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-kotov" class="csl-entry quarto-appendix-citeas" role="listitem">
-Kotov, Egor. n.d. <span>“Beyond the Chatbox: LLM Coding and Research
-Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-agents-workshop">https://github.com/e-kotov/2026-llm-agents-workshop</a>.
-</div></div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -629,7 +583,7 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/e-kotov\.github\.io\/2026-llm-agents-workshop\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -965,8 +919,8 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./40-workspace.html" class="pagination-link" aria-label="40: The Workshop Workspace">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">40: The Workshop Workspace</span>
+      <a href="./40-workspace.html" class="pagination-link" aria-label="The Workshop Workspace">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Workshop Workspace</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

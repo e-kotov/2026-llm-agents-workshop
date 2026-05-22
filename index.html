@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Beyond the Chatbox: LLM Coding and Research Agents for Academics">
 
 <title>Beyond the Chatbox</title>
 <style>
@@ -45,12 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4f446250d2bb6cc7a151367d604a87ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-dfb262e855b434930d896448b82c798a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-4f446250d2bb6cc7a151367d604a87ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-722a3a75eca1cf58baeb6a90b119f172.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-90d1aa749c74e9b4c80b1b68a8a43fdc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-722a3a75eca1cf58baeb6a90b119f172.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -95,16 +93,18 @@ ul.task-list li input[type="checkbox"] {
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
 <meta name="DC.Type" content="WebPage">
+<script src="scripts/details-fold.js" defer=""></script>
 
 
 <meta property="og:title" content="Beyond the Chatbox">
 <meta property="og:description" content="LLM Coding and Research Agents for Academics">
-<meta property="og:image" content="https://e-kotov.github.io/2026-llm-agents-workshop/media/workshop-ad.png">
+<meta property="og:image" content="media/workshop-ad.png">
 <meta property="og:site_name" content="Beyond the Chatbox">
-<meta property="og:image:height" content="545">
-<meta property="og:image:width" content="1000">
 <meta name="citation_title" content="Beyond the Chatbox: LLM Coding and Research Agents for Academics">
 <meta name="citation_author" content="Egor Kotov">
+<meta name="citation_publication_date" content="2026">
+<meta name="citation_cover_date" content="2026">
+<meta name="citation_year" content="2026">
 <meta name="citation_fulltext_html_url" content="https://github.com/e-kotov/2026-llm-agents-workshop">
 <meta name="citation_language" content="en">
 </head>
@@ -282,19 +282,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Beyond the Chatbox</span>
     </a>
   </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/e-kotov/2026-llm-agents-workshop" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
+        <div class="quarto-navbar-tools tools-wide tools-end">
+    <a href="https://github.com/e-kotov/2026-llm-agents-workshop" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
@@ -309,7 +298,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./index.html">Beyond the Chatbox</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -329,70 +318,42 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Workshop</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Beyond the Chatbox</span></a>
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10-intro-to-agents.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01: Introduction to LLM Agents</span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to LLM Agents</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./20-security-sandboxing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02: Security &amp; Sandboxing</span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Security &amp; Sandboxing</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./30-setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">30: Environment Setup</span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Environment Setup</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./40-workspace.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">40: The Workshop Workspace</span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Workshop Workspace</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./50-agent-interactions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">50: Interacting with the Agents</span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Interacting with the Agents</span></span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Resources</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://github.com/e-kotov/2026-llm-agents-workshop/tree/main/workspace" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Workshop Workspace</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -403,14 +364,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a>
-  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#workshop-details" id="toc-workshop-details" class="nav-link" data-scroll-target="#workshop-details">Workshop Details</a></li>
+  <li><a href="#before-the-workshop-accounts-setup" id="toc-before-the-workshop-accounts-setup" class="nav-link" data-scroll-target="#before-the-workshop-accounts-setup">Before the Workshop: Accounts &amp; Setup</a>
+  <ul class="collapse">
+  <li><a href="#recommended-accounts-to-register" id="toc-recommended-accounts-to-register" class="nav-link" data-scroll-target="#recommended-accounts-to-register">1. Recommended Accounts to Register</a></li>
+  <li><a href="#coding-agents-we-will-use-and-why" id="toc-coding-agents-we-will-use-and-why" class="nav-link" data-scroll-target="#coding-agents-we-will-use-and-why">2. Coding Agents We Will Use (and Why)</a></li>
   </ul></li>
-  <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract</a></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -419,11 +381,16 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Workshop</a></li><li class="breadcrumb-item"><a href="./index.html">Beyond the Chatbox</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Beyond the Chatbox</h1>
 </div>
 
+<div>
+  <div class="description">
+    Beyond the Chatbox: LLM Coding and Research Agents for Academics
+  </div>
+</div>
 
 <div class="quarto-title-meta-author">
   <div class="quarto-title-meta-heading">Author</div>
@@ -458,59 +425,129 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="section" class="level1">
-<h1></h1>
+<section id="introduction" class="level1 unnumbered">
+<h1 class="unnumbered">Introduction</h1>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>THIS IS STILL WORK IN PROGRESS - EXPECT BROKEN LINKS AND MISSING CONTENT</strong></p>
+</div>
+</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="media/workshop-ad.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="© Image generated by Google Gemini | Nanobanana"><img src="media/workshop-ad.png" class="img-fluid figure-img" alt="© Image generated by Google Gemini | Nanobanana"></a></p>
+<p><img src="media/workshop-ad.png" class="nolightbox img-fluid figure-img"></p>
 <figcaption>© Image generated by Google Gemini | Nanobanana</figcaption>
 </figure>
 </div>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <p>This interactive tutorial and workshop provides a practical introduction to using large language models (LLMs) in coding agents, featuring applied examples in population research. It is oragnized by <a href="https://www.ekotov.pro">Egor Kotov</a> with support from the <a href="https://www.demogr.mpg.de/en/">Max Planck Institute for Demographic Research</a>.</p>
-<section id="workshop-details" class="level3">
-<h3 class="anchored" data-anchor-id="workshop-details">Workshop Details</h3>
+</section>
+<section id="workshop-details" class="level2">
+<h2 class="anchored" data-anchor-id="workshop-details">Workshop Details</h2>
 <ul>
 <li><strong>Date:</strong> June 03, 2026</li>
 <li><strong>Time:</strong> 13:30-16:30</li>
 <li><strong>Location:</strong> Complesso Belmeloro, room “Lab O”, <a href="https://maps.app.goo.gl/dBrui9tWr6nRudbE7">Via Beniamino Andreatta, 8, 40126 Bologna BO, Italy</a></li>
 </ul>
-</section>
-</section>
-<section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>The software industry has been enjoying these benefits for over a year now, with even top software engineers now having AI assistants generate a vast majority of their code. Now, the tools for agentic coding are mature enough for anyone to master.</p>
+<details>
+<summary>
+<span class="summary-title">Abstract</span> <span class="teaser-preview">The software industry has been enjoying the benefits of coding agents for over a year now, with even top software engineers now having AI assistants generate a vast majority of their code. Now, the tools for agentic coding are mature enough for anyone to try.</span>
+</summary>
 <p>Unlike many educational materials in this field, this workshop will also address the new vectors of attack that novice users might expose themselves to by using coding agents blindly. We will cover key security risks associated with agentic systems, including data leakage, unsafe code execution, and unintended modifications to analysis code and research materials. To mitigate these risks, we will introduce accessible strategies such as containerization, sandboxing, and workflow isolation.</p>
 <p>Participants will also see how the agents themselves can assist in setting up and using these protective tools to improve transparency and reproducibility. The workshop will combine short demonstrations with applied examples relevant to population research. Participants are encouraged to bring their own projects or ideas, which we will use to explore how LLM agents can be integrated into real research workflows. For those without a project, guided exercises and example tasks will be provided.</p>
+</details>
 </section>
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
-<p>To get started with the workshop materials, please navigate through the sections in the navigation bar on the left or with pagination links in the bottom.</p>
-<p>If you are attending the workshop or want to follow along with the exercises, we recommend using the provided <strong>GitHub Codespaces</strong> environment.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://github.com/codespaces/badge.svg" class="img-fluid figure-img"></p>
-<figcaption>Open in GitHub Codespaces</figcaption>
-</figure>
+<section id="before-the-workshop-accounts-setup" class="level2">
+<h2 class="anchored" data-anchor-id="before-the-workshop-accounts-setup">Before the Workshop: Accounts &amp; Setup</h2>
+<p>To make the most of our hands-on sessions, please complete the following steps before the workshop on <strong>June 3, 2026</strong>.</p>
+<div class="callout callout-style-simple callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>For detailed setup instructions and your first exercises, please proceed to the <a href="./30-setup.html">Environment Setup</a> page.</p>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>🔒 Data Privacy &amp; Security Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Free tiers for these LLM services typically <strong>use your prompts and uploaded code for model training</strong>. <strong>Do not use these tools on private, sensitive, or proprietary research data!</strong> Only use public or non-sensitive datasets during the workshop and for general testing.</p>
+</div>
+</div>
+<section id="recommended-accounts-to-register" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-accounts-to-register">1. Recommended Accounts to Register</h3>
+<p>Please sign up for the following services in advance to ensure you have enough free model usage quota during the exercises:</p>
+<ul>
+<li><strong>Google Account</strong> (A personal/secondary account is perfect) — Used for <strong>Gemini CLI</strong> and <strong>Antigravity CLI</strong>. No credit card is required.</li>
+<li><strong>OpenCode Zen</strong> (<a href="https://opencode.ai/zen">opencode.ai/zen</a>) — Gives you free model access via the <strong>OpenCode</strong> agent. You can view the list of available models and details on <a href="https://opencode.ai/docs/zen/#pricing">OpenCode Zen pricing/documentation</a>.</li>
+<li><strong>OpenRouter</strong> (<a href="https://openrouter.ai/">openrouter.ai</a>) — Allows accessing a wide variety of models. You’ll need to generate a free <a href="https://openrouter.ai/workspaces/default/keys">API Key</a> after registering, which can be used to access their catalog of <a href="https://openrouter.ai/models?order=pricing-low-to-high&amp;q=free">free models</a>.</li>
+<li><em>Optional:</em> <strong>NVIDIA NIM/Build</strong> (<a href="https://build.nvidia.com/">build.nvidia.com</a>) — Offers <a href="https://build.nvidia.com/models?filters=nimType%3Anim_type_preview">free preview models</a> (note: account activation requires SMS verification via a mobile phone number).</li>
+</ul>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>If you have a subscription to another LLM service (such as OpenAI ChatGPT Plus, Claude Pro, Gemini Advanced, or Mistral) and prefer to use it during the workshop, please feel free to do so. However, our guided exercises will focus on the tools listed above to ensure everyone has access to the same models and features.</p>
+<p>The skills you will learn here are highly transferable to other AI coding assistants, though setup steps and specific features may vary by provider. Please refer to the documentation of your chosen agent for setup instructions, and don’t hesitate to ask the agent itself how to configure it for your desired models and features.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>API &amp; Account Safety Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do <strong>NOT</strong> attempt to authenticate your Google or Anthropic (Claude) accounts directly within OpenCode. Their terms of service prohibit use of quota based subscriptions in third-party clients, and doing so can result in your accounts being permanently banned. OpenAI is currently a bit more flexible on this at the time of writing, but always verify provider policies.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="coding-agents-we-will-use-and-why" class="level3">
+<h3 class="anchored" data-anchor-id="coding-agents-we-will-use-and-why">2. Coding Agents We Will Use (and Why)</h3>
+<p>The coding agents are already pre-installed and configured inside the workshop’s Docker container / Codespaces environment. We will focus on:</p>
+<ul>
+<li><strong>Google Antigravity CLI</strong> (and its predecessor <strong>Gemini CLI</strong>)
+<ul>
+<li><em>Why:</em> It provides a free daily quota to test cutting-edge models (like <code>Gemini 3.5 Flash</code>, <code>Gemini 3.1 Pro</code>, and <code>Claude 3.5 Sonnet</code>) directly from your Google account.</li>
+</ul></li>
+<li><strong>OpenCode CLI</strong>
+<ul>
+<li><em>Why:</em> A flexible, open-source-friendly agent that can connect to multiple backends. We will use it with free models from <strong>OpenCode Zen</strong>, <strong>OpenRouter</strong>, and <strong>NVIDIA NIM</strong> to show how easy it is to switch between different model providers without vendor lock-in.</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>What is <code>CLI</code>? It stands for “Command Line Interface” and means that you will interact with the agent by typing commands in a terminal (similar to your R console), rather than through a graphical user interface (GUI). This allows for more flexibility and control over the agent’s behavior, as well as easier integration into coding workflows. This also gives you better insight into how the agent works under the hood, which is important for understanding its capabilities and limitations. You are of course free to use the same agents through their graphical interfaces too. We are also limited by the current tutorial environment and tools that are free to use. In our tutorial environment Gemini and Antigravity are only available as CLI, OpenCode is aslo CLI, but you will learn how to run it in graphical mode as well.</p>
+</div>
+</div>
+</div>
+<hr>
+<p>To get started with the workshop materials, please navigate through the sections in the navigation bar on the left or with pagination links in the bottom.</p>
 
 
 </section>
 </section>
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{kotov,
-  author = {Kotov, Egor},
-  title = {Beyond the {Chatbox:} {LLM} {Coding} and {Research} {Agents}
-    for {Academics}},
-  url = {https://github.com/e-kotov/2026-llm-agents-workshop},
-  langid = {en}
-}
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-kotov" class="csl-entry quarto-appendix-citeas" role="listitem">
-Kotov, Egor. n.d. <span>“Beyond the Chatbox: LLM Coding and Research
-Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-agents-workshop">https://github.com/e-kotov/2026-llm-agents-workshop</a>.
-</div></div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -597,7 +634,7 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/e-kotov\.github\.io\/2026-llm-agents-workshop\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -935,8 +972,8 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./10-intro-to-agents.html" class="pagination-link" aria-label="01: Introduction to LLM Agents">
-        <span class="nav-page-text">01: Introduction to LLM Agents</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./10-intro-to-agents.html" class="pagination-link" aria-label="Introduction to LLM Agents">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to LLM Agents</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -967,38 +1004,6 @@ Agents for Academics.”</span> <a href="https://github.com/e-kotov/2026-llm-age
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"fade","descPosition":"top","loop":false,"openEffect":"fade","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
