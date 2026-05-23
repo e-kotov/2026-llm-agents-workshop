@@ -27,3 +27,4 @@ workspace/project/*
 !workspace/project/.gitkeep
 
 /.luarc.json
+.antigravitycli/

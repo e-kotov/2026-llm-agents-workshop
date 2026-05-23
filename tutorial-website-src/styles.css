@@ -371,3 +371,42 @@ details[open] summary {
 body.quarto-dark details[open] summary {
   border-bottom-color: #333c3c !important;
 }
+
+/* Typing effect premium styles */
+.typed-cursor,
+.typed-cursor.typed-cursor--blink {
+  color: #0A7878; /* Primary light brand color */
+  font-weight: normal;
+  opacity: 1;
+  animation: typed-pulse 0.9s ease-in-out infinite;
+  -webkit-animation: typed-pulse 0.9s ease-in-out infinite;
+  margin-left: 4px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.typed-complete .typed-cursor,
+.typed-complete .typed-cursor.typed-cursor--blink {
+  animation-duration: 1.2s;
+  -webkit-animation-duration: 1.2s;
+}
+
+/* Dark mode adjustment for the cursor to match theme accents */
+body.quarto-dark .typed-cursor {
+  color: #33c7ff !important;
+}
+
+@keyframes typed-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.15; }
+}
+
+/* Post-complete soft glow effect for high-end aesthetics */
+.typed-complete #typed-title {
+  text-shadow: 0 0 15px rgba(10, 120, 120, 0.25);
+  transition: text-shadow 0.6s ease-in-out;
+}
+
+body.quarto-dark .typed-complete #typed-title {
+  text-shadow: 0 0 15px rgba(51, 199, 255, 0.35);
+}

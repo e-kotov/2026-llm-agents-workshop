@@ -40,6 +40,7 @@ book:
     - 30-setup.qmd
     - 40-workspace.qmd
     - 50-agent-interactions.qmd
+    - 90-about.qmd
 
   page-footer:
     border: true
@@ -96,6 +97,8 @@ format:
       - text: |
           <meta name="DC.Type" content="WebPage">
           <script src="scripts/details-fold.js" defer></script>
+          <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+          <script src="scripts/typed-init.js" defer></script>
       - file: scripts/analytics.html
   typst:
     filters:
