@@ -5,7 +5,7 @@
 
 /* Centering and Grid behavior */
 #quarto-content.quarto-container {
-  max-width: 1600px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -101,7 +101,7 @@ details[open] > div:first-of-type {
 /* Navbar styling overrides */
 .navbar .navbar-container, 
 .navbar .container-fluid {
-  max-width: 1600px; /* Match the main container width */
+  max-width: 1300px; /* Match the main container width */
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5rem; /* Standard Quarto sidebar alignment */
@@ -159,7 +159,7 @@ h2 {
 }
 
 .nav-footer {
-  max-width: 1200px;
+  max-width: 1300px;
   margin-left: auto;
   margin-right: auto;
   padding: 2rem 0;
