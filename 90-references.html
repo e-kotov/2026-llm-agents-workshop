@@ -8,7 +8,7 @@
 
 <meta name="description" content="Beyond the Chatbox: LLM Coding and Research Agents for Academics">
 
-<title>3&nbsp; Environment Setup – Beyond the Chatbox</title>
+<title>References – Beyond the Chatbox</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,8 +34,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./40-workspace.html" rel="next">
-<link href="./20-security-sandboxing.html" rel="prev">
+<link href="./50-agent-interactions.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -50,9 +49,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-4998239bb66b92f1ae8f1055b2a459a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-6158f7576f6fd3e5a16fa0ac3cb93ad9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-4998239bb66b92f1ae8f1055b2a459a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -304,7 +300,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./30-setup.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Environment Setup</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./90-references.html">References</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -344,7 +340,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./30-setup.html" class="sidebar-item-text sidebar-link active">
+  <a href="./30-setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Environment Setup</span></span></a>
   </div>
 </li>
@@ -362,7 +358,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./90-references.html" class="sidebar-item-text sidebar-link">
+  <a href="./90-references.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -376,19 +372,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#launching-the-environment" id="toc-launching-the-environment" class="nav-link active" data-scroll-target="#launching-the-environment"><span class="header-section-number">3.1</span> 🛠️ Launching the Environment</a>
-  <ul class="collapse">
-  <li><a href="#auto-pause-resume" id="toc-auto-pause-resume" class="nav-link" data-scroll-target="#auto-pause-resume"><span class="header-section-number">3.1.1</span> 💤 Auto-Pause &amp; Resume</a></li>
-  </ul></li>
-  <li><a href="#managing-your-session-quotas" id="toc-managing-your-session-quotas" class="nav-link" data-scroll-target="#managing-your-session-quotas"><span class="header-section-number">3.2</span> 📊 Managing Your Session &amp; Quotas</a>
-  <ul class="collapse">
-  <li><a href="#monthly-free-quotas-2026" id="toc-monthly-free-quotas-2026" class="nav-link" data-scroll-target="#monthly-free-quotas-2026"><span class="header-section-number">3.2.1</span> Monthly Free Quotas (2026)</a></li>
-  <li><a href="#checking-remaining-quota" id="toc-checking-remaining-quota" class="nav-link" data-scroll-target="#checking-remaining-quota"><span class="header-section-number">3.2.2</span> Checking Remaining Quota</a></li>
-  <li><a href="#stopping-your-session-manually" id="toc-stopping-your-session-manually" class="nav-link" data-scroll-target="#stopping-your-session-manually"><span class="header-section-number">3.2.3</span> Stopping Your Session Manually</a></li>
-  </ul></li>
-  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps"><span class="header-section-number">3.3</span> Next Steps</a></li>
+  <li><a href="#production-tools" id="toc-production-tools" class="nav-link active" data-scroll-target="#production-tools">Production tools</a></li>
+  <li><a href="#website-libraries" id="toc-website-libraries" class="nav-link" data-scroll-target="#website-libraries">Website libraries</a></li>
+  <li><a href="#local-project-code" id="toc-local-project-code" class="nav-link" data-scroll-target="#local-project-code">Local project code</a></li>
+  <li><a href="#content-license" id="toc-content-license" class="nav-link" data-scroll-target="#content-license">Content license</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/30-setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/90-references.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -396,7 +385,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Environment Setup</span></h1>
+<h1 class="title">References</h1>
 </div>
 
 
@@ -433,140 +422,150 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>To ensure a consistent, secure, and hassle-free experience, we will use a pre-configured cloud-based development environment. We will use <strong>GitHub Codespaces</strong>.</p>
-<div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>⏳ Start the Setup Early and Focus on the Presentations!
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>First-time environment setup and container building can take <strong>up to 10 minutes</strong> to compile and prepare.</p>
-<p><strong>We highly recommend launching the codespace right at the beginning of the workshop.</strong> While the setup runs automatically in the background, you can continue to fully focus on the presentations, live demonstrations, and slides shown by the tutor.</p>
-</div>
-</div>
-<hr>
-<section id="launching-the-environment" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="launching-the-environment"><span class="header-section-number">3.1</span> 🛠️ Launching the Environment</h2>
-<p>To launch the Codespaces environment manually from the GitHub interface, follow these steps:</p>
-<ol type="1">
-<li>Navigate to the <a href="https://github.com/e-kotov/2026-llm-agents-workshop">workshop repository</a>.</li>
-<li>Click the green <strong>Code</strong> button in the top right.</li>
-<li>Select the <strong>Codespaces</strong> tab.</li>
-<li>Click <strong>Create codespace on main</strong> (or click the <code>...</code> menu to configure machine size).</li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="media/github-start-codespace.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Launch in GitHub Codespaces"><img src="media/github-start-codespace.png" class="img-fluid figure-img" alt="Launch in GitHub Codespaces"></a></p>
-<figcaption>Launch in GitHub Codespaces</figcaption>
-</figure>
-</div>
-<div class="callout callout-style-simple callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>🔒 Free &amp; Secure Environment
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><strong>It is 100% Free:</strong> GitHub provides a generous free tier of <strong>60 hours</strong> of Codespaces usage per month for every personal account. No credit card, billing info, or payment is required.</li>
-<li><strong>It is Completely Secure:</strong> The environment runs inside a secure, isolated container (virtual machine) in the cloud. It does not touch your physical computer, install any local files, or run any software on your machine. It belongs to you and it is also mostly safe to enter your account data (e.g.&nbsp;Google account, especialy if secondary or test account, API keys, other accounts for subscription services or services we will use during the workshop) without worrying about security or privacy issues.</li>
-</ul>
-</div>
-</div>
-<section id="auto-pause-resume" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="auto-pause-resume"><span class="header-section-number">3.1.1</span> 💤 Auto-Pause &amp; Resume</h3>
-<p>To save your free hours, the environment automatically pauses after 30 minutes of inactivity. When you restart it, your files, open tabs, and terminal history are fully preserved—just like waking up a laptop from sleep (though you may need to restart any active terminal commands or running applications).</p>
-<hr>
-</section>
-</section>
-<section id="managing-your-session-quotas" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="managing-your-session-quotas"><span class="header-section-number">3.2</span> 📊 Managing Your Session &amp; Quotas</h2>
-<p>GitHub Codespaces provides a generous free tier, but it is important to understand how usage is consumed to avoid running out of credits.</p>
-<section id="monthly-free-quotas-2026" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="monthly-free-quotas-2026"><span class="header-section-number">3.2.1</span> Monthly Free Quotas (2026)</h3>
-<p>The following quotas apply to personal accounts.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>This page lists the direct software, libraries, and local helper scripts used to build and display this book. It is intended as a practical attribution and reproducibility note, not a full software bill of materials for every transitive dependency bundled by each tool.</p>
+<section id="production-tools" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="production-tools">Production tools</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Account Type</th>
-<th style="text-align: left;">Actual Usage Hours</th>
-<th style="text-align: left;">Storage (per month)</th>
+<th>Software</th>
+<th style="text-align: right;">Version used locally</th>
+<th>Role</th>
+<th>License / project</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><strong>GitHub Free</strong></td>
-<td style="text-align: left;"><strong>60 hours</strong></td>
-<td style="text-align: left;"><strong>15 GB</strong></td>
+<td><a href="https://quarto.org/">Quarto</a></td>
+<td style="text-align: right;">1.9.37</td>
+<td>Builds the book website and PDF from the <code>.qmd</code> source files.</td>
+<td><a href="https://github.com/quarto-dev/quarto-cli">Open-source Quarto CLI</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>GitHub Pro</strong></td>
-<td style="text-align: left;"><strong>90 hours</strong></td>
-<td style="text-align: left;"><strong>20 GB</strong></td>
+<td><a href="https://pandoc.org/">Pandoc</a></td>
+<td style="text-align: right;">3.8.3</td>
+<td>Document conversion engine used by Quarto.</td>
+<td><a href="https://github.com/jgm/pandoc/blob/main/COPYRIGHT">GPL-2.0-or-later</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://typst.app/">Typst</a></td>
+<td style="text-align: right;">0.14.2</td>
+<td>PDF typesetting backend used by the Quarto <code>typst</code> format.</td>
+<td><a href="https://github.com/typst/typst/blob/main/LICENSE">Apache-2.0</a></td>
 </tr>
 </tbody>
 </table>
-<div class="callout callout-style-simple callout-warning callout-titled">
+</section>
+<section id="website-libraries" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="website-libraries">Website libraries</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Software</th>
+<th>How it is used</th>
+<th>License / project</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://github.com/mattboldt/typed.js">Typed.js</a> 2.1.0</td>
+<td>Loaded from <code>unpkg.com</code> for the animated “Beyond the Chatbox” title on the home page.</td>
+<td><a href="https://github.com/mattboldt/typed.js/blob/v2.1.0/LICENSE.txt">MIT</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://getbootstrap.com/">Bootstrap</a> and the Cosmo theme</td>
+<td>HTML layout, responsive navigation, typography, and theme styling through Quarto.</td>
+<td><a href="https://github.com/twbs/bootstrap/blob/main/LICENSE">MIT</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://icons.getbootstrap.com/">Bootstrap Icons</a></td>
+<td>Icons used in Quarto navigation and controls.</td>
+<td><a href="https://github.com/twbs/icons/blob/main/LICENSE">MIT</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://clipboardjs.com/">Clipboard.js</a></td>
+<td>Code-copy buttons generated by Quarto.</td>
+<td><a href="https://github.com/zenorocha/clipboard.js/blob/master/license">MIT</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.fusejs.io/">Fuse.js</a> and autocomplete support</td>
+<td>Client-side search generated by Quarto.</td>
+<td><a href="https://github.com/krisk/Fuse/blob/main/LICENSE">Apache-2.0</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://atomiks.github.io/tippyjs/">Tippy.js</a> and <a href="https://popper.js.org/">Popper</a></td>
+<td>Tooltips and popovers generated by Quarto.</td>
+<td><a href="https://github.com/atomiks/tippyjs/blob/master/LICENSE">MIT</a>, <a href="https://github.com/floating-ui/floating-ui/blob/master/LICENSE">MIT</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.bryanbraun.com/anchorjs/">AnchorJS</a></td>
+<td>Header anchor links generated by Quarto.</td>
+<td><a href="https://github.com/bryanbraun/anchorjs/blob/gh-pages/LICENSE">MIT</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://wicky.nillia.ms/headroom.js/">Headroom.js</a></td>
+<td>Navigation header behavior generated by Quarto.</td>
+<td><a href="https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE">MIT</a></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-simple callout-note callout-titled" title="Typed.js license version">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>💾 Storage Persistence Quota
+<span class="screen-reader-only">Note</span>Typed.js license version
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Storage (15GB/20GB) is consumed even when the codespace is <strong>stopped</strong>. To save your storage quota, make sure to <strong>delete</strong> codespaces you no longer need at <a href="https://github.com/codespaces">github.com/codespaces</a> once the workshop is fully over.</p>
+<p>This book intentionally pins Typed.js to version 2.1.0, whose release tag includes an MIT license. The current <code>main</code> branch of Typed.js uses a GPL-3.0-or-later license. Re-check the upstream license before upgrading the CDN URL to a newer Typed.js release.</p>
 </div>
 </div>
 </section>
-<section id="checking-remaining-quota" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="checking-remaining-quota"><span class="header-section-number">3.2.2</span> Checking Remaining Quota</h3>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>You can monitor your real-time usage and remaining balance at any time:</p>
-<ol type="1">
-<li>Go to your <a href="https://github.com/settings/billing/summary">GitHub Settings &gt; Billing and plans</a>.</li>
-<li>Look for the <strong>Codespaces</strong> section under <strong>Usage this month</strong> or try this direct link: <a href="https://github.com/settings/billing/usage?period=3&amp;group=2&amp;query=product:codespaces">GitHub Codespaces Usage</a>.</li>
-</ol>
-</div>
-</div>
-</div>
+<section id="local-project-code" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="local-project-code">Local project code</h2>
+<p>The book also uses small local scripts and styles maintained in this repository:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>styles.css</code></td>
+<td>Custom visual styling, including the Typed.js cursor styling.</td>
+</tr>
+<tr class="even">
+<td><code>scripts/typed-init.js</code></td>
+<td>Initializes the Typed.js title animation.</td>
+</tr>
+<tr class="odd">
+<td><code>scripts/details-fold.js</code></td>
+<td>Adds behavior for collapsible details blocks.</td>
+</tr>
+<tr class="even">
+<td><code>scripts/trigger-fix.lua</code> and <code>scripts/fix-typst-bg.lua</code></td>
+<td>Support the PDF/Typst rendering workflow.</td>
+</tr>
+<tr class="odd">
+<td><code>scripts/analytics.html</code></td>
+<td>Adds site analytics markup.</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="stopping-your-session-manually" class="level3" data-number="3.2.3">
-<h3 data-number="3.2.3" class="anchored" data-anchor-id="stopping-your-session-manually"><span class="header-section-number">3.2.3</span> Stopping Your Session Manually</h3>
-<p>When you are done with a session, you can stop the codespace manually to instantly stop consuming usage hours:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="media/github-stop-devcontainer-codespace.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Stop GitHub Codespace"><img src="media/github-stop-devcontainer-codespace.png" class="img-fluid figure-img" alt="Stop GitHub Codespace"></a></p>
-<figcaption>Stop GitHub Codespace</figcaption>
-</figure>
-</div>
-<hr>
-</section>
-</section>
-<section id="next-steps" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="next-steps"><span class="header-section-number">3.3</span> Next Steps</h2>
-<p>Now that your environment is ready, let’s explore the <a href="./40-workspace.html">Workshop Workspace</a>.</p>
+<section id="content-license" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="content-license">Content license</h2>
+<p>Unless otherwise noted, the workshop materials are distributed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>, as stated in the site footer. Third-party software, images and other content remains under their respective upstream licenses.</p>
 
 
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>While the <a href="https://docs.github.com/en/billing/concepts/product-billing/github-codespaces#free-quota">official billing documentation</a> lists these as 120 and 180 <strong>core hours</strong>, the minimum instance size is 2 CPU cores. This means every 1 hour of real-time work consumes 2 core hours, resulting in the actual limits shown below.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->
@@ -992,14 +991,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./20-security-sandboxing.html" class="pagination-link" aria-label="Security &amp; Sandboxing">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Security &amp; Sandboxing</span></span>
+      <a href="./50-agent-interactions.html" class="pagination-link" aria-label="Interacting with the Agents">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Interacting with the Agents</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./40-workspace.html" class="pagination-link" aria-label="The Workshop Workspace">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Workshop Workspace</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -1016,7 +1012,7 @@ ul.task-list li input[type="checkbox"] {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/30-setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/90-references.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -1029,38 +1025,6 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"fade","descPosition":"top","loop":false,"openEffect":"fade","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
