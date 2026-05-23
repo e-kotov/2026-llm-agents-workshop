@@ -28,10 +28,29 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
   
+  function initPdfLink() {
+    const marginSidebar = document.querySelector('#quarto-margin-sidebar');
+    if (marginSidebar && !marginSidebar.querySelector('.quarto-margin-pdf-link')) {
+      const pdfLinkDiv = document.createElement('div');
+      pdfLinkDiv.className = 'quarto-margin-pdf-link';
+      pdfLinkDiv.innerHTML = `
+        <a href="assets/Beyond-the-Chatbox.pdf" target="_blank">
+          <i class="bi bi-file-earmark-pdf-fill"></i>
+          <span>Download full tutorial as PDF</span>
+        </a>
+      `;
+      marginSidebar.insertBefore(pdfLinkDiv, marginSidebar.firstChild);
+    }
+  }
+  
   initTeasers();
+  initPdfLink();
   
   // Watch for DOM changes to automatically support dynamic page navigations (SPA)
-  new MutationObserver(initTeasers).observe(document.body, {
+  new MutationObserver(function() {
+    initTeasers();
+    initPdfLink();
+  }).observe(document.body, {
     childList: true,
     subtree: true
   });

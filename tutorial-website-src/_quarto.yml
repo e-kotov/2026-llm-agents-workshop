@@ -1,12 +1,16 @@
 project:
   type: book
   brand: _brand.yml
+  post-render:
+    - scripts/copy-pdf.sh
 
 
 number-sections: true
 number-depth: 3
 
 csl: apa.csl
+
+
 
 book:
   title: "Beyond the Chatbox"
@@ -22,9 +26,9 @@ book:
     background: "#0A7878"
     search: false
     # right:
-    #   - icon: github
-    #     href: https://github.com/e-kotov/2026-llm-agents-workshop
-    #     aria-label: GitHub
+    #   - icon: file-earmark-pdf
+    #     text: "Download PDF"
+    #     href: assets/Beyond-the-Chatbox.pdf
     #     target: _blank
   
   sidebar:
@@ -40,7 +44,7 @@ book:
     - 30-setup.qmd
     - 40-workspace.qmd
     - 50-agent-interactions.qmd
-    - 90-about.qmd
+    - 90-references.qmd
 
   page-footer:
     border: true

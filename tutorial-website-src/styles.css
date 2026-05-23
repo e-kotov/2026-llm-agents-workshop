@@ -410,3 +410,315 @@ body.quarto-dark .typed-cursor {
 body.quarto-dark .typed-complete #typed-title {
   text-shadow: 0 0 15px rgba(51, 199, 255, 0.35);
 }
+
+/* ==========================================================================
+   CHATGPT MOCK CHATBOX INTERFACE STYLING
+   ========================================================================== */
+
+.chatbox-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 0 2.5rem 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 2px 8px -2px rgba(0, 0, 0, 0.02);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: var(--quarto-body-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif);
+}
+
+.chatbox-container:hover {
+  border-color: rgba(10, 120, 120, 0.3);
+  box-shadow: 0 15px 35px -5px rgba(10, 120, 120, 0.07), 0 4px 12px -2px rgba(10, 120, 120, 0.03);
+}
+
+body.quarto-dark .chatbox-container {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  background-color: #161919 !important;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
+}
+
+body.quarto-dark .chatbox-container:hover {
+  border-color: rgba(51, 199, 255, 0.3) !important;
+}
+
+/* 1. Header with macOS window dots and terminal-like title */
+.chatbox-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+body.quarto-dark .chatbox-header {
+  background-color: #1e2222 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.chatbox-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.chatbox-dots .dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.chatbox-dots .dot.red { background-color: #ff5f56; }
+.chatbox-dots .dot.yellow { background-color: #ffbd2e; }
+.chatbox-dots .dot.green { background-color: #27c93f; }
+
+.chatbox-title {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: monospace;
+}
+
+body.quarto-dark .chatbox-title {
+  color: #a0a8a8 !important;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  background-color: #27c93f;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(39, 201, 63, 0.6);
+  animation: status-pulse 2s infinite;
+}
+
+@keyframes status-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(39, 201, 63, 0.7); }
+  70% { box-shadow: 0 0 0 6px rgba(39, 201, 63, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(39, 201, 63, 0); }
+}
+
+.chatbox-actions {
+  width: 45px; /* spacer to center title roughly */
+}
+
+/* 2. Messages Body */
+.chatbox-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: #ffffff;
+}
+
+body.quarto-dark .chatbox-body {
+  background-color: #161919 !important;
+}
+
+.chatbox-message {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+}
+
+.chatbox-message.user {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: 1.5rem;
+}
+
+body.quarto-dark .chatbox-message.user {
+  border-bottom-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* 3. Avatars styling */
+.chatbox-message .avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.chatbox-message.user .avatar {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+body.quarto-dark .chatbox-message.user .avatar {
+  background-color: #2e3434 !important;
+  color: #e9ecef !important;
+}
+
+.chatbox-message.user .avatar svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.chatbox-message.assistant .avatar {
+  background: linear-gradient(135deg, #0A7878, #00b4d8);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(10, 120, 120, 0.2);
+}
+
+body.quarto-dark .chatbox-message.assistant .avatar {
+  background: linear-gradient(135deg, #0a9396, #00b4d8) !important;
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.25) !important;
+}
+
+.chatbox-message.assistant .avatar svg {
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+}
+
+/* 4. Text contents */
+.message-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex-grow: 1;
+}
+
+.message-sender {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #868e96;
+}
+
+body.quarto-dark .message-sender {
+  color: #a0a8a8 !important;
+}
+
+.chatbox-message.user .message-text {
+  font-size: 0.98rem;
+  margin: 0;
+  color: #212529;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+body.quarto-dark .chatbox-message.user .message-text {
+  color: #ffffff !important;
+}
+
+/* Custom H1 inside assistant message block to act as the primary title */
+.chatbox-message.assistant .message-text.title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin: 0;
+  color: #0A7878;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+body.quarto-dark .chatbox-message.assistant .message-text.title {
+  color: #ffffff !important;
+}
+
+/* Typing effect glow on completion */
+.typed-complete.chatbox-container {
+  box-shadow: 0 15px 40px -10px rgba(10, 120, 120, 0.12), 0 4px 15px -3px rgba(10, 120, 120, 0.05);
+  border-color: rgba(10, 120, 120, 0.25);
+}
+
+body.quarto-dark .typed-complete.chatbox-container {
+  box-shadow: 0 25px 50px -15px rgba(0, 180, 216, 0.18);
+  border-color: rgba(51, 199, 255, 0.25) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chatbox-message.assistant .message-text.title {
+    font-size: 1.75rem;
+  }
+  .chatbox-body {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .chatbox-message.assistant .message-text.title {
+    font-size: 1.45rem;
+  }
+  .chatbox-container {
+    margin: 1rem 0 2rem 0;
+  }
+  .chatbox-message {
+    gap: 0.75rem;
+  }
+  .chatbox-message .avatar {
+    width: 30px;
+    height: 30px;
+  }
+  .chatbox-body {
+    padding: 1rem;
+    gap: 1.25rem;
+  }
+}
+
+/* ==========================================================================
+   PDF MARGIN LINK STYLING
+   ========================================================================== */
+
+.quarto-margin-pdf-link {
+  transition: opacity 0.2s ease;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding-bottom: 1rem;
+}
+
+.quarto-margin-pdf-link:hover {
+  opacity: 0.85;
+}
+
+.quarto-margin-pdf-link a {
+  transition: transform 0.2s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #0A7878;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.quarto-margin-pdf-link a i {
+  font-size: 1.2rem;
+  color: #0A7878;
+}
+
+.quarto-margin-pdf-link a:hover {
+  transform: translateY(-1px);
+}
+
+/* Dark mode adjustment for margin link style */
+body.quarto-dark .quarto-margin-pdf-link a {
+  color: #33c7ff !important;
+}
+
+body.quarto-dark .quarto-margin-pdf-link a i {
+  color: #33c7ff !important;
+}
+
+body.quarto-dark .quarto-margin-pdf-link a:hover {
+  color: #ffffff !important;
+}
+
+body.quarto-dark .quarto-margin-pdf-link {
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
