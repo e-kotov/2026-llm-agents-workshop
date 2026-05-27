@@ -152,6 +152,16 @@ h2 {
   border-top: 1px solid #eee;
 }
 
+/* Fix: Keep sidebars from scrolling up at the bottom of the page */
+#quarto-sidebar, 
+.quarto-margin-sidebar {
+  position: sticky !important;
+  top: 80px !important; /* Offset for navbar */
+  height: calc(100vh - 80px) !important;
+  overflow-y: auto !important;
+  align-self: start !important;
+}
+
 /* Page footer */
 .footer {
   border-top: 1px solid #eee;
@@ -516,6 +526,13 @@ body.quarto-dark .chatbox-title {
   flex-direction: column;
   gap: 1.5rem;
   background-color: #ffffff;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.chatbox-viewport {
+  height: 100%;
+  overflow: hidden;
 }
 
 body.quarto-dark .chatbox-body {
@@ -763,18 +780,62 @@ body.quarto-dark .chatbox-container.terminal-mode {
   max-height: 340px;
   /* Thin scrollbar */
   scrollbar-width: thin;
-  scrollbar-color: #30363d #0d1117;
+  scrollbar-color: #8b949e #0d1117;
 }
 
+/* Hide native scrollbar for terminal */
 .chatbox-container.terminal-mode .chatbox-body::-webkit-scrollbar {
-  width: 6px;
+  display: none !important;
+  width: 0 !important;
 }
-.chatbox-container.terminal-mode .chatbox-body::-webkit-scrollbar-track {
-  background: #0d1117;
+.chatbox-container.terminal-mode .chatbox-body {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important;  /* IE/Edge */
+  position: relative !important; /* Anchor for custom scrollbar */
+  overflow-y: auto !important;
 }
-.chatbox-container.terminal-mode .chatbox-body::-webkit-scrollbar-thumb {
-  background-color: #30363d;
-  border-radius: 3px;
+
+/* Custom Scrollbar Container */
+.ghost-scrollbar-track {
+  position: absolute !important; 
+  top: 8px !important;
+  right: 6px !important;
+  height: calc(100% - 16px) !important; 
+  width: 6px !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: auto !important; /* Enable interaction on track */
+  z-index: 1000;
+}
+
+/* Ensure content doesn't overlap the custom scrollbar */
+.terminal-content-wrapper {
+  padding-right: 18px !important;
+}
+
+.terminal-mode .ghost-scrollbar-track {
+  opacity: 1;
+}
+
+/* Custom Scrollbar Thumb */
+.ghost-scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #8b949e !important; /* Light gray */
+  border-radius: 10px;
+  opacity: 1 !important; /* Always visible */
+  transition: background-color 0.2s ease;
+  cursor: grab;
+  pointer-events: auto !important; /* Ensure thumb captures pointers */
+}
+
+.ghost-scrollbar-thumb:hover {
+  background-color: #ffffff;
+  opacity: 0.9;
 }
 
 /* Terminal output wrapper */

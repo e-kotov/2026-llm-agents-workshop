@@ -1,0 +1,15 @@
+---
+title: "Environments & Skills"
+---
+
+## Managing Complex Dependencies
+
+Agents often struggle when they encounter environments with missing dependencies, especially when packages require system-level libraries or compile from source.
+
+We can solve this by:
+1. **Prompting smartly:** Telling the agent *how* to install packages in our specific environment (e.g., using pre-compiled binaries).
+2. **Creating Skills:** Saving that knowledge so the agent automatically knows how to handle the environment in the future.
+
+Let's see how this works in a real, complex scenario.
+
+[Go to Exercise 3: The Pro Resident →](61-task-3.qmd)

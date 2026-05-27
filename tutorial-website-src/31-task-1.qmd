@@ -1,0 +1,21 @@
+---
+title: "Exercise 1: Hello, Agent"
+---
+
+Let's get comfortable with the coding agent on a basic, familiar task.
+
+**Location:** `userspace/projects/task-01-basic/`
+
+### The Goal
+Use a built-in R dataset like `mtcars` or `iris` to perform some basic data manipulation and plotting.
+
+### Steps
+1. Open your terminal and navigate to the `userspace/projects/task-01-basic/` folder.
+2. Start your agent (Gemini CLI, Antigravity, or OpenCode).
+3. Prompt the agent: *"Calculate the mean `mpg` for different `cyl` groups in the `mtcars` dataset and create a simple visualization using `ggplot2`."*
+4. Watch the agent write the R script, execute it, and generate the plot.
+
+::: {.callout-tip}
+## Observe the Agent
+Pay attention to how the agent decides to name files and whether it creates a separate script or runs code directly in the terminal.
+:::

@@ -31,31 +31,44 @@ document.addEventListener('DOMContentLoaded', () => {
         </button>
       </div>
     </div>
-    <div class="chatbox-body" id="chatbox-body">
-      <div class="chatbox-message user">
-        <div class="avatar user-avatar" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-          </svg>
+    <div class="chatbox-viewport" style="position: relative;">
+      <div class="chatbox-body" id="chatbox-body">
+        <div class="chatbox-message user">
+          <div class="avatar user-avatar" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            </svg>
+          </div>
+          <div class="message-content">
+            <span class="message-sender">You</span>
+            <p class="message-text">What are we doing in Bologna this June?</p>
+          </div>
         </div>
-        <div class="message-content">
-          <span class="message-sender">You</span>
-          <p class="message-text">What are we doing in Bologna this June?</p>
+        <div class="chatbox-message assistant">
+          <div class="avatar assistant-avatar capybara-avatar" aria-hidden="true">
+            ${capybaraSvg()}
+          </div>
+          <div class="message-content">
+            <span class="message-sender">Agent</span>
+            <h1 class="message-text title"><span id="typed-title"></span></h1>
+          </div>
         </div>
       </div>
-      <div class="chatbox-message assistant">
-        <div class="avatar assistant-avatar capybara-avatar" aria-hidden="true">
-          ${capybaraSvg()}
-        </div>
-        <div class="message-content">
-          <span class="message-sender">Agent</span>
-          <h1 class="message-text title"><span id="typed-title"></span></h1>
-        </div>
+      <div class="ghost-scrollbar-track" id="ghost-scrollbar-track">
+        <div class="ghost-scrollbar-thumb" id="ghost-scrollbar-thumb"></div>
       </div>
     </div>
   `;
 
   titleEl.parentNode.replaceChild(chatbox, titleEl);
+
+  const bodyEl = document.getElementById('chatbox-body');
+  if (bodyEl) {
+    bodyEl.addEventListener('scroll', syncCustomScrollbar, { passive: true });
+    // Initial sync
+    window.requestAnimationFrame(syncCustomScrollbar);
+  }
+
   const initialHeaderHtml = document.getElementById('chatbox-header-title').innerHTML;
   const initialBodyHtml = document.getElementById('chatbox-body').innerHTML;
   const replayButton = chatbox.querySelector('.demo-replay-button');
@@ -362,9 +375,11 @@ document.addEventListener('DOMContentLoaded', () => {
       body.classList.remove('body-exit', 'cube-face-out');
       body.classList.add(cube ? 'cube-face-in' : 'body-enter');
       scrollTerminal({ instant: true });
+      syncCustomScrollbar();
 
       window.requestAnimationFrame(() => {
         body.classList.add('is-visible');
+        syncCustomScrollbar();
       });
 
       if (instant) {
@@ -396,18 +411,116 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function terminalShellHtml() {
     return `
-      <div class="terminal-output" id="terminal-output" aria-live="polite">
-        <div class="terminal-agent-card">
-          <span class="term-agent">agent</span>
-          <span class="agent-name">Capy</span>
-          <span class="agent-mode">R + CSV analysis</span>
+      <div class="terminal-content-wrapper" id="terminal-content-wrapper">
+        <div class="terminal-output" id="terminal-output" aria-live="polite">
+          <div class="terminal-agent-card">
+            <span class="term-agent">agent</span>
+            <span class="agent-name">Capy</span>
+            <span class="agent-mode">R + CSV analysis</span>
+          </div>
         </div>
       </div>
     `;
   }
 
+  function syncCustomScrollbar() {
+    const body = document.getElementById('chatbox-body');
+    const track = document.getElementById('ghost-scrollbar-track');
+    const thumb = document.getElementById('ghost-scrollbar-thumb');
+
+    if (!body || !track || !thumb) return;
+
+    const contentHeight = body.scrollHeight;
+    const viewHeight = body.clientHeight;
+    
+    if (contentHeight <= viewHeight + 2) {
+      track.style.opacity = '0';
+      track.style.pointerEvents = 'none';
+      return;
+    }
+
+    track.style.opacity = '1';
+    track.style.pointerEvents = 'auto';
+
+    const trackHeight = track.clientHeight;
+    const scrollRatio = viewHeight / contentHeight;
+    const thumbHeight = Math.max(30, trackHeight * scrollRatio);
+    const maxScroll = contentHeight - viewHeight;
+    const scrollProgress = maxScroll > 0 ? body.scrollTop / maxScroll : 0;
+    const maxThumbMove = trackHeight - thumbHeight;
+
+    thumb.style.height = `${thumbHeight}px`;
+    thumb.style.transform = `translateY(${scrollProgress * maxThumbMove}px)`;
+
+    if (!thumb.dataset.hasListener) {
+      thumb.addEventListener('pointerdown', onThumbPointerDown);
+      thumb.dataset.hasListener = 'true';
+    }
+    }
+
+  // Handle dragging the custom scrollbar
+  let isDraggingScrollbar = false;
+  let startDragY = 0;
+  let startScrollTop = 0;
+
+  function onThumbPointerDown(e) {
+    const body = document.getElementById('chatbox-body');
+    const thumb = document.getElementById('ghost-scrollbar-thumb');
+    if (!body || !thumb) return;
+    
+    isDraggingScrollbar = true;
+    startDragY = e.clientY;
+    startScrollTop = body.scrollTop;
+    
+    body.style.scrollBehavior = 'auto'; // Disable smooth scroll
+    thumb.style.transition = 'none';
+    document.body.style.userSelect = 'none';
+    document.body.style.cursor = 'grabbing';
+    
+    window.addEventListener('pointermove', onThumbPointerMove);
+    window.addEventListener('pointerup', onThumbPointerUp);
+    e.stopPropagation();
+    e.preventDefault();
+  }
+
+  function onThumbPointerMove(e) {
+    if (!isDraggingScrollbar) return;
+    
+    const body = document.getElementById('chatbox-body');
+    const track = document.getElementById('ghost-scrollbar-track');
+    const thumb = document.getElementById('ghost-scrollbar-thumb');
+    if (!body || !track || !thumb) return;
+    
+    const deltaY = e.clientY - startDragY;
+    const maxThumbMove = track.clientHeight - thumb.clientHeight;
+    if (maxThumbMove <= 0) return;
+
+    const maxScroll = body.scrollHeight - body.clientHeight;
+    const moveRatio = deltaY / maxThumbMove;
+    
+    body.scrollTop = startScrollTop + (moveRatio * maxScroll);
+    syncCustomScrollbar();
+  }
+
+  function onThumbPointerUp() {
+    isDraggingScrollbar = false;
+    const body = document.getElementById('chatbox-body');
+    const thumb = document.getElementById('ghost-scrollbar-thumb');
+    
+    if (body) body.style.scrollBehavior = '';
+    if (thumb) thumb.style.transition = '';
+    
+    document.body.style.userSelect = '';
+    document.body.style.cursor = '';
+    window.removeEventListener('pointermove', onThumbPointerMove);
+    window.removeEventListener('pointerup', onThumbPointerUp);
+  }
+
   function runTerminalSession(index) {
     const outputEl = document.getElementById('terminal-output');
+    
+    syncCustomScrollbar();
+    
     const step = terminalSession[index];
     if (!outputEl || !step) {
       completeTerminal();
@@ -490,6 +603,8 @@ document.addEventListener('DOMContentLoaded', () => {
         appendPlotPreview(outputEl);
       }
     });
+    
+    syncCustomScrollbar();
   }
 
   function appendCommandLine(step, outputEl) {
@@ -554,10 +669,13 @@ document.addEventListener('DOMContentLoaded', () => {
         top,
         behavior: instant || reduceMotion ? 'auto' : 'smooth',
       });
+      // Small delay to allow smooth scroll to happen before syncing
+      setTimeout(syncCustomScrollbar, 50);
       return;
     }
 
     body.scrollTop = top;
+    syncCustomScrollbar();
   }
 
   function startTerminalAutoScroll() {
@@ -599,6 +717,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const progress = Math.min(1, (now - startedAt) / duration);
       const eased = 0.5 - Math.cos(progress * Math.PI) / 2;
       body.scrollTop = maxScroll * eased;
+      syncCustomScrollbar();
 
       if (progress < 1) {
         terminalAutoScrollFrame = window.requestAnimationFrame(step);

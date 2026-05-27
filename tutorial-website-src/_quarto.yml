@@ -40,10 +40,18 @@ book:
   chapters:
     - index.qmd
     - 10-intro-to-agents.qmd
-    - 20-security-sandboxing.qmd
-    - 30-setup.qmd
-    - 40-workspace.qmd
-    - 50-agent-interactions.qmd
+    - 20-setup.qmd
+    - part: "Basics"
+      chapters:
+        - 30-interaction.qmd
+        - 31-task-1.qmd
+    - part: "Advanced"
+      chapters:
+        - 40-security.qmd
+        - 41-task-2.qmd
+        - 50-context-mastery.qmd
+        - 60-environment-skills.qmd
+        - 61-task-3.qmd
     - 90-references.qmd
 
   page-footer:
