@@ -28,3 +28,4 @@ workspace/project/*
 
 /.luarc.json
 .antigravitycli/
+private/

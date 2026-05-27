@@ -516,7 +516,8 @@ body.quarto-dark .chatbox-title {
 }
 
 .chatbox-actions {
-  width: 45px; /* spacer to center title roughly */
+  display: flex;
+  gap: 0.5rem;
 }
 
 /* 2. Messages Body */
@@ -936,18 +937,33 @@ body.quarto-dark .agent-demo.chatbox-container {
 }
 
 .agent-demo .chatbox-header {
-  min-height: 48px;
-  padding: 0.7rem 1rem;
+  height: 52px;
+  min-height: 52px;
+  max-height: 52px;
+  padding: 0 1rem;
   gap: 0.75rem;
+  display: flex;
+  align-items: center;
   transition:
     background 520ms cubic-bezier(0.16, 1, 0.3, 1),
     border-color 520ms cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.agent-demo .chatbox-dots {
+  width: 52px;
+  flex: 0 0 52px;
 }
 
 .agent-demo .chatbox-title {
   min-width: 0;
   flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
+  gap: 8px;
   overflow: hidden;
   color: #334155;
   font-size: 0.8rem;
@@ -957,31 +973,99 @@ body.quarto-dark .agent-demo.chatbox-container {
 }
 
 .agent-demo .chatbox-actions {
-  width: 68px;
-  flex: 0 0 68px;
+  width: auto;
+  min-width: 160px; /* Approximate width of toggle + replay to keep title centered */
+  flex: 0 0 auto;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 0.28rem;
+  gap: 0.6rem;
 }
 
-.demo-replay-button,
-.demo-view-button {
-  width: 26px;
-  height: 26px;
-  min-width: 26px;
-  max-width: 26px;
-  flex: 0 0 26px;
+.demo-view-toggle {
+  display: flex;
+  position: relative;
+  background: rgba(15, 23, 42, 0.05);
+  border-radius: 999px;
+  padding: 2px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  height: 28px;
   box-sizing: border-box;
-  padding: 0;
-  aspect-ratio: 1;
-  display: inline-grid;
-  place-items: center;
+}
+
+body.quarto-dark .demo-view-toggle,
+.agent-demo.terminal-mode .demo-view-toggle {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.toggle-option {
+  position: relative;
+  z-index: 2;
+  border: none;
+  background: none;
+  padding: 0 12px;
+  font: 700 0.72rem/1 "SF Mono", "Fira Mono", Consolas, monospace;
+  color: #64748b;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  min-width: 54px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.01em;
+}
+
+body.quarto-dark .toggle-option,
+.agent-demo.terminal-mode .toggle-option {
+  color: #94a3b8;
+}
+
+.toggle-option.active {
+  color: #0f172a;
+}
+
+body.quarto-dark .toggle-option.active,
+.agent-demo.terminal-mode .toggle-option.active {
+  color: #ffffff;
+}
+
+.toggle-slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  width: calc(50% - 2px);
+  background: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+body.quarto-dark .toggle-slider,
+.agent-demo.terminal-mode .toggle-slider {
+  background: #2e3434;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Toggle slider position based on active state */
+.agent-demo.terminal-mode .toggle-slider {
+  transform: translateX(100%);
+}
+
+.demo-replay-button {
+  height: 28px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.62);
   color: #64748b;
-  font: 700 0.82rem/1 "SF Mono", "Fira Mono", Consolas, monospace;
+  font: 700 0.72rem/1 "SF Mono", "Fira Mono", Consolas, monospace;
   cursor: pointer;
   opacity: 0.7;
   transition:
@@ -989,32 +1073,22 @@ body.quarto-dark .agent-demo.chatbox-container {
     color 160ms ease,
     background 160ms ease,
     border-color 160ms ease,
-  transform 160ms cubic-bezier(0.16, 1, 0.3, 1);
+    transform 160ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .demo-button-icon {
-  width: 14px;
-  height: 14px;
-  display: inline-grid;
-  place-items: center;
-  line-height: 1;
-  text-align: center;
-}
-
-.demo-replay-button .demo-button-icon {
   font-size: 1rem;
-  transform: translate(0.5px, -1.8px);
+  line-height: 1;
+  transform: translateY(-1px);
 }
 
-.demo-view-button .demo-button-icon {
+.demo-button-text {
   font-size: 0.72rem;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
 }
 
 .demo-replay-button:hover,
-.demo-replay-button:focus-visible,
-.demo-view-button:hover,
-.demo-view-button:focus-visible {
+.demo-replay-button:focus-visible {
   opacity: 1;
   color: #0f766e;
   background: rgba(240, 253, 250, 0.94);
@@ -1022,16 +1096,8 @@ body.quarto-dark .agent-demo.chatbox-container {
   transform: translateY(-1px);
 }
 
-.demo-replay-button:focus-visible,
-.demo-view-button:focus-visible {
-  outline: 2px solid rgba(20, 184, 166, 0.35);
-  outline-offset: 2px;
-}
-
 body.quarto-dark .demo-replay-button,
-body.quarto-dark .demo-view-button,
-.agent-demo.terminal-mode .demo-replay-button,
-.agent-demo.terminal-mode .demo-view-button {
+.agent-demo.terminal-mode .demo-replay-button {
   border-color: rgba(148, 163, 184, 0.16);
   background: rgba(15, 23, 42, 0.54);
   color: #94a3b8;
@@ -1039,12 +1105,8 @@ body.quarto-dark .demo-view-button,
 
 body.quarto-dark .demo-replay-button:hover,
 body.quarto-dark .demo-replay-button:focus-visible,
-body.quarto-dark .demo-view-button:hover,
-body.quarto-dark .demo-view-button:focus-visible,
 .agent-demo.terminal-mode .demo-replay-button:hover,
-.agent-demo.terminal-mode .demo-replay-button:focus-visible,
-.agent-demo.terminal-mode .demo-view-button:hover,
-.agent-demo.terminal-mode .demo-view-button:focus-visible {
+.agent-demo.terminal-mode .demo-replay-button:focus-visible {
   color: #5eead4;
   background: rgba(20, 184, 166, 0.12);
   border-color: rgba(94, 234, 212, 0.24);
@@ -1384,6 +1446,9 @@ body.quarto-dark .title-lift-ghost {
 }
 
 .agent-demo.terminal-mode .chatbox-header {
+  height: 52px;
+  min-height: 52px;
+  max-height: 52px;
   background:
     linear-gradient(180deg, rgba(24, 34, 40, 0.98), rgba(14, 22, 27, 0.98)) !important;
   border-bottom-color: rgba(148, 163, 184, 0.16) !important;
@@ -1603,8 +1668,8 @@ body.quarto-dark .title-lift-ghost {
   }
 
   .agent-demo .chatbox-actions {
-    width: 60px;
-    flex-basis: 60px;
+    width: auto;
+    flex-basis: auto;
   }
 
   .agent-demo .chatbox-body {
