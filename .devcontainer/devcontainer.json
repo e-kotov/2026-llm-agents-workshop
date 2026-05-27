@@ -19,12 +19,13 @@
 				"chrisdias.vscode-opennewinstance",
 				"FedaykinDev.openchamber",
 				"ms-vscode.live-server",
+				"ritwickdey.LiveServer",
 				"posit.air-vscode",
 				"posit.shiny",
 				"quarto.quarto",
 				"reditorsupport.r",
 				"reditorsupport.r-syntax",
-				"tomoki1207.pdf"
+				"mathematic.vscode-pdf"
 			]
 		}
 	}

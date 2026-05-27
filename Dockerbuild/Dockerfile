@@ -163,12 +163,13 @@ RUN mkdir -p /home/${NB_USER}/.config/fish && \
         chrisdias.vscode-opennewinstance \
         FedaykinDev.openchamber \
         ms-vscode.live-server \
+        ritwickdey.LiveServer \
         posit.air-vscode \
         posit.shiny \
         quarto.quarto \
         reditorsupport.r \
         reditorsupport.r-syntax \
-        tomoki1207.pdf; do \
+        mathematic.vscode-pdf; do \
       code-server --extensions-dir ${CODE_EXTENSIONSDIR} --install-extension $ext --force || echo "Failed to install $ext on code-server"; \
     done && \
     # Final cleanup
