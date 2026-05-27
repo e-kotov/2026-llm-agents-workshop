@@ -90,203 +90,196 @@
     ]
   },
   {
-    "objectID": "20-security-sandboxing.html",
-    "href": "20-security-sandboxing.html",
-    "title": "2  Security & Sandboxing",
+    "objectID": "20-setup.html",
+    "href": "20-setup.html",
+    "title": "2  Environment Setup",
     "section": "",
-    "text": "2.1 Common Risks\nUsing coding agents involves granting them the ability to execute code on your machine. This introduces several security and integrity risks that must be managed.",
+    "text": "2.1 🛠️ Launching the Environment\nTo ensure a consistent, secure, and hassle-free experience, we will use a pre-configured cloud-based development environment. We will use GitHub Codespaces.\nTo launch the Codespaces environment manually from the GitHub interface, follow these steps:",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Security & Sandboxing</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Environment Setup</span>"
     ]
   },
   {
-    "objectID": "20-security-sandboxing.html#common-risks",
-    "href": "20-security-sandboxing.html#common-risks",
-    "title": "2  Security & Sandboxing",
+    "objectID": "20-setup.html#launching-the-environment",
+    "href": "20-setup.html#launching-the-environment",
+    "title": "2  Environment Setup",
     "section": "",
-    "text": "2.1.1 Unsafe Code Execution\nAn agent might generate code that deletes files, installs malicious packages, or opens network vulnerabilities, especially if it “hallucinates” a solution or misinterprets a command.\n\n\n2.1.2 Data Leakage\nWhen you provide an agent with access to your files, it might send sensitive data (API keys, personal identifiers, unpublished research) to the LLM provider’s servers for processing.\n\n\n2.1.3 Environment Pollution\nAgents might install many dependencies or modify system configurations, making your research environment unstable or non-reproducible.",
+    "text": "Navigate to the workshop repository.\nClick the green Code button in the top right.\nSelect the Codespaces tab.\nClick Create codespace on main (or click the ... menu to configure machine size).\n\n\n\n\nLaunch in GitHub Codespaces\n\n\n\n\n\n\n\n\nNote🔒 Free & Secure Environment\n\n\n\n\nIt is 100% Free: GitHub provides a generous free tier of 60 hours of Codespaces usage per month for every personal account. No credit card, billing info, or payment is required.\nIt is Completely Secure: The environment runs inside a secure, isolated container (virtual machine) in the cloud. It does not touch your physical computer, install any local files, or run any software on your machine. It belongs to you and it is also mostly safe to enter your account data (e.g. Google account, especialy if secondary or test account, API keys, other accounts for subscription services or services we will use during the workshop) without worrying about security or privacy issues.\n\n\n\n\n2.1.1 💤 Auto-Pause & Resume\nTo save your free hours, the environment automatically pauses after 30 minutes of inactivity. When you restart it, your files, open tabs, and terminal history are fully preserved—just like waking up a laptop from sleep (though you may need to restart any active terminal commands or running applications).",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Security & Sandboxing</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Environment Setup</span>"
     ]
   },
   {
-    "objectID": "20-security-sandboxing.html#mitigation-strategies",
-    "href": "20-security-sandboxing.html#mitigation-strategies",
-    "title": "2  Security & Sandboxing",
-    "section": "2.2 Mitigation Strategies",
-    "text": "2.2 Mitigation Strategies\n\n2.2.1 Containerization (Docker)\nBy running the agent inside a container, you limit its access to your host machine’s files and resources.\n\n\n2.2.2 Managed Environments (GitHub Codespaces)\nUsing a temporary, cloud-based environment like Codespaces provides a “disposable” workspace where you can safely experiment without risking your local setup.\n\n\n2.2.3 The “Human in the Loop”\nNever allow an agent to execute code autonomously without a review step. Tools like Aider or Gemini CLI often prompt for confirmation before running critical commands.",
+    "objectID": "20-setup.html#managing-your-session-quotas",
+    "href": "20-setup.html#managing-your-session-quotas",
+    "title": "2  Environment Setup",
+    "section": "2.2 📊 Managing Your Session & Quotas",
+    "text": "2.2 📊 Managing Your Session & Quotas\nGitHub Codespaces provides a generous free tier, but it is important to understand how usage is consumed to avoid running out of credits.\n\n2.2.1 Monthly Free Quotas (2026)\nThe following quotas apply to personal accounts.1\n\n\n\nAccount Type\nActual Usage Hours\nStorage (per month)\n\n\n\n\nGitHub Free\n60 hours\n15 GB\n\n\nGitHub Pro\n90 hours\n20 GB\n\n\n\n\n\n\n\n\n\nWarning💾 Storage Persistence Quota\n\n\n\nStorage (15GB/20GB) is consumed even when the codespace is stopped. To save your storage quota, make sure to delete codespaces you no longer need at github.com/codespaces once the workshop is fully over.\n\n\n\n\n2.2.2 Checking Remaining Quota\n\n\n\n\n\n\nYou can monitor your real-time usage and remaining balance at any time:\n\nGo to your GitHub Settings &gt; Billing and plans.\nLook for the Codespaces section under Usage this month or try this direct link: GitHub Codespaces Usage.\n\n\n\n\n\n\n2.2.3 Stopping Your Session Manually\nWhen you are done with a session, you can stop the codespace manually to instantly stop consuming usage hours:\n\n\n\nStop GitHub Codespace",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Security & Sandboxing</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Environment Setup</span>"
     ]
   },
   {
-    "objectID": "20-security-sandboxing.html#practice-safe-coding",
-    "href": "20-security-sandboxing.html#practice-safe-coding",
-    "title": "2  Security & Sandboxing",
-    "section": "2.3 Practice Safe Coding",
-    "text": "2.3 Practice Safe Coding\nOur Environment Setup is hosted entirely within a secure GitHub Codespace to ensure your experiments are isolated. Let’s head there now to start exploring.",
+    "objectID": "20-setup.html#next-steps",
+    "href": "20-setup.html#next-steps",
+    "title": "2  Environment Setup",
+    "section": "2.3 Next Steps",
+    "text": "2.3 Next Steps\nNow that your environment is ready, let’s explore the Workshop Workspace.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Security & Sandboxing</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Environment Setup</span>"
     ]
   },
   {
-    "objectID": "30-setup.html",
-    "href": "30-setup.html",
-    "title": "3  Environment Setup",
-    "section": "",
-    "text": "3.1 🛠️ Launching the Environment\nTo ensure a consistent, secure, and hassle-free experience, we will use a pre-configured cloud-based development environment. We will use GitHub Codespaces.\nTo launch the Codespaces environment manually from the GitHub interface, follow these steps:",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Environment Setup</span>"
-    ]
-  },
-  {
-    "objectID": "30-setup.html#launching-the-environment",
-    "href": "30-setup.html#launching-the-environment",
-    "title": "3  Environment Setup",
-    "section": "",
-    "text": "Navigate to the workshop repository.\nClick the green Code button in the top right.\nSelect the Codespaces tab.\nClick Create codespace on main (or click the ... menu to configure machine size).\n\n\n\n\nLaunch in GitHub Codespaces\n\n\n\n\n\n\n\n\nNote🔒 Free & Secure Environment\n\n\n\n\nIt is 100% Free: GitHub provides a generous free tier of 60 hours of Codespaces usage per month for every personal account. No credit card, billing info, or payment is required.\nIt is Completely Secure: The environment runs inside a secure, isolated container (virtual machine) in the cloud. It does not touch your physical computer, install any local files, or run any software on your machine. It belongs to you and it is also mostly safe to enter your account data (e.g. Google account, especialy if secondary or test account, API keys, other accounts for subscription services or services we will use during the workshop) without worrying about security or privacy issues.\n\n\n\n\n3.1.1 💤 Auto-Pause & Resume\nTo save your free hours, the environment automatically pauses after 30 minutes of inactivity. When you restart it, your files, open tabs, and terminal history are fully preserved—just like waking up a laptop from sleep (though you may need to restart any active terminal commands or running applications).",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Environment Setup</span>"
-    ]
-  },
-  {
-    "objectID": "30-setup.html#managing-your-session-quotas",
-    "href": "30-setup.html#managing-your-session-quotas",
-    "title": "3  Environment Setup",
-    "section": "3.2 📊 Managing Your Session & Quotas",
-    "text": "3.2 📊 Managing Your Session & Quotas\nGitHub Codespaces provides a generous free tier, but it is important to understand how usage is consumed to avoid running out of credits.\n\n3.2.1 Monthly Free Quotas (2026)\nThe following quotas apply to personal accounts.1\n\n\n\nAccount Type\nActual Usage Hours\nStorage (per month)\n\n\n\n\nGitHub Free\n60 hours\n15 GB\n\n\nGitHub Pro\n90 hours\n20 GB\n\n\n\n\n\n\n\n\n\nWarning💾 Storage Persistence Quota\n\n\n\nStorage (15GB/20GB) is consumed even when the codespace is stopped. To save your storage quota, make sure to delete codespaces you no longer need at github.com/codespaces once the workshop is fully over.\n\n\n\n\n3.2.2 Checking Remaining Quota\n\n\n\n\n\n\nYou can monitor your real-time usage and remaining balance at any time:\n\nGo to your GitHub Settings &gt; Billing and plans.\nLook for the Codespaces section under Usage this month or try this direct link: GitHub Codespaces Usage.\n\n\n\n\n\n\n3.2.3 Stopping Your Session Manually\nWhen you are done with a session, you can stop the codespace manually to instantly stop consuming usage hours:\n\n\n\nStop GitHub Codespace",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Environment Setup</span>"
-    ]
-  },
-  {
-    "objectID": "30-setup.html#next-steps",
-    "href": "30-setup.html#next-steps",
-    "title": "3  Environment Setup",
-    "section": "3.3 Next Steps",
-    "text": "3.3 Next Steps\nNow that your environment is ready, let’s explore the Workshop Workspace.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Environment Setup</span>"
-    ]
-  },
-  {
-    "objectID": "30-setup.html#footnotes",
-    "href": "30-setup.html#footnotes",
-    "title": "3  Environment Setup",
+    "objectID": "20-setup.html#footnotes",
+    "href": "20-setup.html#footnotes",
+    "title": "2  Environment Setup",
     "section": "",
     "text": "While the official billing documentation lists these as 120 and 180 core hours, the minimum instance size is 2 CPU cores. This means every 1 hour of real-time work consumes 2 core hours, resulting in the actual limits shown below.↩︎",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Environment Setup</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Environment Setup</span>"
     ]
   },
   {
-    "objectID": "40-workspace.html",
-    "href": "40-workspace.html",
-    "title": "4  The Workshop Workspace",
+    "objectID": "30-interaction.html",
+    "href": "30-interaction.html",
+    "title": "3  Agent Interaction",
     "section": "",
-    "text": "4.1 Workspace Structure\nOnce your environment is ready, you will find a dedicated space for your work. Understanding the structure of this workspace is crucial for maintaining security and reproducibility.\nThe root directory contains several key folders:",
+    "text": "3.1 The Interaction Loop\nWorking with coding agents involves a continuous loop: 1. Prompt: You provide a goal or question. 2. Thought: The agent formulates a plan. 3. Action: The agent uses tools (reading files, running bash commands, editing code). 4. Response: The agent presents the result or asks for clarification.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>The Workshop Workspace</span>"
+      "Basics",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Agent Interaction</span>"
     ]
   },
   {
-    "objectID": "40-workspace.html#workspace-structure",
-    "href": "40-workspace.html#workspace-structure",
-    "title": "4  The Workshop Workspace",
+    "objectID": "30-interaction.html#control-vs.-autonomy",
+    "href": "30-interaction.html#control-vs.-autonomy",
+    "title": "3  Agent Interaction",
+    "section": "3.2 Control vs. Autonomy",
+    "text": "3.2 Control vs. Autonomy\nYou can choose how much autonomy to give your agent: - Surgical Mode: Ask for one specific change at a time. - Goal Mode: Provide a high-level goal and let the agent manage the steps.\nReady to try it out?\nGo to Exercise 1: Hello, Agent →",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Agent Interaction</span>"
+    ]
+  },
+  {
+    "objectID": "31-task-1.html",
+    "href": "31-task-1.html",
+    "title": "4  Exercise 1: Hello, Agent",
+    "section": "",
+    "text": "Let’s get comfortable with the coding agent on a basic, familiar task.\nLocation: userspace/projects/task-01-basic/\n\n4.0.1 The Goal\nUse a built-in R dataset like mtcars or iris to perform some basic data manipulation and plotting.\n\n\n4.0.2 Steps\n\nOpen your terminal and navigate to the userspace/projects/task-01-basic/ folder.\nStart your agent (Gemini CLI, Antigravity, or OpenCode).\nPrompt the agent: “Calculate the mean mpg for different cyl groups in the mtcars dataset and create a simple visualization using ggplot2.”\nWatch the agent write the R script, execute it, and generate the plot.\n\n\n\n\n\n\n\nTipObserve the Agent\n\n\n\nPay attention to how the agent decides to name files and whether it creates a separate script or runs code directly in the terminal.",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Exercise 1: Hello, Agent</span>"
+    ]
+  },
+  {
+    "objectID": "40-security.html",
+    "href": "40-security.html",
+    "title": "5  Security & Secrets",
+    "section": "",
+    "text": "5.1 Common Risks\nUsing coding agents involves granting them the ability to execute code on your machine. This introduces several security and integrity risks that must be managed.",
+    "crumbs": [
+      "Advanced",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Security & Secrets</span>"
+    ]
+  },
+  {
+    "objectID": "40-security.html#common-risks",
+    "href": "40-security.html#common-risks",
+    "title": "5  Security & Secrets",
+    "section": "",
+    "text": "5.1.1 Unsafe Code Execution\nAn agent might generate code that deletes files or opens network vulnerabilities. Always use the human-in-the-loop pattern to review commands.\n\n\n5.1.2 Data Leakage\nAgents might send sensitive data (API keys, credentials) to the LLM provider. This is why we use safeguards like hooks and plugins.",
+    "crumbs": [
+      "Advanced",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Security & Secrets</span>"
+    ]
+  },
+  {
+    "objectID": "40-security.html#mitigating-data-leakage",
+    "href": "40-security.html#mitigating-data-leakage",
+    "title": "5  Security & Secrets",
+    "section": "5.2 Mitigating Data Leakage",
+    "text": "5.2 Mitigating Data Leakage\nTo prevent the agent from reading sensitive files (like .env files), we use: - OpenCode: Env Protection Plugins. - Gemini CLI: Hooks to block access to specific files.\nLet’s put this into practice.\nGo to Exercise 2: The Vault →",
+    "crumbs": [
+      "Advanced",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Security & Secrets</span>"
+    ]
+  },
+  {
+    "objectID": "41-task-2.html",
+    "href": "41-task-2.html",
+    "title": "6  Exercise 2: The Vault",
+    "section": "",
+    "text": "Let’s test the security safeguards of your agent.\nLocation: userspace/projects/task-02-vault/\n\n6.0.1 The Goal\nConfigure your agent so it is impossible for it to read sensitive files, specifically the .env file in this directory.\n\n\n6.0.2 Steps\n\nNavigate to userspace/projects/task-02-vault/. This directory contains a .env file with dummy credentials.\nThe “Before” Check: Ask the agent to read the contents of the .env file. It will likely succeed.\nSet up protection:\n\nIf using OpenCode: Follow the plugin instructions to block .env.\nIf using Gemini CLI: Configure a hook to block read_file on .env.\n\nThe “After” Check: Ask the agent to read the .env file again. It should now be blocked!\nProgrammatic Access: Ask the agent: “How can I use the credentials in .env for my R script without you ever reading the file directly?” (Hint: Sys.getenv() or dotenv package).\n\n\n\n\n\n\n\nWarningSecurity First\n\n\n\nIn real research, never commit .env files to Git. Always ensure they are listed in your .gitignore.",
+    "crumbs": [
+      "Advanced",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Exercise 2: The Vault</span>"
+    ]
+  },
+  {
+    "objectID": "50-context-mastery.html",
+    "href": "50-context-mastery.html",
+    "title": "7  The Workshop Workspace",
+    "section": "",
+    "text": "7.1 Workspace Structure\nOnce your environment is ready, you will find a dedicated space for your work. Understanding the structure of this workspace is crucial for maintaining security and reproducibility.\nThe root directory contains several key folders:",
+    "crumbs": [
+      "Advanced",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>The Workshop Workspace</span>"
+    ]
+  },
+  {
+    "objectID": "50-context-mastery.html#workspace-structure",
+    "href": "50-context-mastery.html#workspace-structure",
+    "title": "7  The Workshop Workspace",
     "section": "",
     "text": "userspace/: This is your personal sandbox.\n\nuserspace/examples/: contains pre-built examples that we will explore together.\nuserspace/projects/: This is where you can start your own research projects or experiments.\n\ndata/: Contains shared datasets for the workshop exercises.\ntutorial-website-src/: The source code for this website (if you want to see how it’s built!).",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>The Workshop Workspace</span>"
+      "Advanced",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>The Workshop Workspace</span>"
     ]
   },
   {
-    "objectID": "40-workspace.html#the-sandbox-boundary",
-    "href": "40-workspace.html#the-sandbox-boundary",
-    "title": "4  The Workshop Workspace",
-    "section": "4.2 The Sandbox Boundary",
-    "text": "4.2 The Sandbox Boundary\nAs we discussed in Security & Sandboxing, the userspace/ directory is designed to be your primary work area.\n\n\n\n\n\n\nImportantBest Practice\n\n\n\nWhen instructing an agent to create or modify files, always specify a path within userspace/projects/. This keeps your experimental code isolated from the core workshop materials.",
+    "objectID": "50-context-mastery.html#the-sandbox-boundary",
+    "href": "50-context-mastery.html#the-sandbox-boundary",
+    "title": "7  The Workshop Workspace",
+    "section": "7.2 The Sandbox Boundary",
+    "text": "7.2 The Sandbox Boundary\nAs we discussed in Security & Sandboxing, the userspace/ directory is designed to be your primary work area.\n\n\n\n\n\n\nImportantBest Practice\n\n\n\nWhen instructing an agent to create or modify files, always specify a path within userspace/projects/. This keeps your experimental code isolated from the core workshop materials.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>The Workshop Workspace</span>"
+      "Advanced",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>The Workshop Workspace</span>"
     ]
   },
   {
-    "objectID": "40-workspace.html#next-steps",
-    "href": "40-workspace.html#next-steps",
-    "title": "4  The Workshop Workspace",
-    "section": "4.3 Next Steps",
-    "text": "4.3 Next Steps\nNow that you understand where to work, let’s learn how to Interact with the Agents.",
+    "objectID": "50-context-mastery.html#next-steps",
+    "href": "50-context-mastery.html#next-steps",
+    "title": "7  The Workshop Workspace",
+    "section": "7.3 Next Steps",
+    "text": "7.3 Next Steps\nNow that you understand where to work, let’s learn how to Interact with the Agents.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>The Workshop Workspace</span>"
+      "Advanced",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>The Workshop Workspace</span>"
     ]
   },
   {
-    "objectID": "50-agent-interactions.html",
-    "href": "50-agent-interactions.html",
-    "title": "5  Interacting with the Agents",
+    "objectID": "60-environment-skills.html",
+    "href": "60-environment-skills.html",
+    "title": "8  Environments & Skills",
     "section": "",
-    "text": "5.1 Available CLI Agents\nIn this environment, you have access to several world-class coding agents. You can interact with them via the terminal or integrated VS Code extensions.",
+    "text": "8.1 Managing Complex Dependencies\nAgents often struggle when they encounter environments with missing dependencies, especially when packages require system-level libraries or compile from source.\nWe can solve this by: 1. Prompting smartly: Telling the agent how to install packages in our specific environment (e.g., using pre-compiled binaries). 2. Creating Skills: Saving that knowledge so the agent automatically knows how to handle the environment in the future.\nLet’s see how this works in a real, complex scenario.\nGo to Exercise 3: The Pro Resident →",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Interacting with the Agents</span>"
+      "Advanced",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Environments & Skills</span>"
     ]
   },
   {
-    "objectID": "50-agent-interactions.html#available-cli-agents",
-    "href": "50-agent-interactions.html#available-cli-agents",
-    "title": "5  Interacting with the Agents",
+    "objectID": "61-task-3.html",
+    "href": "61-task-3.html",
+    "title": "9  Exercise 3: The Pro Resident",
     "section": "",
-    "text": "Aider: A powerful pair-programming tool that works directly with your git repository. Run aider in the terminal.\nGemini CLI: Interactive chat with Google’s Gemini models. Run gemini-chat.\nClaude CLI: Direct access to Anthropic’s Claude models. Run claude.\nNCA (Nim Coding Agent): Optimized for speed and specific tasks. Run nca.",
+    "text": "Let’s handle complex dependencies and teach the agent a permanent “Skill.”\nLocation: userspace/projects/task-03-demotools/\n\n9.0.1 The Goal\nInstall the DemoTools R package successfully in a Linux container without compiling from source, and create a reusable agent “Skill” for this process.\n\n\n9.0.2 Steps\n\nNavigate to userspace/projects/task-03-demotools/.\nAsk the agent to run the analysis.R script. It will fail.\nPrompt the agent to install DemoTools.\nIntervene: If the agent tries to compile from source (it takes 30+ minutes), stop it. Guide it to find and install the binary version for Linux (e.g., via https://timriffe.r-universe.dev).\nCreate a Skill: Once the script runs, tell the agent: “You’ve learned how to install binary packages on this system. Document this as a ‘Skill’ so you always prefer binaries over source compilation in this workspace.”\nBonus: Use the HMD_USER and HMD_PASS credentials (via environment variables) to fetch real data from the Human Mortality Database.\n\n\n\n\n\n\n\nImportantThinking in Code\n\n\n\nThis exercise demonstrates why we sometimes need to “override” the agent’s default behavior with specific system knowledge.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Interacting with the Agents</span>"
-    ]
-  },
-  {
-    "objectID": "50-agent-interactions.html#exercise-1-exploring-data-with-gemini",
-    "href": "50-agent-interactions.html#exercise-1-exploring-data-with-gemini",
-    "title": "5  Interacting with the Agents",
-    "section": "5.2 Exercise 1: Exploring Data with Gemini",
-    "text": "5.2 Exercise 1: Exploring Data with Gemini\nTry asking Gemini to help you understand the shared datasets. Open your terminal and run:\ngemini-chat \"List the files in the data/ directory and give me a brief summary of the columns in the first CSV file you find.\"",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Interacting with the Agents</span>"
-    ]
-  },
-  {
-    "objectID": "50-agent-interactions.html#exercise-2-pair-programming-with-aider",
-    "href": "50-agent-interactions.html#exercise-2-pair-programming-with-aider",
-    "title": "5  Interacting with the Agents",
-    "section": "5.3 Exercise 2: Pair Programming with Aider",
-    "text": "5.3 Exercise 2: Pair Programming with Aider\nAider is excellent for editing existing code or starting new scripts. Let’s try creating a script in your userspace/projects/ folder:\n\nOpen the terminal.\nRun aider userspace/projects/analysis.py.\nInside the Aider chat, type: &gt; “Read data/sample_data.csv and create a plot of the population trends by year.”",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Interacting with the Agents</span>"
-    ]
-  },
-  {
-    "objectID": "50-agent-interactions.html#exercise-3-rapid-prototyping-with-nca",
-    "href": "50-agent-interactions.html#exercise-3-rapid-prototyping-with-nca",
-    "title": "5  Interacting with the Agents",
-    "section": "5.4 Exercise 3: Rapid Prototyping with NCA",
-    "text": "5.4 Exercise 3: Rapid Prototyping with NCA\nIf you need a quick script or a one-liner, nca is very efficient:\nnca \"Write a python one-liner to count the number of rows in data/sample_data.csv\"",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Interacting with the Agents</span>"
-    ]
-  },
-  {
-    "objectID": "50-agent-interactions.html#security-best-practices-reminder",
-    "href": "50-agent-interactions.html#security-best-practices-reminder",
-    "title": "5  Interacting with the Agents",
-    "section": "5.5 Security & Best Practices Reminder",
-    "text": "5.5 Security & Best Practices Reminder\nAs discussed in Security & Sandboxing, always remember:\n\nWork within userspace/: This ensures your experiments are isolated.\nReview Agent Code: Never execute code generated by an agent without reviewing it first.\nProtect Sensitive Data: Do not provide agents with access to private credentials or sensitive personal data.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Interacting with the Agents</span>"
-    ]
-  },
-  {
-    "objectID": "50-agent-interactions.html#next-steps",
-    "href": "50-agent-interactions.html#next-steps",
-    "title": "5  Interacting with the Agents",
-    "section": "5.6 Next Steps",
-    "text": "5.6 Next Steps\nNow that you are comfortable with the agents, let’s move on to the guided examples (coming soon).",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Interacting with the Agents</span>"
+      "Advanced",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Exercise 3: The Pro Resident</span>"
     ]
   },
   {
