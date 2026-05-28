@@ -1,0 +1,73 @@
+---
+title: "The Core Brain: Models and Prompts"
+---
+
+The most fundamental part of any coding agent is the **Model**—the "brain" that processes your requests. However, the model doesn't work in a vacuum; it is wrapped in an **Agent Harness** (e.g. OpenCode, Claude Code, Codex, Google Antigravity CLI, many others).
+
+
+## Models
+
+In this workshop we are going to use a variety of models, at the link below you can see a comparison of the characteristics, performance, and costs of the models we will be using, as well as some other popular models that you can try on your own.
+
+[See models comparison](https://artificialanalysis.ai/?cost=cost-breakdown&output-tokens=intelligence-vs-output-tokens&models=gpt-5-5-high%2Cgemini-3-pro-low%2Cgemini-3-5-flash%2Cgemini-3-1-pro-preview%2Cclaude-opus-4-7%2Cclaude-sonnet-4-6-adaptive%2Cdeepseek-v4-flash-high%2Cminimax-m2-7%2Cnvidia-nemotron-3-super-120b-a12b%2Cqwen3-5-397b-a17b%2Cqwen3-5-122b-a10b%2Cqwen3-6-35b-a3b%2Cqwen3-6-27b%2Cqwen3-6-plus%2Cgemini-3-pro%2Cminimax-m2-5%2Cglm-4-5-air)
+
+## Model vs. Agent System Prompts
+
+An agent's behavior is governed by layers of instructions. It is helpful to distinguish between the instructions given to the model and those that define the agent harness.
+
+### The Model System Prompt
+This is the base set of rules provided by the model provider (e.g., OpenAI, Anthropic, Google). It typically contains safety guidelines and a persona like *"You are a helpful AI assistant."* These instructions are often "hard-coded" or pre-configured by the provider before the agent harness adds its own layer.
+
+### The Agent System Prompt
+The **Agent Harness** (the software you use to interact with the model) provides its own set of instructions. Depending on the harness, these might include:
+
+- What it is (e.g. *"you are OpenCode, an agent that can read and write files, run code, and use tools to help users with coding tasks"*).
+
+- How to use tools (like reading files or running bash commands).
+
+- Where and how to access documenatation on how to configure the agent harness (that is, you can actually ask most agent harnesses to change certain settings by asking them using natural language.)
+
+::: {.callout-important}
+**Key Insight:** The agent harness often does not have access to the underlying Model System Prompt. They are separate layers of instruction that are combined (concatenated) before being sent to the LLM provider that does the actual processing.
+:::
+
+## Configuration Files: Global and Local Instructions
+
+The behavior of an agent harness is often guided by specific configuration files that provide context about you and your project. In our workshop, we focus on a hierarchy of **Instruction Files** (typically named `GEMINI.md` for Google's models, `CLAUDE.md` for Anthropic's models, and `AGENTS.md` for most other agents including OpenAI Codex).
+
+### Global vs. Local Instructions
+
+Harnesses typically look for instructions at two levels:
+
+1.  **Global Instructions (`~/.gemini/GEMINI.md` or `~/.agents/AGENTS.md`)**: These are your personal preferences that follow you across all projects. They might include your preferred coding style (e.g., "I always use the Tidyverse"), your language preferences, or general rules about how you want the agent to communicate.
+
+2.  **Local (Project) Instructions (`./GEMINI.md` or `./AGENTS.md`)**: These are specific to a single repository. They define the overall project architecture, naming conventions, and project-specific workflows. Local instructions usually take precedence over global ones for that specific project in case of a conflict.
+
+This may differ from agent to agent, so refere to the documentation of the specific agent harness ([OpenCode](https://opencode.ai/docs/rules/#precedence), [Antigravity CLI](https://antigravity.google/docs/cli-best-practices#:~:text=Write%20a%20codebase%20rule%20file), [Gemini CLI](https://geminicli.com/docs/cli/gemini-md/), [Claude Code](https://code.claude.com/docs/en/memory#claude-md-files), [Codex](https://developers.openai.com/codex/guides/agents-md)), or just as the agent itself.
+
+## Prompt Layering Architecture
+
+The final prompt sent to the LLM service is a "sandwich" of different instruction layers. Understanding this hierarchy helps you write better prompts and understand agent behavior.
+```{mermaid}
+%%| label: fig-prompt-layers
+%%| fig-cap: "Prompt Layering Architecture: The hierarchy of instruction layers."
+graph TD
+    subgraph Context
+        M[<b>Model System Prompt</b><br/>'You are a helpful assistant...']
+        A[<b>Agent System Prompt</b><br/>Tool definitions + Hierarchy]
+        G[<b>Global Instructions</b><br/>'~/.gemini/GEMINI.md' or '~/.agents.md']
+        L[<b>Local Instructions</b><br/>'./GEMINI.md' or './agents.md']
+        U[<b>User Context / Persona</b><br/>'Act as Hadley Wickham...']
+        H[<b>Conversation History</b><br/>Past messages, tool outputs]
+        P[<b>User Request</b><br/>'Fix this bug']
+    end
+    LLM[LLM Reasoning Engine]
+
+    M --> A
+    A --> G
+    G --> L
+    L --> U
+    U --> H
+    H --> P
+    P --> LLM
+```

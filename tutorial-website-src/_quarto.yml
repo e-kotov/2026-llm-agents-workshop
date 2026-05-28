@@ -41,17 +41,24 @@ book:
     - index.qmd
     - 10-intro-to-agents.qmd
     - 20-setup.qmd
-    - part: "Basics"
+    - 21-VS Code-navigation.qmd
+    - 22-auth-agents.qmd
+    - part: "The Brain"
       chapters:
-        - 30-interaction.qmd
-        - 31-task-1.qmd
-    - part: "Advanced"
+        - 30-core-mechanics.qmd
+        - 31-task-1-prompts.qmd
+    - part: "Capabilities"
       chapters:
-        - 40-security.qmd
-        - 41-task-2.qmd
-        - 50-context-mastery.qmd
-        - 60-environment-skills.qmd
-        - 61-task-3.qmd
+        - 40-capabilities.qmd
+        - 41-task-2-tools.qmd
+    - part: "State Management"
+      chapters:
+        - 50-context-memory.qmd
+        - 51-task-3-context.qmd
+    - part: "Safety"
+      chapters:
+        - 60-security-isolation.qmd
+        - 61-task-4-security.qmd
     - 90-references.qmd
 
   page-footer:
@@ -145,3 +152,7 @@ affiliations:
     city: Barcelona
     country: Spain
     url: https://www.upf.edu/en/web/politiques/home
+
+
+editor:
+  render-on-save: true

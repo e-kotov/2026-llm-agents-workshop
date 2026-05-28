@@ -47,7 +47,7 @@ Free tiers for these LLM services typically **use your prompts and uploaded code
 **Do not use these tools on private, sensitive, or proprietary research data!** Only use public or non-sensitive datasets during the workshop and for general testing.
 :::
 
-### 1. Recommended Accounts to Register
+### Recommended Accounts to Register {#recommended-accounts}
 
 Please sign up for the following services in advance to ensure you have enough free model usage quota during the exercises:
 
@@ -78,12 +78,12 @@ Do **NOT** attempt to authenticate your Google or Anthropic (Claude) accounts di
 
 ---
 
-### 2. Coding Agents We Will Use (and Why)
+### Coding Agents We Will Use (and Why)
 
 The coding agents are already pre-installed and configured inside the workshop's Docker container / Codespaces environment. We will focus on:
 
 *   **Google Antigravity CLI** (and its predecessor **Gemini CLI**)
-    *   *Why:* It provides a free daily quota to test cutting-edge models (like `Gemini 3.5 Flash`, `Gemini 3.1 Pro`, and `Claude 3.5 Sonnet`) directly from your Google account.
+    *   *Why:* It provides a free daily quota to test cutting-edge models (like `Gemini 3.5 Flash`, `Gemini 3.1 Pro`, and `Claude` models) directly from your Google account.
 *   **OpenCode CLI** 
     *   *Why:* A flexible, open-source-friendly agent that can connect to multiple backends. We will use it with free models from **OpenCode Zen**, **OpenRouter**, and **NVIDIA NIM** to show how easy it is to switch between different model providers without vendor lock-in.
 

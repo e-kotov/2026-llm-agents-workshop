@@ -15,7 +15,7 @@ First-time environment setup and container building can take **up to 10 minutes*
 
 ---
 
-## 🛠️ Launching the Environment
+## 🛠️ Launching the Environment {#launching-the-environment}
 
 To launch the Codespaces environment manually from the GitHub interface, follow these steps:
 
@@ -24,7 +24,12 @@ To launch the Codespaces environment manually from the GitHub interface, follow 
 3. Select the **Codespaces** tab.
 4. Click **Create codespace on main** (or click the `...` menu to configure machine size).
 
-![Launch in GitHub Codespaces](media/github-start-codespace.png)
+::: {#fig-codespace-start} 
+![](media/github-start-codespace.png)
+
+Start GitHub Codespaces
+
+:::
 
 ::: {.callout-note}
 ### 🔒 Free & Secure Environment
@@ -32,6 +37,14 @@ To launch the Codespaces environment manually from the GitHub interface, follow 
 * **It is Completely Secure:** The environment runs inside a secure, isolated container (virtual machine) in the cloud. It does not touch your physical computer, install any local files, or run any software on your machine. It belongs to you and it is also mostly safe to enter your account data (e.g. Google account, especialy if secondary or test account, API keys, other accounts for subscription services or services we will use during the workshop) without worrying about security or privacy issues.
 :::
 
+
+::: {#fig-codespace-start-video}
+
+{{< video media/videos/start-codespace.mp4 title='Start a Codespace on GitHub' >}}
+
+Codespace startup process (sped up)
+
+:::
 
 ### 💤 Auto-Pause & Resume
 To save your free hours, the environment automatically pauses after 30 minutes of inactivity. When you restart it, your files, open tabs, and terminal history are fully preserved—just like waking up a laptop from sleep (though you may need to restart any active terminal commands or running applications).
@@ -65,15 +78,10 @@ You can monitor your real-time usage and remaining balance at any time:
 2. Look for the **Codespaces** section under **Usage this month** or try this direct link: [GitHub Codespaces Usage](https://github.com/settings/billing/usage?period=3&group=2&query=product:codespaces).
 :::
 
-### Stopping Your Session Manually
+### Stopping Your Session Manually {#stop-codespace}
 
 When you are done with a session, you can stop the codespace manually to instantly stop consuming usage hours:
 
 ![Stop GitHub Codespace](media/github-stop-devcontainer-codespace.png)
 
 ---
-
-## Next Steps
-
-Now that your environment is ready, let's explore the [Workshop Workspace](40-workspace.qmd).
-

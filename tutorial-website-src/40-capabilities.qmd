@@ -1,0 +1,55 @@
+---
+title: "Capabilities: Tools and Skills"
+---
+
+While the "Brain" (Model) can think and reason, it needs a way to interact with the world to be useful for coding, research or other tasks. These interaction is achieved through **Tools**, usually provided by the agent harness. **Skills** are higher-level bundles of instructions and logic that provide the agent with expertise in a specific domain, they may provide a specific way to do something or also add a custom tool (via shell, Python or any other script.)
+
+## Tools: The Agent's Hands
+
+Tools are discrete functions that the agent can execute to perform actions in your environment. Common tools include:
+
+- **`read_file`**: Looking at the contents of a script or data file.
+
+- **`write_file` / `replace`**: Creating new files or editing existing code.
+
+- **`run_shell_command`**: Executing commands in the terminal (e.g., running an R script, installing a package, or listing files with `ls`, but also moving and deleting files, and virtually anything else you can do in the terminal  - which is essentialy anything).
+
+- **`web_search`**: Accessing the internet to find documentation or troubleshooting tips.
+
+The agent doesn't just "run" these tools; it *reasons* about when to use them. For example, if you ask it to fix a bug, it will first use `read_file` to see the code, then `run_shell_command` to run a test that will produce output with the error message, it will think or search online or in the documenation how to fix and finally `replace` to attempt the fix. Then it is likely to run the test again to see if the fix worked, and if not it will repeat the process until the bug is fixed or it runs out of ideas or model quota, or, sometimes, model context window.
+
+## Skills: Specialized Capabilities
+
+`Skills` are higher-level bundles of instructions and logic that provide the agent with expertise in a specific domain. While `tools` are the discrete actions an agent can perform, `skills` represent the programmed logic and best practices the agent follows to complete complex tasks potnetially combining many stanard tools or even custom scripts. This is very useful for cases when there is a very particular way something needs to be done, and they way you need the agent to do it is rather different how a general-purpose model would do it by following very frequent patterns in its training data.
+
+Technically, `Skills` are just plain text files with metadata and textual instructions. Optionally there can also be scripts to be run during applicaiton of the skill.
+
+For R language users, `Posit` (the maker of `RStudio`) has developed a set of skills and published them on GitHub at [posit/skills](https://github.com/posit-dev/skills). These skills are designed to help the agent understand how to perform common R programming tasks in a way that follows best practices and modern conventions. Follow the link and view any of the skills to see how they are structured and what kind of instructions they provide to the agent.
+
+`Skills` can be global (stored in your user profile in a special folder) or local (stored in the current project folder). The agent automatically loads all global skills for all projects, and all project-specific skills when you are starting the agent in that project's directory.
+
+::: {.callout-tip}
+**Activating Skills:** You can explicitly ask an agent to activate a skill (e.g., *"Activate the R data analysis skill"*) to ensure it uses the most modern and idiomatic patterns for that task.
+:::
+
+`Skills` should be concise, as they are loaded into the model's context window. To save space in the context window, the agent only loads short metadata descriptions of each skill, and only loads the full instructions when the agent decides it needs to use that skill. This allows you to have a large library of skills without overwhelming the model's context.
+
+::: {.callout-note}
+Note however, that having hundreds of skills might be counterproductive, as the agent might spend too much time evaluating which skills to load and use for a given task. It's best to have a curated set of skills that are relevant to your typical workflows or use project specific skills for very particular tasks that require a specific way of doing things.
+:::
+
+::: {.callout-tip}
+Anthiropic (the maker of Claude) has initially introduced the concept of `Skills` and they have a special [**Skill Creator** `skill`](https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md)
+:::
+
+## The Execution Loop
+
+When you give a complex task to an agent, it enters an iterative loop:
+1. **Plan**: The agent thinks about the steps needed.
+2. **Act**: It calls one or more tools (e.g., reads a file).
+3. **Validate**: It checks the result of the tool call (e.g., did the test pass?).
+4. **Repeat**: It continues until the goal is achieved.
+
+---
+
+In the next exercise, we will put these tools and skills to work by analyzing a real dataset and fixing code.

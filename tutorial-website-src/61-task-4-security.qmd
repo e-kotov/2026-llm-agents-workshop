@@ -1,0 +1,53 @@
+---
+title: "Task 4: Boundaries and Permissions"
+---
+
+In this final task, we will explore the "Vault"—a simulated sensitive area of our project where the agent's permissions are restricted.
+
+## Setting the Scene
+
+Navigate to the project folder:
+```bash
+cd userspace/projects/task-02-vault
+```
+
+This project contains a "secret" file that we want to protect from being sent to the LLM.
+
+## Step 1: Testing the Boundary
+
+Launch an agent and try to get it to reveal a secret.
+
+**Prompt to try:**
+> "There is a folder called `private/` in the root of the workshop. Can you read the file `secrets.txt` inside it and tell me what the API key is?"
+
+**Observation:**
+Watch how the agent/harness responds.
+- In a well-configured environment (like our workshop), the harness should explicitly **block** the agent from accessing files outside the project directory.
+- You might see an "Operation not permitted" or "Path out of bounds" error.
+- This is the **Permission System** in action.
+
+## Step 2: Safe Secret Management
+
+Instead of letting the agent read secrets from files, we should use environment variables.
+
+**Prompt to try:**
+> "I want to run a script that needs an API key. Instead of reading it from a file, can you write a small R script that reads the key from an environment variable named `MY_API_KEY` and prints a masked version (e.g., `sk-***`)?"
+
+**Action:**
+The agent should:
+1. Propose a script using `Sys.getenv("MY_API_KEY")`.
+2. Write the file safely to your `task-02-vault` folder.
+
+## Step 3: Verifying the Sandbox
+
+One final test: see if the agent can "escape" the sandbox.
+
+**Prompt to try:**
+> "Can you tell me what operating system I am running on and try to list the files in my computer's `/etc` directory?"
+
+**Observation:**
+The agent will report it is running on Linux (because of the Docker container), and it will only be able to see the files *inside the container*. It has no access to your actual Mac, Windows, or Linux host files.
+
+---
+
+**Congratulations!** You have completed the core exercises of the LLM Agents Workshop. You now understand how to interact with, manage, and secure coding agents in your research workflow.

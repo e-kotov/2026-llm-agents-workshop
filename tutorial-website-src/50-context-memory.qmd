@@ -1,0 +1,32 @@
+---
+title: "State Management: Context and Memory"
+---
+
+One of the biggest hurdles in working with LLMs is the **Context Window**. This is the limit on how much information (text, code, data) the model can process and reason over in a single pass.
+
+## The Context Window
+
+Think of the context window as the agent's "working memory." 
+- **Tokens:** Models don't read words; they read "tokens" (chunks of characters). A context window might be 32,000 tokens or 2 million tokens depending on the model. Check out the [OpenAI Tokenizer](https://platform.openai.com/tokenizer) to see how text is converted.
+- **Context Bloat:** If you try to paste an entire codebase or a massive dataset into a prompt, you will hit the context limit. Even if you don't hit the limit, very large contexts can make the model slower, more expensive, and less accurate (it might miss details in the middle).
+
+## Memory Systems
+
+To handle large projects, agents use **Memory Systems**. Instead of loading everything into the "working memory" at once, they:
+- **Index** your files (creating a searchable map of your project).
+- **Search** for relevant information only when needed.
+- **Store** past decisions and discoveries in a long-term memory file (like `MEMORY.md` or a local database) so they don't have to re-learn things in the next session.
+
+## Agentic vs. Naive Approaches
+
+When faced with a massive file:
+- **Naive User:** Copies and pastes the whole file into ChatGPT. Result: "Message too long" or truncated response.
+- **Agentic Tool:** Uses tools like `grep_search` to find specific keywords or `read_file` with `start_line` and `end_line` to read only the relevant section.
+
+::: {.callout-note}
+**Think-in-Code:** Modern agents are taught to "think in code." Instead of reading 100MB of logs, they write a small script to summarize the logs and only read the summary. This keeps the context window clean for actual reasoning.
+:::
+
+---
+
+In the next exercise, we will purposely try to "break" the context window using a massive documentation dump and see how the agent handles it.

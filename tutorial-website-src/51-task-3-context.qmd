@@ -1,0 +1,53 @@
+---
+title: "Task 3: The Context Limit Challenge"
+---
+
+In this task, we will simulate a real-world scenario where you have "too much information" for the model to handle at once. We'll use the `rdocdump` tool to create a massive text file from an R package.
+
+## Step 1: Generating the "Mega-File"
+
+Open your terminal and run the following command to dump the entire documentation of the `DemoTools` package into a single text file:
+
+```bash
+# This uses rdocdump to pull the full text of the package from GitHub
+# Note: You might need to install it first if not in the container
+# remotes::install_github("e-kotov/rdocdump")
+Rscript -e 'rdocdump::rdocdump("e-kotov/DemoTools", out = "demotools_dump.txt")'
+```
+
+## Step 2: The Naive Reality Check
+
+Now that you have `demotools_dump.txt`, try the "Naive" approach:
+
+1. Open the file in VS Code and copy **all** the text (it will be thousands of lines).
+2. Go to the [OpenAI Tokenizer](https://platform.openai.com/tokenizer) and paste it. How many tokens is it?
+3. Try pasting it into [Google AI Studio](https://aistudio.google.com/) or ChatGPT. 
+   - Does it fit? 
+   - Is it hard to scroll?
+   - Imagine doing this for every question you have!
+
+## Step 3: The Agentic Solution
+
+Now, let's see how an agent handles this without blowing up the context window.
+
+Launch the Gemini CLI or OpenCode agent and give it a broad task.
+
+**Prompt to try:**
+> "I have a file called `demotools_dump.txt`. Read it and explain how the `DemoTools` package handles life table calculations. Provide a code example based on what you find."
+
+**Observation:**
+The agent **cannot** read the entire file at once because it has a safety limit (usually around 2000 lines). Watch how it pivots:
+- It might use `grep_search` to find "life table".
+- It might read the file in small chunks using `start_line` and `end_line`.
+- It might use a "Context Mode" tool to index the file in a sandbox and only return the relevant sections.
+
+## Why this matters
+
+By using an agent, you avoided:
+1. **Wasting money/tokens** on thousands of lines of irrelevant documentation.
+2. **Confusing the model** with too much noise.
+3. **Manual effort** of hunting through a giant text file.
+
+---
+
+**Tip:** If the agent gets stuck, help it! You can say: *"Use `grep_search` to find the life table functions in the dump file."*

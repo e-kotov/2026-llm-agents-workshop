@@ -1,0 +1,32 @@
+---
+title: "Safety and Isolation: Sandboxes and Permissions"
+---
+
+Coding agents are incredibly powerful—they can delete files, run commands, and access the internet. This power comes with significant security risks. To mitigate these risks, agents operate within **Sandboxes** and under strict **Permission** systems.
+
+## The Sandbox (Containerization)
+
+A **Sandbox** is an isolated environment where the agent can work without affecting your main computer. 
+- **Docker/Containers:** In this workshop, your entire environment is inside a Docker container. If the agent makes a mistake or runs a malicious command, it only affects the container, not your laptop.
+- **Codespaces:** GitHub Codespaces provides a cloud-based sandbox that is completely isolated from your personal data and local machine.
+
+## Permission Systems
+
+Even inside a sandbox, we don't want the agent to have "God Mode." Permission systems act as a gatekeeper for sensitive actions.
+
+- **Human-in-the-Loop:** For high-risk actions (like deleting a directory or pushing to GitHub), the agent should ask for your permission first.
+- **Rule-Based Blocking:** Harnesses can be configured to automatically block access to certain folders or commands. For example, an agent might be allowed to edit your code but forbidden from reading your `.ssh` keys or `.env` files.
+
+## Data Leakage and Privacy
+
+A major security concern with LLM agents is **Data Leakage**. When an agent reads a file to understand a bug, it sends the content of that file to the model provider (e.g., OpenAI, Google, Anthropic).
+- **Secrets:** Never allow an agent to read files containing API keys, passwords, or sensitive research data unless you trust the model provider with that information.
+- **Environment Variables:** Use `Sys.getenv()` in R or `os.environ` in Python to handle secrets, and ensure your `.gitignore` prevents these from being committed.
+
+::: {.callout-warning}
+**Always Review:** Coding agents are "stochastic parrots"—they can be tricked into doing unsafe things (Prompt Injection). Always review the "Plan" the agent proposes before it executes destructive tools.
+:::
+
+---
+
+In our final exercise, we will test the agent's boundaries by asking it to access a "protected" part of our workspace.
