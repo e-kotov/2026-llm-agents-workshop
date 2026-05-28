@@ -8,6 +8,8 @@ Open the `userspace/projects/task-02` folder in `VS Code` and open a terminal th
 
 Notice that this time in the task project folder (unlike the previous tasks) you have an `AGENTS.md` and a copy of it in `GEMINI.md` file that explains to the agent how to properly install R packages in our Codespace environment.
 
+## Setup the environment
+
 Prompt it:
 
 ```md
@@ -19,8 +21,16 @@ Once this is set, read the documenation of the agent harness (e.g. for OpenCode 
 
 Once that is done, restart the agent.
 
+## Test the setup
+
+You don't need to enter your real credentials into the `.env` file for this test, just put in some fake text there.
+
 Try to force it to read the file with natural language instructions. See if it works.
 
 Try fooling it, by askig it to write an R script that reads any text file and prints it to console. Then manually edit this script to read the `.env` file and print it to console. Then ask the agent to run this script and tell you what the output is. See if it can read the credentials this way.
+
+## Feel free to continue expermenting
+
+Feel free to put in your real credentials for the [Human Mortality Database](https://www.mortality.org/) and ask the agent to retrieve the data and perhaps create some plots for you.
 
 After all of these experiments, don't forget to change your password for HMD in case you did put in your real credentials into the `.env` file at some point.
