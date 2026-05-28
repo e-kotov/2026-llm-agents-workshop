@@ -116,6 +116,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     chown -R ${NB_USER} /opt/share/code-server /home/${NB_USER}/.local /home/${NB_USER}/project && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Add a build argument to invalidate the cache for CLI tool installations
+ARG CACHE_BUSTER=1
+
 # 2. Global CLI tools installation (Root)
 RUN curl -LsSf https://astral.sh/uv/install.sh | UV_INSTALL_DIR=/home/${NB_USER}/.local/bin sh && \
     curl -fsSL https://claude.ai/install.sh | CI=1 bash && \

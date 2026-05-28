@@ -157,6 +157,9 @@ RUN echo "alias nca-nvidia='NCA_PROVIDER=openai OPENAI_BASE_URL=\${NCA_PROVIDER_
 # Ensure all tools are in the PATH for the user session
 ENV PATH="/home/$USERNAME/.local/bin:/home/$USERNAME/miniforge3/bin:/home/$USERNAME/.pixi/bin:/home/$USERNAME/.cargo/bin:$NVM_DIR/versions/node/default/bin:${PATH}"
 
+# Add a build argument to invalidate the cache for CLI tool installations
+ARG CACHE_BUSTER=1
+
 # Install all CLI tools in a single layer to minimize metadata and clean caches
 RUN mkdir -p /home/$USERNAME/.config/fish && \
     curl -fsSL -o /tmp/miniforge.sh https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh && \
