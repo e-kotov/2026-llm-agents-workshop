@@ -8,7 +8,7 @@
 
 <meta name="description" content="Beyond the Chatbox: LLM Coding and Research Agents for Academics">
 
-<title>9&nbsp; Exercise 3: The Pro Resident – Beyond the Chatbox</title>
+<title>10&nbsp; Task 2: Working with Tools and Skills – Beyond the Chatbox</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -34,8 +69,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./90-references.html" rel="next">
-<link href="./60-environment-skills.html" rel="prev">
+<link href="./50-context-memory.html" rel="next">
+<link href="./40-capabilities.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -47,9 +82,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-952c7fb2ee4e37be4cc15ce4892e6b5e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6ee86db8dbfe2e14ef29202bcbbbfcda.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-952c7fb2ee4e37be4cc15ce4892e6b5e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-41f1360bca6d68a7c894536bc8e0bf04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-00644fe898d4f798301a7326409cdb3f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-41f1360bca6d68a7c894536bc8e0bf04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -301,7 +336,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./40-security.html">Advanced</a></li><li class="breadcrumb-item"><a href="./61-task-3.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Exercise 3: The Pro Resident</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./40-capabilities.html">Capabilities</a></li><li class="breadcrumb-item"><a href="./41-task-2-tools.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Task 2: Working with Tools and Skills</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -339,10 +374,22 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Environment Setup</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-vscode-navigation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Navigating the Workshop Environment</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22-auth-agents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Accessing models and authenticating agents</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Basics</span></a>
+ <span class="menu-text">The Brain</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -350,14 +397,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./30-interaction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Agent Interaction</span></span></a>
+  <a href="./30-core-mechanics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Core Brain: Models and Prompts</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./31-task-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exercise 1: Hello, Agent</span></span></a>
+  <a href="./31-task-1-prompts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Task 1: Exploring System Prompts</span></span></a>
   </div>
 </li>
       </ul>
@@ -365,7 +412,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Advanced</span></a>
+ <span class="menu-text">Safety</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -373,32 +420,60 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./40-security.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Security &amp; Secrets</span></span></a>
+  <a href="./35-security-isolation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Safety and Isolation: Sandboxes and Permissions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./41-task-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exercise 2: The Vault</span></span></a>
+  <a href="./36-task-security.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Task 2: Boundaries and Permissions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Capabilities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./40-capabilities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Capabilities: Tools and Skills</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./50-context-mastery.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Workshop Workspace</span></span></a>
+  <a href="./41-task-2-tools.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Task 2: Working with Tools and Skills</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">State Management</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./50-context-memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">State Management: Context and Memory</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./60-environment-skills.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Environments &amp; Skills</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./61-task-3.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Exercise 3: The Pro Resident</span></span></a>
+  <a href="./51-task-3-context.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Task 3: The Context Limit Challenge</span></span></a>
   </div>
 </li>
       </ul>
@@ -419,18 +494,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-goal" id="toc-the-goal" class="nav-link active" data-scroll-target="#the-goal"><span class="header-section-number">9.0.1</span> The Goal</a></li>
-  <li><a href="#steps" id="toc-steps" class="nav-link" data-scroll-target="#steps"><span class="header-section-number">9.0.2</span> Steps</a></li>
+  <li><a href="#setting-the-scene" id="toc-setting-the-scene" class="nav-link active" data-scroll-target="#setting-the-scene"><span class="header-section-number">10.1</span> Setting the Scene</a></li>
+  <li><a href="#step-1-exploratory-analysis" id="toc-step-1-exploratory-analysis" class="nav-link" data-scroll-target="#step-1-exploratory-analysis"><span class="header-section-number">10.2</span> Step 1: Exploratory Analysis</a></li>
+  <li><a href="#step-2-activating-a-skill" id="toc-step-2-activating-a-skill" class="nav-link" data-scroll-target="#step-2-activating-a-skill"><span class="header-section-number">10.3</span> Step 2: Activating a Skill</a></li>
+  <li><a href="#step-3-fixing-a-bug" id="toc-step-3-fixing-a-bug" class="nav-link" data-scroll-target="#step-3-fixing-a-bug"><span class="header-section-number">10.4</span> Step 3: Fixing a Bug</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/61-task-3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/41-task-2-tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./40-security.html">Advanced</a></li><li class="breadcrumb-item"><a href="./61-task-3.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Exercise 3: The Pro Resident</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./40-capabilities.html">Capabilities</a></li><li class="breadcrumb-item"><a href="./41-task-2-tools.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Task 2: Working with Tools and Skills</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Exercise 3: The Pro Resident</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Task 2: Working with Tools and Skills</span></h1>
 </div>
 
 
@@ -467,35 +544,32 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Let’s handle complex dependencies and teach the agent a permanent “Skill.”</p>
-<p><strong>Location:</strong> <code>userspace/projects/task-03-demotools/</code></p>
-<section id="the-goal" class="level3" data-number="9.0.1">
-<h3 data-number="9.0.1" class="anchored" data-anchor-id="the-goal"><span class="header-section-number">9.0.1</span> The Goal</h3>
-<p>Install the <code>DemoTools</code> R package successfully in a Linux container without compiling from source, and create a reusable agent “Skill” for this process.</p>
+<p>In this task, you will use the Gemini CLI agent to explore a project, run code, and apply your first automated fix. We will use the <code>task-03-demotools</code> project.</p>
+<section id="setting-the-scene" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="setting-the-scene"><span class="header-section-number">10.1</span> Setting the Scene</h2>
+<p>Navigate to the project folder in your terminal:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> userspace/projects/task-03-demotools</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This folder contains a small R analysis and some sample data.</p>
 </section>
-<section id="steps" class="level3" data-number="9.0.2">
-<h3 data-number="9.0.2" class="anchored" data-anchor-id="steps"><span class="header-section-number">9.0.2</span> Steps</h3>
-<ol type="1">
-<li>Navigate to <code>userspace/projects/task-03-demotools/</code>.</li>
-<li>Ask the agent to run the <code>analysis.R</code> script. It will fail.</li>
-<li>Prompt the agent to install <code>DemoTools</code>.</li>
-<li><strong>Intervene:</strong> If the agent tries to compile from source (it takes 30+ minutes), stop it. Guide it to find and install the <em>binary</em> version for Linux (e.g., via <code>https://timriffe.r-universe.dev</code>).</li>
-<li><strong>Create a Skill:</strong> Once the script runs, tell the agent: <em>“You’ve learned how to install binary packages on this system. Document this as a ‘Skill’ so you always prefer binaries over source compilation in this workspace.”</em></li>
-<li><strong>Bonus:</strong> Use the <code>HMD_USER</code> and <code>HMD_PASS</code> credentials (via environment variables) to fetch real data from the Human Mortality Database.</li>
-</ol>
-<div class="callout callout-style-simple callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Thinking in Code
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This exercise demonstrates why we sometimes need to “override” the agent’s default behavior with specific system knowledge.</p>
-</div>
-</div>
+<section id="step-1-exploratory-analysis" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="step-1-exploratory-analysis"><span class="header-section-number">10.2</span> Step 1: Exploratory Analysis</h2>
+<p>Launch the agent and ask it to describe the project.</p>
+<p><strong>Prompt to try:</strong> &gt; “Explore this directory. What data is here, and what does the <code>analysis.R</code> script do?”</p>
+<p><strong>Observation:</strong> Watch the agent use <code>ls</code> and <code>read_file</code> to build its understanding. It should identify the CSV file and the R script’s purpose.</p>
+</section>
+<section id="step-2-activating-a-skill" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="step-2-activating-a-skill"><span class="header-section-number">10.3</span> Step 2: Activating a Skill</h2>
+<p>Let’s ensure the agent is in the right “mindset” for R data analysis.</p>
+<p><strong>Prompt to try:</strong> &gt; “Activate the <code>r-data-analysis</code> skill and run the <code>analysis.R</code> script. Does it produce any output or errors?”</p>
+<p><strong>Observation:</strong> The agent will likely use <code>run_shell_command</code> to execute the R script. It might encounter an error if a package is missing or if there’s a bug in the code.</p>
+</section>
+<section id="step-3-fixing-a-bug" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="step-3-fixing-a-bug"><span class="header-section-number">10.4</span> Step 3: Fixing a Bug</h2>
+<p>If the script failed (or even if it succeeded), let’s ask the agent to improve it.</p>
+<p><strong>Prompt to try:</strong> &gt; “The script needs to calculate the growth rate of the population by region. Can you modify <code>analysis.R</code> to add this calculation and save the result to a new file called <code>growth_rates.csv</code>?”</p>
+<p><strong>Action:</strong> Watch the agent: 1. Read the current script. 2. Formulate a plan to add the <code>dplyr</code> logic. 3. Use the <code>replace</code> or <code>write_file</code> tool to update the code. 4. Run the script again to verify the output exists.</p>
+<hr>
+<p><strong>Tip:</strong> You can check the new <code>growth_rates.csv</code> file in your VS Code file pane to verify the agent’s work!</p>
 
 
 </section>
@@ -923,13 +997,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./60-environment-skills.html" class="pagination-link" aria-label="Environments &amp; Skills">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Environments &amp; Skills</span></span>
+      <a href="./40-capabilities.html" class="pagination-link" aria-label="Capabilities: Tools and Skills">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Capabilities: Tools and Skills</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./90-references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./50-context-memory.html" class="pagination-link" aria-label="State Management: Context and Memory">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">State Management: Context and Memory</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -947,7 +1021,7 @@ ul.task-list li input[type="checkbox"] {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/61-task-3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/41-task-2-tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

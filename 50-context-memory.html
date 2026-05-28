@@ -8,7 +8,7 @@
 
 <meta name="description" content="Beyond the Chatbox: LLM Coding and Research Agents for Academics">
 
-<title>7&nbsp; The Workshop Workspace – Beyond the Chatbox</title>
+<title>11&nbsp; State Management: Context and Memory – Beyond the Chatbox</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,8 +34,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./60-environment-skills.html" rel="next">
-<link href="./41-task-2.html" rel="prev">
+<link href="./51-task-3-context.html" rel="next">
+<link href="./41-task-2-tools.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -47,9 +47,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-952c7fb2ee4e37be4cc15ce4892e6b5e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6ee86db8dbfe2e14ef29202bcbbbfcda.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-952c7fb2ee4e37be4cc15ce4892e6b5e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-41f1360bca6d68a7c894536bc8e0bf04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-00644fe898d4f798301a7326409cdb3f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-41f1360bca6d68a7c894536bc8e0bf04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -301,7 +301,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./40-security.html">Advanced</a></li><li class="breadcrumb-item"><a href="./50-context-mastery.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Workshop Workspace</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./50-context-memory.html">State Management</a></li><li class="breadcrumb-item"><a href="./50-context-memory.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">State Management: Context and Memory</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -339,10 +339,22 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Environment Setup</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-vscode-navigation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Navigating the Workshop Environment</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22-auth-agents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Accessing models and authenticating agents</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Basics</span></a>
+ <span class="menu-text">The Brain</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -350,14 +362,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./30-interaction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Agent Interaction</span></span></a>
+  <a href="./30-core-mechanics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Core Brain: Models and Prompts</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./31-task-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exercise 1: Hello, Agent</span></span></a>
+  <a href="./31-task-1-prompts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Task 1: Exploring System Prompts</span></span></a>
   </div>
 </li>
       </ul>
@@ -365,7 +377,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Advanced</span></a>
+ <span class="menu-text">Safety</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -373,32 +385,60 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./40-security.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Security &amp; Secrets</span></span></a>
+  <a href="./35-security-isolation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Safety and Isolation: Sandboxes and Permissions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./41-task-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exercise 2: The Vault</span></span></a>
+  <a href="./36-task-security.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Task 2: Boundaries and Permissions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Capabilities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./40-capabilities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Capabilities: Tools and Skills</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./50-context-mastery.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Workshop Workspace</span></span></a>
+  <a href="./41-task-2-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Task 2: Working with Tools and Skills</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">State Management</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./50-context-memory.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">State Management: Context and Memory</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./60-environment-skills.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Environments &amp; Skills</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./61-task-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Exercise 3: The Pro Resident</span></span></a>
+  <a href="./51-task-3-context.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Task 3: The Context Limit Challenge</span></span></a>
   </div>
 </li>
       </ul>
@@ -419,19 +459,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#workspace-structure" id="toc-workspace-structure" class="nav-link active" data-scroll-target="#workspace-structure"><span class="header-section-number">7.1</span> Workspace Structure</a></li>
-  <li><a href="#the-sandbox-boundary" id="toc-the-sandbox-boundary" class="nav-link" data-scroll-target="#the-sandbox-boundary"><span class="header-section-number">7.2</span> The Sandbox Boundary</a></li>
-  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps"><span class="header-section-number">7.3</span> Next Steps</a></li>
+  <li><a href="#the-context-window" id="toc-the-context-window" class="nav-link active" data-scroll-target="#the-context-window"><span class="header-section-number">11.1</span> The Context Window</a></li>
+  <li><a href="#memory-systems" id="toc-memory-systems" class="nav-link" data-scroll-target="#memory-systems"><span class="header-section-number">11.2</span> Memory Systems</a></li>
+  <li><a href="#agentic-vs.-naive-approaches" id="toc-agentic-vs.-naive-approaches" class="nav-link" data-scroll-target="#agentic-vs.-naive-approaches"><span class="header-section-number">11.3</span> Agentic vs.&nbsp;Naive Approaches</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/50-context-mastery.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/50-context-memory.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./40-security.html">Advanced</a></li><li class="breadcrumb-item"><a href="./50-context-mastery.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Workshop Workspace</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./50-context-memory.html">State Management</a></li><li class="breadcrumb-item"><a href="./50-context-memory.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">State Management: Context and Memory</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Workshop Workspace</span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">State Management: Context and Memory</span></h1>
 </div>
 
 
@@ -468,40 +508,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Once your environment is ready, you will find a dedicated space for your work. Understanding the structure of this workspace is crucial for maintaining security and reproducibility.</p>
-<section id="workspace-structure" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="workspace-structure"><span class="header-section-number">7.1</span> Workspace Structure</h2>
-<p>The root directory contains several key folders:</p>
-<ul>
-<li><code>userspace/</code>: This is your personal sandbox.
-<ul>
-<li><code>userspace/examples/</code>: contains pre-built examples that we will explore together.</li>
-<li><code>userspace/projects/</code>: This is where you can start your own research projects or experiments.</li>
-</ul></li>
-<li><code>data/</code>: Contains shared datasets for the workshop exercises.</li>
-<li><code>tutorial-website-src/</code>: The source code for this website (if you want to see how it’s built!).</li>
-</ul>
+<p>One of the biggest hurdles in working with LLMs is the <strong>Context Window</strong>. This is the limit on how much information (text, code, data) the model can process and reason over in a single pass.</p>
+<section id="the-context-window" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="the-context-window"><span class="header-section-number">11.1</span> The Context Window</h2>
+<p>Think of the context window as the agent’s “working memory.” - <strong>Tokens:</strong> Models don’t read words; they read “tokens” (chunks of characters). A context window might be 32,000 tokens or 2 million tokens depending on the model. Check out the <a href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a> to see how text is converted. - <strong>Context Bloat:</strong> If you try to paste an entire codebase or a massive dataset into a prompt, you will hit the context limit. Even if you don’t hit the limit, very large contexts can make the model slower, more expensive, and less accurate (it might miss details in the middle).</p>
 </section>
-<section id="the-sandbox-boundary" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="the-sandbox-boundary"><span class="header-section-number">7.2</span> The Sandbox Boundary</h2>
-<p>As we discussed in <a href="20-security-sandboxing.qmd">Security &amp; Sandboxing</a>, the <code>userspace/</code> directory is designed to be your primary work area.</p>
-<div class="callout callout-style-simple callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
+<section id="memory-systems" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="memory-systems"><span class="header-section-number">11.2</span> Memory Systems</h2>
+<p>To handle large projects, agents use <strong>Memory Systems</strong>. Instead of loading everything into the “working memory” at once, they: - <strong>Index</strong> your files (creating a searchable map of your project). - <strong>Search</strong> for relevant information only when needed. - <strong>Store</strong> past decisions and discoveries in a long-term memory file (like <code>MEMORY.md</code> or a local database) so they don’t have to re-learn things in the next session.</p>
+</section>
+<section id="agentic-vs.-naive-approaches" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="agentic-vs.-naive-approaches"><span class="header-section-number">11.3</span> Agentic vs.&nbsp;Naive Approaches</h2>
+<p>When faced with a massive file: - <strong>Naive User:</strong> Copies and pastes the whole file into ChatGPT. Result: “Message too long” or truncated response. - <strong>Agentic Tool:</strong> Uses tools like <code>grep_search</code> to find specific keywords or <code>read_file</code> with <code>start_line</code> and <code>end_line</code> to read only the relevant section.</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Best Practice
+<div class="callout-body-container">
+<p><strong>Think-in-Code:</strong> Modern agents are taught to “think in code.” Instead of reading 100MB of logs, they write a small script to summarize the logs and only read the summary. This keeps the context window clean for actual reasoning.</p>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>When instructing an agent to create or modify files, always specify a path within <code>userspace/projects/</code>. This keeps your experimental code isolated from the core workshop materials.</p>
 </div>
-</div>
-</section>
-<section id="next-steps" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="next-steps"><span class="header-section-number">7.3</span> Next Steps</h2>
-<p>Now that you understand where to work, let’s learn how to <a href="50-agent-interactions.qmd">Interact with the Agents</a>.</p>
+<hr>
+<p>In the next exercise, we will purposely try to “break” the context window using a massive documentation dump and see how the agent handles it.</p>
 
 
 </section>
@@ -929,13 +959,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./41-task-2.html" class="pagination-link" aria-label="Exercise 2: The Vault">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exercise 2: The Vault</span></span>
+      <a href="./41-task-2-tools.html" class="pagination-link" aria-label="Task 2: Working with Tools and Skills">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Task 2: Working with Tools and Skills</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./60-environment-skills.html" class="pagination-link" aria-label="Environments &amp; Skills">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Environments &amp; Skills</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./51-task-3-context.html" class="pagination-link" aria-label="Task 3: The Context Limit Challenge">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Task 3: The Context Limit Challenge</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -953,7 +983,7 @@ ul.task-list li input[type="checkbox"] {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/50-context-mastery.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/50-context-memory.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

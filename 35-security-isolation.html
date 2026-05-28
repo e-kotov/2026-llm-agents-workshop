@@ -8,7 +8,7 @@
 
 <meta name="description" content="Beyond the Chatbox: LLM Coding and Research Agents for Academics">
 
-<title>2&nbsp; Environment Setup – Beyond the Chatbox</title>
+<title>7&nbsp; Safety and Isolation: Sandboxes and Permissions – Beyond the Chatbox</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -34,8 +69,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./21-vscode-navigation.html" rel="next">
-<link href="./10-intro-to-agents.html" rel="prev">
+<link href="./36-task-security.html" rel="next">
+<link href="./31-task-1-prompts.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -50,11 +85,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-41f1360bca6d68a7c894536bc8e0bf04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-00644fe898d4f798301a7326409cdb3f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-41f1360bca6d68a7c894536bc8e0bf04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
-<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -306,7 +336,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./20-setup.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Environment Setup</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./35-security-isolation.html">Safety</a></li><li class="breadcrumb-item"><a href="./35-security-isolation.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Safety and Isolation: Sandboxes and Permissions</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -340,7 +370,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./20-setup.html" class="sidebar-item-text sidebar-link active">
+  <a href="./20-setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Environment Setup</span></span></a>
   </div>
 </li>
@@ -390,7 +420,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./35-security-isolation.html" class="sidebar-item-text sidebar-link">
+  <a href="./35-security-isolation.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Safety and Isolation: Sandboxes and Permissions</span></span></a>
   </div>
 </li>
@@ -464,26 +494,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#launching-the-environment" id="toc-launching-the-environment" class="nav-link active" data-scroll-target="#launching-the-environment"><span class="header-section-number">2.1</span> 🛠️ Launching the Environment</a>
-  <ul class="collapse">
-  <li><a href="#auto-pause-resume" id="toc-auto-pause-resume" class="nav-link" data-scroll-target="#auto-pause-resume"><span class="header-section-number">2.1.1</span> 💤 Auto-Pause &amp; Resume</a></li>
-  </ul></li>
-  <li><a href="#managing-your-session-quotas" id="toc-managing-your-session-quotas" class="nav-link" data-scroll-target="#managing-your-session-quotas"><span class="header-section-number">2.2</span> 📊 Managing Your Session &amp; Quotas</a>
-  <ul class="collapse">
-  <li><a href="#monthly-free-quotas-2026" id="toc-monthly-free-quotas-2026" class="nav-link" data-scroll-target="#monthly-free-quotas-2026"><span class="header-section-number">2.2.1</span> Monthly Free Quotas (2026)</a></li>
-  <li><a href="#checking-remaining-quota" id="toc-checking-remaining-quota" class="nav-link" data-scroll-target="#checking-remaining-quota"><span class="header-section-number">2.2.2</span> Checking Remaining Quota</a></li>
-  <li><a href="#stop-codespace" id="toc-stop-codespace" class="nav-link" data-scroll-target="#stop-codespace"><span class="header-section-number">2.2.3</span> Stopping Your Session Manually</a></li>
-  </ul></li>
+  <li><a href="#sanboxing-and-containerization" id="toc-sanboxing-and-containerization" class="nav-link active" data-scroll-target="#sanboxing-and-containerization"><span class="header-section-number">7.1</span> Sanboxing and Containerization</a></li>
+  <li><a href="#ignore-files" id="toc-ignore-files" class="nav-link" data-scroll-target="#ignore-files"><span class="header-section-number">7.2</span> Ignore files</a></li>
+  <li><a href="#permission-systems" id="toc-permission-systems" class="nav-link" data-scroll-target="#permission-systems"><span class="header-section-number">7.3</span> Permission Systems</a></li>
+  <li><a href="#bottom-line" id="toc-bottom-line" class="nav-link" data-scroll-target="#bottom-line"><span class="header-section-number">7.4</span> Bottom line</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/20-setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/35-security-isolation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./35-security-isolation.html">Safety</a></li><li class="breadcrumb-item"><a href="./35-security-isolation.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Safety and Isolation: Sandboxes and Permissions</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Environment Setup</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Safety and Isolation: Sandboxes and Permissions</span></h1>
 </div>
 
 
@@ -520,150 +544,42 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>To ensure a consistent, secure, and hassle-free experience, we will use a pre-configured cloud-based development environment. We will use <strong>GitHub Codespaces</strong>.</p>
-<div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>⏳ Start the Setup Early and Focus on the Presentations!
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>First-time environment setup and container building can take <strong>up to 10 minutes</strong> to compile and prepare.</p>
-<p><strong>We highly recommend launching the codespace right at the beginning of the workshop.</strong> While the setup runs automatically in the background, you can continue to fully focus on the presentations, live demonstrations, and slides shown by the tutor.</p>
-</div>
-</div>
-<hr>
-<section id="launching-the-environment" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="launching-the-environment"><span class="header-section-number">2.1</span> 🛠️ Launching the Environment</h2>
-<p>To launch the Codespaces environment manually from the GitHub interface, follow these steps:</p>
-<ol type="1">
-<li>Navigate to the <a href="https://github.com/e-kotov/2026-llm-agents-workshop">workshop repository</a>.</li>
-<li>Click the green <strong>Code</strong> button in the top right.</li>
-<li>Select the <strong>Codespaces</strong> tab.</li>
-<li>Click <strong>Create codespace on main</strong> (or click the <code>...</code> menu to configure machine size).</li>
-</ol>
-<div id="fig-codespace-start" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-codespace-start-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="media/github-start-codespace.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;2.1: Start GitHub Codespaces"><img src="media/github-start-codespace.png" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-codespace-start-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.1: Start GitHub Codespaces
-</figcaption>
-</figure>
-</div>
-<div class="callout callout-style-simple callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>🔒 Free &amp; Secure Environment
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<p>Coding agents are incredibly powerful—they can delete files, run commands, and access the internet. This power comes with significant security risks. To mitigate these risks, agents operate within <strong>Sandboxes</strong> and under strict <strong>Permission</strong> systems.</p>
+<section id="sanboxing-and-containerization" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="sanboxing-and-containerization"><span class="header-section-number">7.1</span> Sanboxing and Containerization</h2>
+<p>A <strong>Sandbox</strong> is an isolated environment where the agent can work without affecting your main computer. Usually, you would like the agent to have access to its own folders (with systemp prompt, settings and skills) and to your specific project folder, but not anywhere else on your computer. This way, if the agent makes a mistake or runs a malicious command, it only affects the sandbox and possible files in your project, but not your entire system.</p>
+<p>In this workshop, your entire environment is inside a Docker container. If the agent makes a mistake or runs a malicious command, it only affects the container, not your laptop.</p>
+<p>All operating systems provide different ways of sandboxing or containerization, and many agent harnesses have built-in sandboxing features (but they still depend on your operating system). For example, there is well written concise documentation for <code>Gemini CLI</code> on the ways <a href="https://geminicli.com/docs/cli/sandbox/#sandboxing-methods">it supports sandboxing</a>, also see <a href="https://code.claude.com/docs/en/sandboxing#get-started">Claude Code sandboxing</a>, <a href="https://developers.openai.com/codex/concepts/sandboxing">Codex Sandboxing</a>. For other agents, you might need a more custom setup, for example using <a href="https://www.docker.com/products/docker-sandboxes/"><code>Docker Sandboxes</code></a> or <a href="https://www.virtualbox.org/"><code>Virtual Machines (e.g. VirtualBox)</code></a> to create a isolated environment for the agent to run in and only connect your project folder to that environment. For most of these tools you have to have administrative access to your computer to set up the sandbox, there for for your work computer, ask your IT team if they can set up a sandboxed environment for you to run agents in.</p>
+<p>Sandboxing also allows to allow the agent to be more autonomous and possibly also run in the so called ‘YOLO’ (‘you only look onece’) or ‘dangerously skip permissions’ mode, where the agent essentially can do whatver it decides to do without asking for permissions. That allows you to stop babysitting the agent and let it do its work without interruptions, but it also means that if the agent makes a mistake or is tricked into doing something malicious, it can cause a lot of damage. So be very careful with this mode.</p>
+<p>In this workshop in the provided Codespace Docker container you can feel, free to run the agents in this mode.</p>
+<p>To run agents in ‘YOLO’ mode, you can either start them in this mode:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gemini</span> <span class="at">-y</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">agy</span> <span class="at">--dangerously-skip-permissions</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># opencode does not have this mode yet, but it can be configured to just skip all permissions in its settings file, ask the agent how to do it</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Gemini CLI also allows swithing it on while running with <code>Ctrl+Y</code> hotkey.</p>
+</section>
+<section id="ignore-files" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="ignore-files"><span class="header-section-number">7.2</span> Ignore files</h2>
+<p>When working on your tasks, agents often scan and read full files or parts of files in your projects. This data is of course then sent over to the model provider along with your prompt and chat history. This data may (and with free models we use in the workshop will) be used in future model and agent training. Therefore, you might want to exclude certain files from being read by the agent.</p>
+<p>You can instruct the agent to ignore certain files with <code>.gitignore</code> file in the project root, or with a custom <code>AGENTS.md</code> file with instructions for the agent (e.g.&nbsp;“never read <code>.env</code> files”). The exact way to do this depends on the agent harness you are using, so ask your agent how to exclude certain files from being read by the agent.</p>
+<p>Very often agents will use the default <code>.gitignore</code> file to exclude files from being read. But many have their custom special files such as <code>.ignore</code> (<a href="https://opencode.ai/docs/tools/#ignore-patterns">OpenCode</a>), <code>.geminiignore</code> (<a href="https://geminicli.com/docs/cli/gemini-ignore/">Gemini CLI</a>), <a href="https://github.com/openai/codex/issues/2847">Codex does not have such special file yet</a>, read the documentation of your agent harness to see if it has such special file and how to use it.</p>
+<p>But this is not a guarantee that the agent will not read these files, as there are many hacks that a rouge agent might use to bypass these ignore files. Also remember, that agents generally (at least by default) have write permissions to their own setttings files, so there is also no guarantee that the agent will not change its settings to remove the ignore files or edit them.</p>
+</section>
+<section id="permission-systems" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="permission-systems"><span class="header-section-number">7.3</span> Permission Systems</h2>
+<p>Even inside a sandbox, we may not want the agent to have “God Mode.” Permission systems act as a gatekeeper for sensitive actions. They can also act as a safety net in case you cannot setup a proper sandbox (e.g.&nbsp;you don’t have sufficient permissions to set up a sandbox on your work computer).</p>
 <ul>
-<li><strong>It is 100% Free:</strong> GitHub provides a generous free tier of <strong>60 hours</strong> of Codespaces usage per month for every personal account. No credit card, billing info, or payment is required.</li>
-<li><strong>It is Completely Secure:</strong> The environment runs inside a secure, isolated container (virtual machine) in the cloud. It does not touch your physical computer, install any local files, or run any software on your machine. It belongs to you and it is also mostly safe to enter your account data (e.g.&nbsp;Google account, especialy if secondary or test account, API keys, other accounts for subscription services or services we will use during the workshop) without worrying about security or privacy issues.</li>
+<li><p><strong>Human-in-the-Loop:</strong> For high-risk actions (like deleting a directory or pushing to GitHub), the agent should ask for your permission first.</p></li>
+<li><p><strong>Rule-Based Blocking:</strong> Harnesses can be configured to automatically block access to certain folders or commands. For example, an agent might be allowed to edit your code but forbidden from reading your <code>.ssh</code> keys or <code>.env</code> files with passwords (e.g.&nbsp;credentials you may be using to access external services or databases). Also you might configure the agent harness to never execute file deletion commands, or commands that result in git commites or your prjoect data upload to a remote git repository or other backup locaiton (which may lead to data loss or corruption if agent messed something up locally).</p></li>
 </ul>
-</div>
-</div>
-<div id="fig-codespace-start-video" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-codespace-start-video-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title="Start a Codespace on GitHub"><source src="media/videos/start-codespace.mp4"></video></div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-codespace-start-video-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.2: Codespace startup process (sped up)
-</figcaption>
-</figure>
-</div>
-<section id="auto-pause-resume" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="auto-pause-resume"><span class="header-section-number">2.1.1</span> 💤 Auto-Pause &amp; Resume</h3>
-<p>To save your free hours, the environment automatically pauses after 30 minutes of inactivity. When you restart it, your files, open tabs, and terminal history are fully preserved—just like waking up a laptop from sleep (though you may need to restart any active terminal commands or running applications).</p>
 <hr>
 </section>
-</section>
-<section id="managing-your-session-quotas" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="managing-your-session-quotas"><span class="header-section-number">2.2</span> 📊 Managing Your Session &amp; Quotas</h2>
-<p>GitHub Codespaces provides a generous free tier, but it is important to understand how usage is consumed to avoid running out of credits.</p>
-<section id="monthly-free-quotas-2026" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="monthly-free-quotas-2026"><span class="header-section-number">2.2.1</span> Monthly Free Quotas (2026)</h3>
-<p>The following quotas apply to personal accounts.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Account Type</th>
-<th style="text-align: left;">Actual Usage Hours</th>
-<th style="text-align: left;">Storage (per month)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>GitHub Free</strong></td>
-<td style="text-align: left;"><strong>60 hours</strong></td>
-<td style="text-align: left;"><strong>15 GB</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>GitHub Pro</strong></td>
-<td style="text-align: left;"><strong>90 hours</strong></td>
-<td style="text-align: left;"><strong>20 GB</strong></td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-simple callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>💾 Storage Persistence Quota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Storage (15GB/20GB) is consumed even when the codespace is <strong>stopped</strong>. To save your storage quota, make sure to <strong>delete</strong> codespaces you no longer need at <a href="https://github.com/codespaces">github.com/codespaces</a> once the workshop is fully over.</p>
-</div>
-</div>
-</section>
-<section id="checking-remaining-quota" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="checking-remaining-quota"><span class="header-section-number">2.2.2</span> Checking Remaining Quota</h3>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>You can monitor your real-time usage and remaining balance at any time:</p>
-<ol type="1">
-<li>Go to your <a href="https://github.com/settings/billing/summary">GitHub Settings &gt; Billing and plans</a>.</li>
-<li>Look for the <strong>Codespaces</strong> section under <strong>Usage this month</strong> or try this direct link: <a href="https://github.com/settings/billing/usage?period=3&amp;group=2&amp;query=product:codespaces">GitHub Codespaces Usage</a>.</li>
-</ol>
-</div>
-</div>
-</div>
-</section>
-<section id="stop-codespace" class="level3" data-number="2.2.3">
-<h3 data-number="2.2.3" class="anchored" data-anchor-id="stop-codespace"><span class="header-section-number">2.2.3</span> Stopping Your Session Manually</h3>
-<p>When you are done with a session, you can stop the codespace manually to instantly stop consuming usage hours:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="media/github-stop-devcontainer-codespace.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Stop GitHub Codespace"><img src="media/github-stop-devcontainer-codespace.png" class="img-fluid figure-img" alt="Stop GitHub Codespace"></a></p>
-<figcaption>Stop GitHub Codespace</figcaption>
-</figure>
-</div>
-<hr>
+<section id="bottom-line" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="bottom-line"><span class="header-section-number">7.4</span> Bottom line</h2>
+<p>It is very likely that even most sandboxed isolated agent customized with strict permissions will make a mistake at some point and do something you did not want it to do, such as deleting a file or installing a package that breaks your project. This is just the nature of current generation of agents, they are not perfect and they will make mistakes. So always make sure to have proper backups of your work, and if possible use version control (e.g.&nbsp;Git) so you can easily revert any unwanted changes.</p>
+<p>For git, consider using authenticaiton that requires user interaction for any changes done in your project locally to be pushed to your remote git repository or backup. Such precations could be a password required for every access to ssh key for sending the data to the remote repository, or a biometric authentication (supported on some laptops and operating systems).</p>
 
 
-</section>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>While the <a href="https://docs.github.com/en/billing/concepts/product-billing/github-codespaces#free-quota">official billing documentation</a> lists these as 120 and 180 <strong>core hours</strong>, the minimum instance size is 2 CPU cores. This means every 1 hour of real-time work consumes 2 core hours, resulting in the actual limits shown below.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->
@@ -1089,13 +1005,13 @@ Figure&nbsp;2.2: Codespace startup process (sped up)
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./10-intro-to-agents.html" class="pagination-link" aria-label="Introduction to LLM Agents">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to LLM Agents</span></span>
+      <a href="./31-task-1-prompts.html" class="pagination-link" aria-label="Task 1: Exploring System Prompts">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Task 1: Exploring System Prompts</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./21-vscode-navigation.html" class="pagination-link" aria-label="Navigating the Workshop Environment">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Navigating the Workshop Environment</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./36-task-security.html" class="pagination-link" aria-label="Task 2: Boundaries and Permissions">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Task 2: Boundaries and Permissions</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1113,7 +1029,7 @@ Figure&nbsp;2.2: Codespace startup process (sped up)
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/20-setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/35-security-isolation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -1126,39 +1042,6 @@ Figure&nbsp;2.2: Codespace startup process (sped up)
     </div>
   </div>
 </footer>
-<script>videojs(video_shortcode_videojs_video1);</script>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"fade","descPosition":"top","loop":false,"openEffect":"fade","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

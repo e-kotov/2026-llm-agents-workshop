@@ -8,7 +8,7 @@
 
 <meta name="description" content="Beyond the Chatbox: LLM Coding and Research Agents for Academics">
 
-<title>6&nbsp; Exercise 2: The Vault – Beyond the Chatbox</title>
+<title>4&nbsp; Accessing models and authenticating agents – Beyond the Chatbox</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -34,8 +69,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./50-context-mastery.html" rel="next">
-<link href="./40-security.html" rel="prev">
+<link href="./30-core-mechanics.html" rel="next">
+<link href="./21-vscode-navigation.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -47,9 +82,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-952c7fb2ee4e37be4cc15ce4892e6b5e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6ee86db8dbfe2e14ef29202bcbbbfcda.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-952c7fb2ee4e37be4cc15ce4892e6b5e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-41f1360bca6d68a7c894536bc8e0bf04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-00644fe898d4f798301a7326409cdb3f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-41f1360bca6d68a7c894536bc8e0bf04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -301,7 +341,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./40-security.html">Advanced</a></li><li class="breadcrumb-item"><a href="./41-task-2.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exercise 2: The Vault</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./22-auth-agents.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Accessing models and authenticating agents</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -339,10 +379,22 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Environment Setup</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-vscode-navigation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Navigating the Workshop Environment</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22-auth-agents.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Accessing models and authenticating agents</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Basics</span></a>
+ <span class="menu-text">The Brain</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -350,14 +402,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./30-interaction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Agent Interaction</span></span></a>
+  <a href="./30-core-mechanics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Core Brain: Models and Prompts</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./31-task-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exercise 1: Hello, Agent</span></span></a>
+  <a href="./31-task-1-prompts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Task 1: Exploring System Prompts</span></span></a>
   </div>
 </li>
       </ul>
@@ -365,7 +417,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Advanced</span></a>
+ <span class="menu-text">Safety</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -373,32 +425,60 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./40-security.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Security &amp; Secrets</span></span></a>
+  <a href="./35-security-isolation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Safety and Isolation: Sandboxes and Permissions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./41-task-2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exercise 2: The Vault</span></span></a>
+  <a href="./36-task-security.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Task 2: Boundaries and Permissions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Capabilities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./40-capabilities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Capabilities: Tools and Skills</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./50-context-mastery.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Workshop Workspace</span></span></a>
+  <a href="./41-task-2-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Task 2: Working with Tools and Skills</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">State Management</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./50-context-memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">State Management: Context and Memory</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./60-environment-skills.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Environments &amp; Skills</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./61-task-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Exercise 3: The Pro Resident</span></span></a>
+  <a href="./51-task-3-context.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Task 3: The Context Limit Challenge</span></span></a>
   </div>
 </li>
       </ul>
@@ -419,18 +499,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-goal" id="toc-the-goal" class="nav-link active" data-scroll-target="#the-goal"><span class="header-section-number">6.0.1</span> The Goal</a></li>
-  <li><a href="#steps" id="toc-steps" class="nav-link" data-scroll-target="#steps"><span class="header-section-number">6.0.2</span> Steps</a></li>
+  <li><a href="#authenticating-agents" id="toc-authenticating-agents" class="nav-link active" data-scroll-target="#authenticating-agents"><span class="header-section-number">4.1</span> Authenticating Agents</a></li>
+  <li><a href="#opencode" id="toc-opencode" class="nav-link" data-scroll-target="#opencode"><span class="header-section-number">4.2</span> OpenCode</a>
+  <ul class="collapse">
+  <li><a href="#opencode-zen" id="toc-opencode-zen" class="nav-link" data-scroll-target="#opencode-zen"><span class="header-section-number">4.2.1</span> OpenCode Zen</a></li>
+  <li><a href="#openrouter" id="toc-openrouter" class="nav-link" data-scroll-target="#openrouter"><span class="header-section-number">4.2.2</span> OpenRouter</a></li>
+  <li><a href="#nvidia-nimbuild" id="toc-nvidia-nimbuild" class="nav-link" data-scroll-target="#nvidia-nimbuild"><span class="header-section-number">4.2.3</span> NVIDIA NIM/Build</a></li>
+  </ul></li>
+  <li><a href="#google" id="toc-google" class="nav-link" data-scroll-target="#google"><span class="header-section-number">4.3</span> Google</a>
+  <ul class="collapse">
+  <li><a href="#google-antigravity-cli" id="toc-google-antigravity-cli" class="nav-link" data-scroll-target="#google-antigravity-cli"><span class="header-section-number">4.3.1</span> Google Antigravity CLI</a></li>
+  <li><a href="#google-gemini-cli" id="toc-google-gemini-cli" class="nav-link" data-scroll-target="#google-gemini-cli"><span class="header-section-number">4.3.2</span> Google Gemini CLI</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/41-task-2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/22-auth-agents.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./40-security.html">Advanced</a></li><li class="breadcrumb-item"><a href="./41-task-2.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exercise 2: The Vault</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exercise 2: The Vault</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Accessing models and authenticating agents</span></h1>
 </div>
 
 
@@ -467,40 +557,131 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Let’s test the security safeguards of your agent.</p>
-<p><strong>Location:</strong> <code>userspace/projects/task-02-vault/</code></p>
-<section id="the-goal" class="level3" data-number="6.0.1">
-<h3 data-number="6.0.1" class="anchored" data-anchor-id="the-goal"><span class="header-section-number">6.0.1</span> The Goal</h3>
-<p>Configure your agent so it is impossible for it to read sensitive files, specifically the <code>.env</code> file in this directory.</p>
+<section id="authenticating-agents" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="authenticating-agents"><span class="header-section-number">4.1</span> Authenticating Agents</h2>
+<p>I suggest you start with more basic models available for free with OpenCode Zen, OpenRouter and optionally NVIDIA NIM/Build, and then try the more powerful frontier models available in Gemini CLI and Antigravity CLI.</p>
+<p>Authenticate at least one of the services below before proceeding. Saving authenticaiton credentials in the Codespaces environment is safe, as it runs in an isolated container in the cloud and only you have access to it via your GitHub account. However, do make sure to use expiration date when setting up API keys or logout from the Google account (for Gemini models) after the workshop to avoid any potential security issues in the future. Also remember to <a href="https://github.com/codespaces">delete the Codespace</a> once the workshop is fully over.</p>
 </section>
-<section id="steps" class="level3" data-number="6.0.2">
-<h3 data-number="6.0.2" class="anchored" data-anchor-id="steps"><span class="header-section-number">6.0.2</span> Steps</h3>
-<ol type="1">
-<li>Navigate to <code>userspace/projects/task-02-vault/</code>. This directory contains a <code>.env</code> file with dummy credentials.</li>
-<li><strong>The “Before” Check:</strong> Ask the agent to read the contents of the <code>.env</code> file. It will likely succeed.</li>
-<li><strong>Set up protection:</strong>
-<ul>
-<li><em>If using OpenCode:</em> Follow the <a href="https://opencode.ai/docs/plugins/#env-protection">plugin instructions</a> to block <code>.env</code>.</li>
-<li><em>If using Gemini CLI:</em> Configure a hook to block <code>read_file</code> on <code>.env</code>.</li>
-</ul></li>
-<li><strong>The “After” Check:</strong> Ask the agent to read the <code>.env</code> file again. It should now be blocked!</li>
-<li><strong>Programmatic Access:</strong> Ask the agent: <em>“How can I use the credentials in <code>.env</code> for my R script without you ever reading the file directly?”</em> (Hint: <code>Sys.getenv()</code> or <code>dotenv</code> package).</li>
-</ol>
-<div class="callout callout-style-simple callout-warning callout-titled">
+<section id="opencode" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="opencode"><span class="header-section-number">4.2</span> OpenCode</h2>
+<p>You can just start using the OpenCode agent immediately after launch without API key, but model quoata will be small, as you are likely sharing an IP address with several other workshop participants.</p>
+<p>Just start OpenCode in a new terminal with command:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">opencode</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="fig-new-terminal" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-new-terminal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="media/vscode-new-terminal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;4.1: Opening a new terminal in VS Code."><img src="media/vscode-new-terminal.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-new-terminal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: Opening a new terminal in VS Code.
+</figcaption>
+</figure>
+</div>
+<p>Once it starts, use <code>/model</code> slash-command to select a model and type <code>free</code> to see all available free models.</p>
+<section id="opencode-zen" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="opencode-zen"><span class="header-section-number">4.2.1</span> OpenCode Zen</h3>
+<p><strong>OpenCode Zen</strong> (<a href="https://opencode.ai/zen">opencode.ai/zen</a>) gives you free model access via the <strong>OpenCode</strong> agent. You can view the list of available models and details on <a href="https://opencode.ai/docs/zen/#pricing">OpenCode Zen pricing/documentation</a>. Get a free account, generate API key and add it in OpenCode.</p>
+<div id="fig-opencode-zen-api-key" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-opencode-zen-api-key-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title="Adding API Key to OpenCode Zen"><source src="media/videos/opencode-zen-api.mp4"></video></div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-opencode-zen-api-key-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.2: Adding OpenCode Zen API key to OpenCode agent.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="openrouter" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="openrouter"><span class="header-section-number">4.2.2</span> OpenRouter</h3>
+<p><strong>OpenRouter</strong> (<a href="https://openrouter.ai/">openrouter.ai</a>) allows accessing a wide variety of models. You’ll need to generate a free <a href="https://openrouter.ai/workspaces/default/keys">API Key</a> after registering, which can be used to access their catalog of <a href="https://openrouter.ai/models?order=pricing-low-to-high&amp;q=free">free models</a>.</p>
+<div id="fig-openrouter-api-key" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-openrouter-api-key-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-video"><video id="video_shortcode_videojs_video2" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title="Adding API Key to OpenRouter"><source src="media/videos/opencode-openrouter-api.mp4"></video></div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-openrouter-api-key-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.3: Adding OpenRouter API key to OpenCode agent.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="nvidia-nimbuild" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="nvidia-nimbuild"><span class="header-section-number">4.2.3</span> NVIDIA NIM/Build</h3>
+<p>This is completely optional, as it takes a bit more time to setup and requires SMS verification. You are probably going to be fine with OpenCode Zen and OpenRouter free models + models in Google’s Gemini CLI and Antigravity CLI.</p>
+<p><strong>NVIDIA NIM/Build</strong> (<a href="https://build.nvidia.com/">build.nvidia.com</a>) offers <a href="https://build.nvidia.com/models?filters=nimType%3Anim_type_preview">free preview models</a>.</p>
+<div id="fig-nvidia-nim-api-key" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nvidia-nim-api-key-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-video"><video id="video_shortcode_videojs_video3" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title="Adding API Key to NVIDIA NIM"><source src="media/videos/opencode-nvidia-api.mp4"></video></div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nvidia-nim-api-key-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.4: Adding NVIDIA NIM API key to OpenCode agent.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Security First
+<span class="screen-reader-only">Tip</span>OpenCode Graphical user interface
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In real research, never commit <code>.env</code> files to Git. Always ensure they are listed in your <code>.gitignore</code>.</p>
+<p>If you want to try OpenCode’s graphical user interface instead of the command line, you can launch it with <code>opencode web</code> command in the terminal or use <code>OpenChamber</code> <code>VS Code</code> extension.</p>
+<div id="fig-nvidia-nim-api-key" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nvidia-nim-api-key-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-video"><video id="video_shortcode_videojs_video4" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title="Running OpenCode GUI"><source src="media/videos/opencode-gui.mp4"></video></div>
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nvidia-nim-api-key-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.5: Running OpenCode’s graphical user interface with <code>opencode web</code> command or OpenChamber VS Code extension.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="google" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="google"><span class="header-section-number">4.3</span> Google</h2>
+<p>Google has two separate agents with different model access and quotas: <strong>Gemini CLI</strong> and <strong>Antigravity CLI</strong>. Gemini CLI models will be disabled for most users mid-June 2026, but you can still use it to try out the models for free. Going forward, Antigravity CLI will be the main way to access Google’s models, and it also provides a free daily quota.</p>
+<section id="google-antigravity-cli" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="google-antigravity-cli"><span class="header-section-number">4.3.1</span> Google Antigravity CLI</h3>
+<p>The <strong>Google Antigravity CLI</strong> (and its predecessor <strong>Gemini CLI</strong>) provides a free daily quota to test cutting-edge models (like <code>Gemini 3.5 Flash</code>, <code>Gemini 3.1 Pro</code>, and <code>Claude</code> models). You can authenticate it using your Google account credentials, no credit card required.</p>
+<p>To start Antigravity CLI, in new terminal run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">agy</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="fig-antigravity-auth" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-antigravity-auth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-video"><video id="video_shortcode_videojs_video5" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title="Authenticating Google Antigravity CLI"><source src="media/videos/agy-setup.mp4"></video></div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-antigravity-auth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.6: Authenticating Google Antigravity CLI with your Google account.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="google-gemini-cli" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="google-gemini-cli"><span class="header-section-number">4.3.2</span> Google Gemini CLI</h3>
+<p>The <strong>Google Gemini CLI</strong> is the predecessor to Antigravity CLI and provides free quota to <code>Gemini 3 Flash</code>, <code>Gemini 3.1 Pro</code> and a few other models. You can authenticate it using your Google account credentials, no credit card required.</p>
+<p>To start Gemini CLI, in new terminal run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gemini</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="fig-gemini-auth" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gemini-auth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-video"><video id="video_shortcode_videojs_video6" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title="Authenticating Google Gemini CLI"><source src="media/videos/gemini-cli-setup.mp4"></video></div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gemini-auth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.7: Authenticating Google Gemini CLI with your Google account.
+</figcaption>
+</figure>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -926,13 +1107,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./40-security.html" class="pagination-link" aria-label="Security &amp; Secrets">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Security &amp; Secrets</span></span>
+      <a href="./21-vscode-navigation.html" class="pagination-link" aria-label="Navigating the Workshop Environment">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Navigating the Workshop Environment</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./50-context-mastery.html" class="pagination-link" aria-label="The Workshop Workspace">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Workshop Workspace</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./30-core-mechanics.html" class="pagination-link" aria-label="The Core Brain: Models and Prompts">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Core Brain: Models and Prompts</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -950,7 +1131,7 @@ ul.task-list li input[type="checkbox"] {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/41-task-2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/22-auth-agents.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -963,6 +1144,44 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
 </footer>
+<script>videojs(video_shortcode_videojs_video1);</script>
+<script>videojs(video_shortcode_videojs_video2);</script>
+<script>videojs(video_shortcode_videojs_video3);</script>
+<script>videojs(video_shortcode_videojs_video4);</script>
+<script>videojs(video_shortcode_videojs_video5);</script>
+<script>videojs(video_shortcode_videojs_video6);</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"fade","descPosition":"top","loop":false,"openEffect":"fade","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

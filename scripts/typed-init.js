@@ -23,11 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
         <span id="chatbox-header-label">workshop-agent chat</span>
       </div>
       <div class="chatbox-actions">
-        <button class="demo-view-button" type="button" aria-label="Show finished terminal view" title="Show finished terminal view">
-          <span class="demo-button-icon" aria-hidden="true">T</span>
-        </button>
+        <div class="demo-view-toggle">
+          <div class="toggle-slider"></div>
+          <button class="toggle-option chat active" type="button" data-view="chat">Chat</button>
+          <button class="toggle-option agent" type="button" data-view="agent">Agent</button>
+        </div>
         <button class="demo-replay-button" type="button" aria-label="Replay animation" title="Replay animation">
           <span class="demo-button-icon" aria-hidden="true">&#8635;</span>
+          <span class="demo-button-text">Replay</span>
         </button>
       </div>
     </div>
@@ -72,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const initialHeaderHtml = document.getElementById('chatbox-header-title').innerHTML;
   const initialBodyHtml = document.getElementById('chatbox-body').innerHTML;
   const replayButton = chatbox.querySelector('.demo-replay-button');
-  const viewButton = chatbox.querySelector('.demo-view-button');
+  const viewToggle = chatbox.querySelector('.demo-view-toggle');
   const demoTimers = new Set();
   let typedInstance = null;
   let currentView = 'animating';
@@ -130,7 +133,18 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   replayButton.addEventListener('click', restartDemo);
-  viewButton.addEventListener('click', toggleCompletedView);
+  viewToggle.addEventListener('click', (e) => {
+    const btn = e.target.closest('.toggle-option');
+    if (!btn) return;
+    const view = btn.getAttribute('data-view');
+    if (view === currentView) return;
+    
+    if (view === 'chat') {
+      showCompletedChat();
+    } else {
+      showCompletedTerminal();
+    }
+  });
 
   function queueTimeout(callback, delay) {
     const timerId = window.setTimeout(() => {
@@ -166,14 +180,14 @@ document.addEventListener('DOMContentLoaded', () => {
     body.innerHTML = initialBodyHtml;
     body.scrollTop = 0;
     currentView = 'animating';
-    updateViewButton();
+    updateViewToggle();
     startTypedTitle();
   }
 
   function completeTerminal() {
     chatbox.classList.add('terminal-complete');
     currentView = 'terminal';
-    updateViewButton();
+    updateViewToggle();
     scrollTerminal();
   }
 
@@ -209,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     body.scrollTop = 0;
     currentView = 'chat';
-    updateViewButton();
+    updateViewToggle();
   }
 
   function showCompletedTerminal() {
@@ -234,26 +248,29 @@ document.addEventListener('DOMContentLoaded', () => {
     body.innerHTML = terminalShellHtml();
     renderTerminalInstantly();
     currentView = 'terminal';
-    updateViewButton();
+    updateViewToggle();
     body.scrollTop = 0;
     queueTimeout(startTerminalAutoScroll, 260);
   }
 
-  function updateViewButton() {
-    if (!viewButton) {
+  function updateViewToggle() {
+    if (!viewToggle) {
       return;
     }
+
+    const chatBtn = viewToggle.querySelector('[data-view="chat"]');
+    const agentBtn = viewToggle.querySelector('[data-view="agent"]');
 
     if (currentView === 'terminal') {
-      viewButton.setAttribute('aria-label', 'Show finished chat view');
-      viewButton.setAttribute('title', 'Show finished chat view');
-      viewButton.querySelector('span').textContent = 'C';
-      return;
+      chatBtn.classList.remove('active');
+      agentBtn.classList.add('active');
+    } else if (currentView === 'chat') {
+      chatBtn.classList.add('active');
+      agentBtn.classList.remove('active');
+    } else {
+      chatBtn.classList.remove('active');
+      agentBtn.classList.remove('active');
     }
-
-    viewButton.setAttribute('aria-label', 'Show finished terminal view');
-    viewButton.setAttribute('title', 'Show finished terminal view');
-    viewButton.querySelector('span').textContent = 'T';
   }
 
   function capybaraSvg() {

@@ -8,7 +8,7 @@
 
 <meta name="description" content="Beyond the Chatbox: LLM Coding and Research Agents for Academics">
 
-<title>8&nbsp; Environments &amp; Skills – Beyond the Chatbox</title>
+<title>9&nbsp; Capabilities: Tools and Skills – Beyond the Chatbox</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,8 +34,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./61-task-3.html" rel="next">
-<link href="./50-context-mastery.html" rel="prev">
+<link href="./41-task-2-tools.html" rel="next">
+<link href="./36-task-security.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -47,9 +47,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-952c7fb2ee4e37be4cc15ce4892e6b5e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6ee86db8dbfe2e14ef29202bcbbbfcda.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-952c7fb2ee4e37be4cc15ce4892e6b5e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-41f1360bca6d68a7c894536bc8e0bf04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-00644fe898d4f798301a7326409cdb3f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-41f1360bca6d68a7c894536bc8e0bf04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -301,7 +301,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./40-security.html">Advanced</a></li><li class="breadcrumb-item"><a href="./60-environment-skills.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Environments &amp; Skills</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./40-capabilities.html">Capabilities</a></li><li class="breadcrumb-item"><a href="./40-capabilities.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Capabilities: Tools and Skills</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -339,10 +339,22 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Environment Setup</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-vscode-navigation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Navigating the Workshop Environment</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22-auth-agents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Accessing models and authenticating agents</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Basics</span></a>
+ <span class="menu-text">The Brain</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -350,14 +362,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./30-interaction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Agent Interaction</span></span></a>
+  <a href="./30-core-mechanics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Core Brain: Models and Prompts</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./31-task-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exercise 1: Hello, Agent</span></span></a>
+  <a href="./31-task-1-prompts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Task 1: Exploring System Prompts</span></span></a>
   </div>
 </li>
       </ul>
@@ -365,7 +377,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Advanced</span></a>
+ <span class="menu-text">Safety</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -373,32 +385,60 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./40-security.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Security &amp; Secrets</span></span></a>
+  <a href="./35-security-isolation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Safety and Isolation: Sandboxes and Permissions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./41-task-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exercise 2: The Vault</span></span></a>
+  <a href="./36-task-security.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Task 2: Boundaries and Permissions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Capabilities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./40-capabilities.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Capabilities: Tools and Skills</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./50-context-mastery.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Workshop Workspace</span></span></a>
+  <a href="./41-task-2-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Task 2: Working with Tools and Skills</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">State Management</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./50-context-memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">State Management: Context and Memory</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./60-environment-skills.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Environments &amp; Skills</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./61-task-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Exercise 3: The Pro Resident</span></span></a>
+  <a href="./51-task-3-context.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Task 3: The Context Limit Challenge</span></span></a>
   </div>
 </li>
       </ul>
@@ -419,17 +459,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#managing-complex-dependencies" id="toc-managing-complex-dependencies" class="nav-link active" data-scroll-target="#managing-complex-dependencies"><span class="header-section-number">8.1</span> Managing Complex Dependencies</a></li>
+  <li><a href="#tools-the-agents-hands" id="toc-tools-the-agents-hands" class="nav-link active" data-scroll-target="#tools-the-agents-hands"><span class="header-section-number">9.1</span> Tools: The Agent’s Hands</a></li>
+  <li><a href="#skills-specialized-capabilities" id="toc-skills-specialized-capabilities" class="nav-link" data-scroll-target="#skills-specialized-capabilities"><span class="header-section-number">9.2</span> Skills: Specialized Capabilities</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/60-environment-skills.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/40-capabilities.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./40-security.html">Advanced</a></li><li class="breadcrumb-item"><a href="./60-environment-skills.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Environments &amp; Skills</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./40-capabilities.html">Capabilities</a></li><li class="breadcrumb-item"><a href="./40-capabilities.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Capabilities: Tools and Skills</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Environments &amp; Skills</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Capabilities: Tools and Skills</span></h1>
 </div>
 
 
@@ -466,12 +507,56 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="managing-complex-dependencies" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="managing-complex-dependencies"><span class="header-section-number">8.1</span> Managing Complex Dependencies</h2>
-<p>Agents often struggle when they encounter environments with missing dependencies, especially when packages require system-level libraries or compile from source.</p>
-<p>We can solve this by: 1. <strong>Prompting smartly:</strong> Telling the agent <em>how</em> to install packages in our specific environment (e.g., using pre-compiled binaries). 2. <strong>Creating Skills:</strong> Saving that knowledge so the agent automatically knows how to handle the environment in the future.</p>
-<p>Let’s see how this works in a real, complex scenario.</p>
-<p><a href="./61-task-3.html">Go to Exercise 3: The Pro Resident →</a></p>
+<p>While the “Brain” (Model) can think and reason, it needs a way to interact with the world to be useful for coding, research or other tasks. These interaction is achieved through <strong>Tools</strong>, usually provided by the agent harness. <strong>Skills</strong> are higher-level bundles of instructions and logic that provide the agent with expertise in a specific domain, they may provide a specific way to do something or also add a custom tool (via shell, Python or any other script.)</p>
+<section id="tools-the-agents-hands" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="tools-the-agents-hands"><span class="header-section-number">9.1</span> Tools: The Agent’s Hands</h2>
+<p>Tools are discrete functions that the agent can execute to perform actions in your environment. Common tools include:</p>
+<ul>
+<li><p><strong><code>read_file</code></strong>: Looking at the contents of a script or data file.</p></li>
+<li><p><strong><code>write_file</code> / <code>replace</code></strong>: Creating new files or editing existing code.</p></li>
+<li><p><strong><code>run_shell_command</code></strong>: Executing commands in the terminal (e.g., running an R script, installing a package, or listing files with <code>ls</code>, but also moving and deleting files, and virtually anything else you can do in the terminal - which is essentialy anything).</p></li>
+<li><p><strong><code>web_search</code></strong>: Accessing the internet to find documentation or troubleshooting tips.</p></li>
+</ul>
+<p>The agent doesn’t just “run” these tools; it <em>reasons</em> about when to use them. For example, if you ask it to fix a bug, it will first use <code>read_file</code> to see the code, then <code>run_shell_command</code> to run a test that will produce output with the error message, it will think or search online or in the documenation how to fix and finally <code>replace</code> to attempt the fix. Then it is likely to run the test again to see if the fix worked, and if not it will repeat the process until the bug is fixed or it runs out of ideas or model quota, or, sometimes, model context window.</p>
+</section>
+<section id="skills-specialized-capabilities" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="skills-specialized-capabilities"><span class="header-section-number">9.2</span> Skills: Specialized Capabilities</h2>
+<p><code>Skills</code> are higher-level bundles of instructions and logic that provide the agent with expertise in a specific domain. While <code>tools</code> are the discrete actions an agent can perform, <code>skills</code> represent the programmed logic and best practices the agent follows to complete complex tasks potnetially combining many stanard tools or even custom scripts. This is very useful for cases when there is a very particular way something needs to be done, and they way you need the agent to do it is rather different how a general-purpose model would do it by following very frequent patterns in its training data.</p>
+<p>Technically, <code>Skills</code> are just plain text files with metadata and textual instructions. Optionally there can also be scripts to be run during applicaiton of the skill.</p>
+<p>For R language users, <code>Posit</code> (the maker of <code>RStudio</code>) has developed a set of skills and published them on GitHub at <a href="https://github.com/posit-dev/skills">posit/skills</a>. These skills are designed to help the agent understand how to perform common R programming tasks in a way that follows best practices and modern conventions. Follow the link and view any of the skills to see how they are structured and what kind of instructions they provide to the agent.</p>
+<p><code>Skills</code> can be global (stored in your user profile in a special folder) or local (stored in the current project folder). The agent automatically loads all global skills for all projects, and all project-specific skills when you are starting the agent in that project’s directory.</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Activating Skills:</strong> You can explicitly ask an agent to activate a skill (e.g., <em>“Activate the R data analysis skill”</em>) to ensure it uses the most modern and idiomatic patterns for that task.</p>
+</div>
+</div>
+</div>
+<p><code>Skills</code> should be concise, as they are loaded into the model’s context window. To save space in the context window, the agent only loads short metadata descriptions of each skill, and only loads the full instructions when the agent decides it needs to use that skill. This allows you to have a large library of skills without overwhelming the model’s context.</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Note however, that having hundreds of skills might be counterproductive, as the agent might spend too much time evaluating which skills to load and use for a given task. It’s best to have a curated set of skills that are relevant to your typical workflows or use project specific skills for very particular tasks that require a specific way of doing things.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Anthiropic (the maker of Claude) has initially introduced the concept of <code>Skills</code> and they have a special <a href="https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md"><strong>Skill Creator</strong> <code>skill</code></a></p>
+</div>
+</div>
+</div>
+<hr>
 
 
 </section>
@@ -899,13 +984,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./50-context-mastery.html" class="pagination-link" aria-label="The Workshop Workspace">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Workshop Workspace</span></span>
+      <a href="./36-task-security.html" class="pagination-link" aria-label="Task 2: Boundaries and Permissions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Task 2: Boundaries and Permissions</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./61-task-3.html" class="pagination-link" aria-label="Exercise 3: The Pro Resident">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Exercise 3: The Pro Resident</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./41-task-2-tools.html" class="pagination-link" aria-label="Task 2: Working with Tools and Skills">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Task 2: Working with Tools and Skills</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -923,7 +1008,7 @@ ul.task-list li input[type="checkbox"] {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/60-environment-skills.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/40-capabilities.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

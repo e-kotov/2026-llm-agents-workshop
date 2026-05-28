@@ -8,7 +8,7 @@
 
 <meta name="description" content="Beyond the Chatbox: LLM Coding and Research Agents for Academics">
 
-<title>2&nbsp; Environment Setup – Beyond the Chatbox</title>
+<title>12&nbsp; Task 3: The Context Limit Challenge – Beyond the Chatbox</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -34,8 +69,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./21-vscode-navigation.html" rel="next">
-<link href="./10-intro-to-agents.html" rel="prev">
+<link href="./90-references.html" rel="next">
+<link href="./50-context-memory.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -50,11 +85,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-41f1360bca6d68a7c894536bc8e0bf04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-00644fe898d4f798301a7326409cdb3f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-41f1360bca6d68a7c894536bc8e0bf04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
-<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -306,7 +336,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./20-setup.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Environment Setup</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./50-context-memory.html">State Management</a></li><li class="breadcrumb-item"><a href="./51-task-3-context.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Task 3: The Context Limit Challenge</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -340,7 +370,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./20-setup.html" class="sidebar-item-text sidebar-link active">
+  <a href="./20-setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Environment Setup</span></span></a>
   </div>
 </li>
@@ -442,7 +472,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./51-task-3-context.html" class="sidebar-item-text sidebar-link">
+  <a href="./51-task-3-context.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Task 3: The Context Limit Challenge</span></span></a>
   </div>
 </li>
@@ -464,26 +494,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#launching-the-environment" id="toc-launching-the-environment" class="nav-link active" data-scroll-target="#launching-the-environment"><span class="header-section-number">2.1</span> 🛠️ Launching the Environment</a>
-  <ul class="collapse">
-  <li><a href="#auto-pause-resume" id="toc-auto-pause-resume" class="nav-link" data-scroll-target="#auto-pause-resume"><span class="header-section-number">2.1.1</span> 💤 Auto-Pause &amp; Resume</a></li>
-  </ul></li>
-  <li><a href="#managing-your-session-quotas" id="toc-managing-your-session-quotas" class="nav-link" data-scroll-target="#managing-your-session-quotas"><span class="header-section-number">2.2</span> 📊 Managing Your Session &amp; Quotas</a>
-  <ul class="collapse">
-  <li><a href="#monthly-free-quotas-2026" id="toc-monthly-free-quotas-2026" class="nav-link" data-scroll-target="#monthly-free-quotas-2026"><span class="header-section-number">2.2.1</span> Monthly Free Quotas (2026)</a></li>
-  <li><a href="#checking-remaining-quota" id="toc-checking-remaining-quota" class="nav-link" data-scroll-target="#checking-remaining-quota"><span class="header-section-number">2.2.2</span> Checking Remaining Quota</a></li>
-  <li><a href="#stop-codespace" id="toc-stop-codespace" class="nav-link" data-scroll-target="#stop-codespace"><span class="header-section-number">2.2.3</span> Stopping Your Session Manually</a></li>
-  </ul></li>
+  <li><a href="#step-1-generating-the-mega-file" id="toc-step-1-generating-the-mega-file" class="nav-link active" data-scroll-target="#step-1-generating-the-mega-file"><span class="header-section-number">12.1</span> Step 1: Generating the “Mega-File”</a></li>
+  <li><a href="#step-2-the-naive-reality-check" id="toc-step-2-the-naive-reality-check" class="nav-link" data-scroll-target="#step-2-the-naive-reality-check"><span class="header-section-number">12.2</span> Step 2: The Naive Reality Check</a></li>
+  <li><a href="#step-3-the-agentic-solution" id="toc-step-3-the-agentic-solution" class="nav-link" data-scroll-target="#step-3-the-agentic-solution"><span class="header-section-number">12.3</span> Step 3: The Agentic Solution</a></li>
+  <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters"><span class="header-section-number">12.4</span> Why this matters</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/20-setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/51-task-3-context.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./50-context-memory.html">State Management</a></li><li class="breadcrumb-item"><a href="./51-task-3-context.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Task 3: The Context Limit Challenge</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Environment Setup</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Task 3: The Context Limit Challenge</span></h1>
 </div>
 
 
@@ -520,150 +544,43 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>To ensure a consistent, secure, and hassle-free experience, we will use a pre-configured cloud-based development environment. We will use <strong>GitHub Codespaces</strong>.</p>
-<div class="callout callout-style-simple callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>⏳ Start the Setup Early and Focus on the Presentations!
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>First-time environment setup and container building can take <strong>up to 10 minutes</strong> to compile and prepare.</p>
-<p><strong>We highly recommend launching the codespace right at the beginning of the workshop.</strong> While the setup runs automatically in the background, you can continue to fully focus on the presentations, live demonstrations, and slides shown by the tutor.</p>
-</div>
-</div>
-<hr>
-<section id="launching-the-environment" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="launching-the-environment"><span class="header-section-number">2.1</span> 🛠️ Launching the Environment</h2>
-<p>To launch the Codespaces environment manually from the GitHub interface, follow these steps:</p>
+<p>In this task, we will simulate a real-world scenario where you have “too much information” for the model to handle at once. We’ll use the <code>rdocdump</code> tool to create a massive text file from an R package.</p>
+<section id="step-1-generating-the-mega-file" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="step-1-generating-the-mega-file"><span class="header-section-number">12.1</span> Step 1: Generating the “Mega-File”</h2>
+<p>Open your terminal and run the following command to dump the entire documentation of the <code>DemoTools</code> package into a single text file:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This uses rdocdump to pull the full text of the package from GitHub</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: You might need to install it first if not in the container</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># remotes::install_github("e-kotov/rdocdump")</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> <span class="at">-e</span> <span class="st">'rdocdump::rdocdump("e-kotov/DemoTools", out = "demotools_dump.txt")'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-2-the-naive-reality-check" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="step-2-the-naive-reality-check"><span class="header-section-number">12.2</span> Step 2: The Naive Reality Check</h2>
+<p>Now that you have <code>demotools_dump.txt</code>, try the “Naive” approach:</p>
 <ol type="1">
-<li>Navigate to the <a href="https://github.com/e-kotov/2026-llm-agents-workshop">workshop repository</a>.</li>
-<li>Click the green <strong>Code</strong> button in the top right.</li>
-<li>Select the <strong>Codespaces</strong> tab.</li>
-<li>Click <strong>Create codespace on main</strong> (or click the <code>...</code> menu to configure machine size).</li>
-</ol>
-<div id="fig-codespace-start" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-codespace-start-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="media/github-start-codespace.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;2.1: Start GitHub Codespaces"><img src="media/github-start-codespace.png" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-codespace-start-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.1: Start GitHub Codespaces
-</figcaption>
-</figure>
-</div>
-<div class="callout callout-style-simple callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>🔒 Free &amp; Secure Environment
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<li>Open the file in VS Code and copy <strong>all</strong> the text (it will be thousands of lines).</li>
+<li>Go to the <a href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a> and paste it. How many tokens is it?</li>
+<li>Try pasting it into <a href="https://aistudio.google.com/">Google AI Studio</a> or ChatGPT.
 <ul>
-<li><strong>It is 100% Free:</strong> GitHub provides a generous free tier of <strong>60 hours</strong> of Codespaces usage per month for every personal account. No credit card, billing info, or payment is required.</li>
-<li><strong>It is Completely Secure:</strong> The environment runs inside a secure, isolated container (virtual machine) in the cloud. It does not touch your physical computer, install any local files, or run any software on your machine. It belongs to you and it is also mostly safe to enter your account data (e.g.&nbsp;Google account, especialy if secondary or test account, API keys, other accounts for subscription services or services we will use during the workshop) without worrying about security or privacy issues.</li>
-</ul>
-</div>
-</div>
-<div id="fig-codespace-start-video" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-codespace-start-video-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title="Start a Codespace on GitHub"><source src="media/videos/start-codespace.mp4"></video></div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-codespace-start-video-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.2: Codespace startup process (sped up)
-</figcaption>
-</figure>
-</div>
-<section id="auto-pause-resume" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="auto-pause-resume"><span class="header-section-number">2.1.1</span> 💤 Auto-Pause &amp; Resume</h3>
-<p>To save your free hours, the environment automatically pauses after 30 minutes of inactivity. When you restart it, your files, open tabs, and terminal history are fully preserved—just like waking up a laptop from sleep (though you may need to restart any active terminal commands or running applications).</p>
-<hr>
-</section>
-</section>
-<section id="managing-your-session-quotas" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="managing-your-session-quotas"><span class="header-section-number">2.2</span> 📊 Managing Your Session &amp; Quotas</h2>
-<p>GitHub Codespaces provides a generous free tier, but it is important to understand how usage is consumed to avoid running out of credits.</p>
-<section id="monthly-free-quotas-2026" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="monthly-free-quotas-2026"><span class="header-section-number">2.2.1</span> Monthly Free Quotas (2026)</h3>
-<p>The following quotas apply to personal accounts.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Account Type</th>
-<th style="text-align: left;">Actual Usage Hours</th>
-<th style="text-align: left;">Storage (per month)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>GitHub Free</strong></td>
-<td style="text-align: left;"><strong>60 hours</strong></td>
-<td style="text-align: left;"><strong>15 GB</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>GitHub Pro</strong></td>
-<td style="text-align: left;"><strong>90 hours</strong></td>
-<td style="text-align: left;"><strong>20 GB</strong></td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-simple callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>💾 Storage Persistence Quota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Storage (15GB/20GB) is consumed even when the codespace is <strong>stopped</strong>. To save your storage quota, make sure to <strong>delete</strong> codespaces you no longer need at <a href="https://github.com/codespaces">github.com/codespaces</a> once the workshop is fully over.</p>
-</div>
-</div>
-</section>
-<section id="checking-remaining-quota" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="checking-remaining-quota"><span class="header-section-number">2.2.2</span> Checking Remaining Quota</h3>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>You can monitor your real-time usage and remaining balance at any time:</p>
-<ol type="1">
-<li>Go to your <a href="https://github.com/settings/billing/summary">GitHub Settings &gt; Billing and plans</a>.</li>
-<li>Look for the <strong>Codespaces</strong> section under <strong>Usage this month</strong> or try this direct link: <a href="https://github.com/settings/billing/usage?period=3&amp;group=2&amp;query=product:codespaces">GitHub Codespaces Usage</a>.</li>
+<li>Does it fit?</li>
+<li>Is it hard to scroll?</li>
+<li>Imagine doing this for every question you have!</li>
+</ul></li>
 </ol>
-</div>
-</div>
-</div>
 </section>
-<section id="stop-codespace" class="level3" data-number="2.2.3">
-<h3 data-number="2.2.3" class="anchored" data-anchor-id="stop-codespace"><span class="header-section-number">2.2.3</span> Stopping Your Session Manually</h3>
-<p>When you are done with a session, you can stop the codespace manually to instantly stop consuming usage hours:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="media/github-stop-devcontainer-codespace.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Stop GitHub Codespace"><img src="media/github-stop-devcontainer-codespace.png" class="img-fluid figure-img" alt="Stop GitHub Codespace"></a></p>
-<figcaption>Stop GitHub Codespace</figcaption>
-</figure>
-</div>
+<section id="step-3-the-agentic-solution" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="step-3-the-agentic-solution"><span class="header-section-number">12.3</span> Step 3: The Agentic Solution</h2>
+<p>Now, let’s see how an agent handles this without blowing up the context window.</p>
+<p>Launch the Gemini CLI or OpenCode agent and give it a broad task.</p>
+<p><strong>Prompt to try:</strong> &gt; “I have a file called <code>demotools_dump.txt</code>. Read it and explain how the <code>DemoTools</code> package handles life table calculations. Provide a code example based on what you find.”</p>
+<p><strong>Observation:</strong> The agent <strong>cannot</strong> read the entire file at once because it has a safety limit (usually around 2000 lines). Watch how it pivots: - It might use <code>grep_search</code> to find “life table”. - It might read the file in small chunks using <code>start_line</code> and <code>end_line</code>. - It might use a “Context Mode” tool to index the file in a sandbox and only return the relevant sections.</p>
+</section>
+<section id="why-this-matters" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="why-this-matters"><span class="header-section-number">12.4</span> Why this matters</h2>
+<p>By using an agent, you avoided: 1. <strong>Wasting money/tokens</strong> on thousands of lines of irrelevant documentation. 2. <strong>Confusing the model</strong> with too much noise. 3. <strong>Manual effort</strong> of hunting through a giant text file.</p>
 <hr>
+<p><strong>Tip:</strong> If the agent gets stuck, help it! You can say: <em>“Use <code>grep_search</code> to find the life table functions in the dump file.”</em></p>
 
 
-</section>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>While the <a href="https://docs.github.com/en/billing/concepts/product-billing/github-codespaces#free-quota">official billing documentation</a> lists these as 120 and 180 <strong>core hours</strong>, the minimum instance size is 2 CPU cores. This means every 1 hour of real-time work consumes 2 core hours, resulting in the actual limits shown below.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->
@@ -1089,13 +1006,13 @@ Figure&nbsp;2.2: Codespace startup process (sped up)
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./10-intro-to-agents.html" class="pagination-link" aria-label="Introduction to LLM Agents">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to LLM Agents</span></span>
+      <a href="./50-context-memory.html" class="pagination-link" aria-label="State Management: Context and Memory">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">State Management: Context and Memory</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./21-vscode-navigation.html" class="pagination-link" aria-label="Navigating the Workshop Environment">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Navigating the Workshop Environment</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./90-references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1113,7 +1030,7 @@ Figure&nbsp;2.2: Codespace startup process (sped up)
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/20-setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/51-task-3-context.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -1126,39 +1043,6 @@ Figure&nbsp;2.2: Codespace startup process (sped up)
     </div>
   </div>
 </footer>
-<script>videojs(video_shortcode_videojs_video1);</script>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"fade","descPosition":"top","loop":false,"openEffect":"fade","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
