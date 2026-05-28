@@ -47,6 +47,10 @@ book:
       chapters:
         - 30-core-mechanics.qmd
         - 31-task-1-prompts.qmd
+    - part: "Safety"
+      chapters:
+        - 35-security-isolation.qmd
+        - 36-task-security.qmd
     - part: "Capabilities"
       chapters:
         - 40-capabilities.qmd
@@ -55,10 +59,6 @@ book:
       chapters:
         - 50-context-memory.qmd
         - 51-task-3-context.qmd
-    - part: "Safety"
-      chapters:
-        - 60-security-isolation.qmd
-        - 61-task-4-security.qmd
     - 90-references.qmd
 
   page-footer:

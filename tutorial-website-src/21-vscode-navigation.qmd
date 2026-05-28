@@ -6,12 +6,12 @@ Before we start interacting with agents, let's take a moment to understand the "
 
 ## The VS Code Interface
 
-The workshop runs in a specialized container that includes all necessary tools. See the [figure](#fig-VS Code-interface) below for the main elements of the VS Code interface in the Codespace environment. Click the image to zoom in.
+The workshop runs in a specialized container that includes all necessary tools. See the [figure](#fig-vscode-interface) below for the main elements of the VS Code interface in the Codespace environment. Click the image to zoom in.
 
 
-::: {#fig-VS Code-interface}
+::: {#fig-vscode-interface}
 
-![](media/VS Code-main-annotated.png)
+![](media/vscode-main-annotated.png)
 
 Main elements of VS Code interface.
 
@@ -26,9 +26,9 @@ In `VS Code` a folder is considered a project or workspace.
 
 To open any folder as a new project/workspace, right-click on the folder and choose `Open New Workbench Here`.
 
-::: {#fig-VS Code-open-folder-new-window}
+::: {#fig-vscode-open-folder-new-window}
 
-{{< video media/videos/VS Code-open-folder-as-project-new-window.mp4 title='Opening a folder as a new project' >}}
+{{< video media/videos/vscode-open-folder-as-project-new-window.mp4 title='Opening a folder as a new project' >}}
 
 Opening a folder as a new project in VS Code.
 
@@ -40,9 +40,9 @@ This allows to easily manage this workspace as well as Git repository for this s
 
 For quick agent tasks in any folder without opening a new window, you can also open a terminal directly in that folder. Right-click on the folder and select `Open in Integrated Terminal`.
 
-::: {#fig-VS Code-open-terminal-in-folder}
+::: {#fig-vscode-open-terminal-in-folder}
 
-{{< video media/videos/VS Code-open-folder-in-terminal.mp4 title='Opening terminal in a specific folder' >}}
+{{< video media/videos/vscode-open-folder-in-terminal.mp4 title='Opening terminal in a specific folder' >}}
 
 Opening terminal in a specific folder in VS Code.
 
@@ -56,9 +56,9 @@ If you open the folder in terminal this way and start an agent there, it will tr
 
 If at any point you feel lost, you can always reopen the default folder that the Codespaces started with by clicking the burger menu in the top left corner of `VS Code` and selecting `File -> Open Folder` and pasting '/workspace/' there. Or use the `File -> Open Recent` menu to find the folder you want to open.
 
-::: {#fig-VS Code-open-folder}
+::: {#fig-vscode-open-folder}
 
-![](media/VS Code-open-folder.png)
+![](media/vscode-open-folder.png)
 
 Opening a folder in VS Code.
 
@@ -91,9 +91,9 @@ You don't need to memorize these, as agent can navigate the terminal and file sy
 
 If you need to browse all files in the Codespace, you can use `File Explorer` extension preinstalled for you in the Codespace:
 
-::: {#fig-VS Code-file-explorer}
+::: {#fig-vscode-file-explorer}
 
-{{< video media/videos/VS Code-file-explorer.mp4 >}}
+{{< video media/videos/vscode-file-explorer.mp4 >}}
 
 Using `File Explorer` extension to browse all files in the Codespace.
 

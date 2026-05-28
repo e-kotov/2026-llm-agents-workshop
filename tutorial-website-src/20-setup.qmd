@@ -24,7 +24,7 @@ To launch the Codespaces environment manually from the GitHub interface, follow 
 3. Select the **Codespaces** tab.
 4. Click **Create codespace on main** (or click the `...` menu to configure machine size).
 
-::: {#fig-codespace-start} 
+::: {#fig-codespace-start}
 ![](media/github-start-codespace.png)
 
 Start GitHub Codespaces

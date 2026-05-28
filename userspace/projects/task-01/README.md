@@ -1,22 +1,3 @@
----
-title: "Task 1: Exploring System Prompts"
----
-
-In this task, you will interact with the **OpenCode** agent to understand the layers of instructions that govern its behavior.
-
-
-Open the [workshop Codespace environment](20-setup.qmd#launching-the-environment) if you haven't already.
-
-Open the terminal in `VS Code` and launch the OpenCode agent with command:
-
-```bash
-opencode
-```
-
-Reminder how to get around the interface is in [Navigating the Interface](21-VS Code-navigation.qmd). 
-
-Make sure you have selected a free model before you begin. See [Accessing models and authenticating agents](22-auth-agents.qmd#opencode) for instructions on how to do this.
-
 
 ## Mini-Exercise 1: Extracting the Agent Prompt
 
@@ -33,9 +14,9 @@ Make sure you have selected a free model before you begin. See [Accessing models
 
 - Did it know about its "Model" instructions? 
 
-::: {.callout-tip}
+
 Try doing the same with Google Gemini CLI or Antigravity CLI and see if the results are different. Alternatively, ask the coding agent you might be using regularly.
-:::
+
 
 
 ## Mini-Exercise 2: Dumping Instructions to a File
@@ -94,9 +75,3 @@ At this point you might be asked to allow certain actions/tools the agent will n
 Notice how agent tries to install packages. Very likely it will use it's training data to explicitly run `install.packages('tidymodels', repos = 'https://cloud.r-project.org/')` or similar. The problem is that in the Codespace you are running an Ubuntu Linux operating system, and on Linux R packages have to be built from source, which is very often very slow. The container you are in is perfectly setup to install packages from [Posit Package Manager](https://p3m.dev/client/#/repos/cran/setup?distribution=ubuntu-24.04) that provides pre-build binaries of R packages, which allows the installation to be as fast as on macOS or Windows. But the model chose to ignore this or did not bother to check.
 
 So this is where you can press `Esc` key to interrupt the agent and give it some help. E.g. you can tell it to use `https://p3m.dev/cran/__linux__/noble/latest` for package installation, or you can create an `AGENTS.md` file in project root explaining briefly that it runs in Ubuntu Linux and packages should be installed from `https://p3m.dev/cran/__linux__/noble/latest` and reload the agent and try starting the conversation over. At this point the agent will already know how to do it properly in this specific environment.
-
-
-
----
-
-Once you are done, close the agent by typing `exit` or `quit`.

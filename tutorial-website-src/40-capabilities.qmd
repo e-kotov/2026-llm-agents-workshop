@@ -42,14 +42,4 @@ Note however, that having hundreds of skills might be counterproductive, as the 
 Anthiropic (the maker of Claude) has initially introduced the concept of `Skills` and they have a special [**Skill Creator** `skill`](https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md)
 :::
 
-## The Execution Loop
-
-When you give a complex task to an agent, it enters an iterative loop:
-1. **Plan**: The agent thinks about the steps needed.
-2. **Act**: It calls one or more tools (e.g., reads a file).
-3. **Validate**: It checks the result of the tool call (e.g., did the test pass?).
-4. **Repeat**: It continues until the goal is achieved.
-
 ---
-
-In the next exercise, we will put these tools and skills to work by analyzing a real dataset and fixing code.
