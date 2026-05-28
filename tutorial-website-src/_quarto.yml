@@ -41,7 +41,7 @@ book:
     - index.qmd
     - 10-intro-to-agents.qmd
     - 20-setup.qmd
-    - 21-VS Code-navigation.qmd
+    - 21-vscode-navigation.qmd
     - 22-auth-agents.qmd
     - part: "The Brain"
       chapters:
