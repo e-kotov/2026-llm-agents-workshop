@@ -20,7 +20,7 @@ opencode
 
 
 ::: {#fig-new-terminal}
-![](media/VS Code-new-terminal.png)
+![](media/vscode-new-terminal.png)
 
 Opening a new terminal in VS Code.
 
