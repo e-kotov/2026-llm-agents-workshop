@@ -1,0 +1,1 @@
+You are in linux ubuntu so to install R pacakges faster always install using this repo `https://p3m.dev/cran/__linux__/noble/latest` or even better, just never set the repos argumetn at all as this container where you are running is already perfectly setup ot use this repo.
