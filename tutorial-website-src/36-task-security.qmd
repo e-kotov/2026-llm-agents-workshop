@@ -6,6 +6,8 @@ In this task, we will explore how to try controlling the agent's access to files
 
 Open the `userspace/projects/task-02` folder in `VS Code` and open a terminal there. Start the agent harness there.
 
+Notice that this time in the task project folder (unlike the previous tasks) you have an `AGENTS.md` and a copy of it in `GEMINI.md` file that explains to the agent how to properly install R packages in our Codespace environment.
+
 Prompt it:
 
 ```md

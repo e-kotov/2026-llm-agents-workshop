@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const workshopTitle = 'Beyond the Chatbox';
   const chatFinalTitle = 'Going beyond the chatbox';
 
-  if (!titleEl || titleEl.textContent.trim() !== workshopTitle) {
+  if (!titleEl || (!titleEl.textContent.trim().includes(workshopTitle) && !titleEl.textContent.trim().includes(chatFinalTitle))) {
     return;
   }
 

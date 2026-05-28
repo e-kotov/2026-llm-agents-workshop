@@ -985,50 +985,54 @@ body.quarto-dark .agent-demo.chatbox-container {
 .demo-view-toggle {
   display: flex;
   position: relative;
-  background: rgba(15, 23, 42, 0.05);
+  background: rgba(15, 23, 42, 0.05) !important;
   border-radius: 999px;
   padding: 2px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
   height: 28px;
   box-sizing: border-box;
 }
 
 body.quarto-dark .demo-view-toggle,
 .agent-demo.terminal-mode .demo-view-toggle {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
 }
 
 .toggle-option {
   position: relative;
   z-index: 2;
-  border: none;
-  background: none;
-  padding: 0 12px;
-  font: 700 0.72rem/1 "SF Mono", "Fira Mono", Consolas, monospace;
-  color: #64748b;
+  border: none !important;
+  background: none !important;
+  padding: 0 12px !important;
+  margin: 0 !important;
+  appearance: none;
+  -webkit-appearance: none;
+  font: 700 0.72rem/1 "SF Mono", "Fira Mono", Consolas, monospace !important;
+  color: #64748b !important;
   cursor: pointer;
   transition: color 0.2s ease;
   min-width: 54px;
-  height: 100%;
+  height: 100% !important;
   display: flex;
   align-items: center;
   justify-content: center;
   letter-spacing: -0.01em;
+  box-shadow: none !important;
 }
 
 body.quarto-dark .toggle-option,
 .agent-demo.terminal-mode .toggle-option {
-  color: #94a3b8;
+  color: #94a3b8 !important;
 }
 
 .toggle-option.active {
-  color: #0f172a;
+  color: #0f172a !important;
 }
 
 body.quarto-dark .toggle-option.active,
 .agent-demo.terminal-mode .toggle-option.active {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .toggle-slider {
@@ -1056,18 +1060,22 @@ body.quarto-dark .toggle-slider,
 }
 
 .demo-replay-button {
-  height: 28px;
-  padding: 0 10px;
-  display: flex;
+  height: 28px !important;
+  padding: 0 10px !important;
+  margin: 0 !important;
+  display: flex !important;
   align-items: center;
   gap: 6px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.62);
-  color: #64748b;
-  font: 700 0.72rem/1 "SF Mono", "Fira Mono", Consolas, monospace;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.62) !important;
+  color: #64748b !important;
+  font: 700 0.72rem/1 "SF Mono", "Fira Mono", Consolas, monospace !important;
   cursor: pointer;
   opacity: 0.7;
+  box-shadow: none !important;
   transition:
     opacity 160ms ease,
     color 160ms ease,
@@ -1077,39 +1085,39 @@ body.quarto-dark .toggle-slider,
 }
 
 .demo-button-icon {
-  font-size: 1rem;
-  line-height: 1;
+  font-size: 1rem !important;
+  line-height: 1 !important;
   transform: translateY(-1px);
 }
 
 .demo-button-text {
-  font-size: 0.72rem;
+  font-size: 0.72rem !important;
   letter-spacing: -0.01em;
 }
 
 .demo-replay-button:hover,
 .demo-replay-button:focus-visible {
-  opacity: 1;
-  color: #0f766e;
-  background: rgba(240, 253, 250, 0.94);
-  border-color: rgba(20, 184, 166, 0.28);
+  opacity: 1 !important;
+  color: #0f766e !important;
+  background: rgba(240, 253, 250, 0.94) !important;
+  border-color: rgba(20, 184, 166, 0.28) !important;
   transform: translateY(-1px);
 }
 
 body.quarto-dark .demo-replay-button,
 .agent-demo.terminal-mode .demo-replay-button {
-  border-color: rgba(148, 163, 184, 0.16);
-  background: rgba(15, 23, 42, 0.54);
-  color: #94a3b8;
+  border-color: rgba(148, 163, 184, 0.16) !important;
+  background: rgba(15, 23, 42, 0.54) !important;
+  color: #94a3b8 !important;
 }
 
 body.quarto-dark .demo-replay-button:hover,
 body.quarto-dark .demo-replay-button:focus-visible,
 .agent-demo.terminal-mode .demo-replay-button:hover,
 .agent-demo.terminal-mode .demo-replay-button:focus-visible {
-  color: #5eead4;
-  background: rgba(20, 184, 166, 0.12);
-  border-color: rgba(94, 234, 212, 0.24);
+  color: #5eead4 !important;
+  background: rgba(20, 184, 166, 0.12) !important;
+  border-color: rgba(94, 234, 212, 0.24) !important;
 }
 
 .agent-demo .chatbox-body {

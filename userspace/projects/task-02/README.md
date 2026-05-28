@@ -1,3 +1,5 @@
+Notice that this time (unlike the previous tasks) you have an AGENTS.md and a copy of it in GEMINI.md file that explains to the agent how to properly install R packages in our Codespace environment.
+
 
 Prompt it:
 
