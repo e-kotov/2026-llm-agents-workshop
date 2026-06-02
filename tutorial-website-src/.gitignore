@@ -1,5 +1,5 @@
 /.quarto/
-_site/
-_book/
+/_site/
+/_book/
 **/*.quarto_ipynb
-slides/
+/slides/

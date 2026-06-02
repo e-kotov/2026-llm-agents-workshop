@@ -1,6 +1,8 @@
 project:
   type: book
   brand: _brand.yml
+  resources:
+    - slides/
   post-render:
     - scripts/copy-pdf.sh
 
