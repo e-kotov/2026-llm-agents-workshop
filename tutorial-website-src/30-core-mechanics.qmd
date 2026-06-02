@@ -6,7 +6,7 @@ The most fundamental part of any coding agent is the **Model**—the "brain" tha
 
 ## Slides
 
-{{< pdf slides/intro.pdf width=100% height=450 image=media/slides/intro-preview.png image_width=100% button="Download Slides (PDF)" >}}
+{{< pdf slides/intro.pdf width=100% height=450 image=media/slides/intro-preview.png image_width=100% button="Download Slides (PDF)" image_force=FALSE >}}
 
 
 
