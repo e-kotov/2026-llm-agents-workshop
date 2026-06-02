@@ -124,7 +124,7 @@ format:
       - scripts/trigger-fix.lua
 
 execute:
-  freeze: true
+  freeze: false
 
 citation:
   type: webpage
