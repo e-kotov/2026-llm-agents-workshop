@@ -152,14 +152,16 @@ h2 {
   border-top: 1px solid #eee;
 }
 
-/* Fix: Keep sidebars from scrolling up at the bottom of the page */
-#quarto-sidebar, 
-.quarto-margin-sidebar {
-  position: sticky !important;
-  top: 80px !important; /* Offset for navbar */
-  height: calc(100vh - 80px) !important;
-  overflow-y: auto !important;
-  align-self: start !important;
+/* Fix: Keep sidebars from scrolling up at the bottom of the page on Desktop */
+@media (min-width: 992px) {
+  #quarto-sidebar, 
+  .quarto-margin-sidebar {
+    position: sticky !important;
+    top: 80px !important; /* Offset for navbar */
+    height: calc(100vh - 80px) !important;
+    overflow-y: auto !important;
+    align-self: start !important;
+  }
 }
 
 /* Page footer */
