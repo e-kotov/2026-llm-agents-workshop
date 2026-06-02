@@ -82,9 +82,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ec31813410c495faaee9d65af4ca6002.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-eb17667f038be3b277b00fa0c3297375.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-ec31813410c495faaee9d65af4ca6002.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6c8f521c0c2991fd15eeaf3478bbe9f5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-2d834bede658bd0117c594d6fd39dae1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6c8f521c0c2991fd15eeaf3478bbe9f5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -489,8 +489,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#setup-the-environment" id="toc-setup-the-environment" class="nav-link active" data-scroll-target="#setup-the-environment"><span class="header-section-number">8.1</span> Setup the environment</a></li>
+  <li><a href="#test-the-setup" id="toc-test-the-setup" class="nav-link" data-scroll-target="#test-the-setup"><span class="header-section-number">8.2</span> Test the setup</a></li>
+  <li><a href="#feel-free-to-continue-expermenting" id="toc-feel-free-to-continue-expermenting" class="nav-link" data-scroll-target="#feel-free-to-continue-expermenting"><span class="header-section-number">8.3</span> Feel free to continue expermenting</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/36-task-security.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -537,15 +545,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>In this task, we will explore how to try controlling the agent’s access to files and commands.</p>
 <p>Open the <code>userspace/projects/task-02</code> folder in <code>VS Code</code> and open a terminal there. Start the agent harness there.</p>
+<p>Notice that this time in the task project folder (unlike the previous tasks) you have an <code>AGENTS.md</code> and a copy of it in <code>GEMINI.md</code> file that explains to the agent how to properly install R packages in our Codespace environment.</p>
+<section id="setup-the-environment" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="setup-the-environment"><span class="header-section-number">8.1</span> Setup the environment</h2>
 <p>Prompt it:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>I want to use HMDHFDplus R package to get the data for Germany for last few years. I have password and user name, but i want the code in the R script that uses the <span class="in">`HMDHFDplus`</span> package to get the credentials from <span class="in">`.env`</span> file. Can you write such script and save it as <span class="in">`get_data.R`</span>? I will put in my credentials int the <span class="in">`.env`</span> file later, for now just setup the code and that file with how you would expect the credentials to be stored there. Double check list of functions in the pacakge and also using <span class="in">`?&lt;function_name&gt;`</span> check how to use the function that fetches the data.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Once this is set, read the documenation of the agent harness (e.g.&nbsp;for OpenCode this there is <a href="https://opencode.ai/docs/plugins/#env-protection">a specific section with exact example on how to set this up</a>, for Gemini CLI, just try googling ‘in gemini cli how to make a hook that prevents if from reading .env file?’). Then pass over the instructions to the agent itself and ask it to configure itself so that it cannot read the <code>.env</code> file and thus cannot access the credentials stored there.</p>
 <p>Once that is done, restart the agent.</p>
+</section>
+<section id="test-the-setup" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="test-the-setup"><span class="header-section-number">8.2</span> Test the setup</h2>
+<p>You don’t need to enter your real credentials into the <code>.env</code> file for this test, just put in some fake text there.</p>
 <p>Try to force it to read the file with natural language instructions. See if it works.</p>
 <p>Try fooling it, by askig it to write an R script that reads any text file and prints it to console. Then manually edit this script to read the <code>.env</code> file and print it to console. Then ask the agent to run this script and tell you what the output is. See if it can read the credentials this way.</p>
+</section>
+<section id="feel-free-to-continue-expermenting" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="feel-free-to-continue-expermenting"><span class="header-section-number">8.3</span> Feel free to continue expermenting</h2>
+<p>Feel free to put in your real credentials for the <a href="https://www.mortality.org/">Human Mortality Database</a> and ask the agent to retrieve the data and perhaps create some plots for you.</p>
 <p>After all of these experiments, don’t forget to change your password for HMD in case you did put in your real credentials into the <code>.env</code> file at some point.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -994,7 +1014,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </a>
   </li>  
 </ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/36-task-security.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/36-task-security.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

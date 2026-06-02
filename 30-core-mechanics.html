@@ -47,9 +47,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ec31813410c495faaee9d65af4ca6002.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-eb17667f038be3b277b00fa0c3297375.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-ec31813410c495faaee9d65af4ca6002.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6c8f521c0c2991fd15eeaf3478bbe9f5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-2d834bede658bd0117c594d6fd39dae1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6c8f521c0c2991fd15eeaf3478bbe9f5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -463,17 +463,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#models" id="toc-models" class="nav-link active" data-scroll-target="#models"><span class="header-section-number">5.1</span> Models</a></li>
-  <li><a href="#model-vs.-agent-system-prompts" id="toc-model-vs.-agent-system-prompts" class="nav-link" data-scroll-target="#model-vs.-agent-system-prompts"><span class="header-section-number">5.2</span> Model vs.&nbsp;Agent System Prompts</a>
+  <li><a href="#slides" id="toc-slides" class="nav-link active" data-scroll-target="#slides"><span class="header-section-number">5.1</span> Slides</a></li>
+  <li><a href="#models" id="toc-models" class="nav-link" data-scroll-target="#models"><span class="header-section-number">5.2</span> Models</a></li>
+  <li><a href="#model-vs.-agent-system-prompts" id="toc-model-vs.-agent-system-prompts" class="nav-link" data-scroll-target="#model-vs.-agent-system-prompts"><span class="header-section-number">5.3</span> Model vs.&nbsp;Agent System Prompts</a>
   <ul class="collapse">
-  <li><a href="#the-model-system-prompt" id="toc-the-model-system-prompt" class="nav-link" data-scroll-target="#the-model-system-prompt"><span class="header-section-number">5.2.1</span> The Model System Prompt</a></li>
-  <li><a href="#the-agent-system-prompt" id="toc-the-agent-system-prompt" class="nav-link" data-scroll-target="#the-agent-system-prompt"><span class="header-section-number">5.2.2</span> The Agent System Prompt</a></li>
+  <li><a href="#the-model-system-prompt" id="toc-the-model-system-prompt" class="nav-link" data-scroll-target="#the-model-system-prompt"><span class="header-section-number">5.3.1</span> The Model System Prompt</a></li>
+  <li><a href="#the-agent-system-prompt" id="toc-the-agent-system-prompt" class="nav-link" data-scroll-target="#the-agent-system-prompt"><span class="header-section-number">5.3.2</span> The Agent System Prompt</a></li>
   </ul></li>
-  <li><a href="#configuration-files-global-and-local-instructions" id="toc-configuration-files-global-and-local-instructions" class="nav-link" data-scroll-target="#configuration-files-global-and-local-instructions"><span class="header-section-number">5.3</span> Configuration Files: Global and Local Instructions</a>
+  <li><a href="#configuration-files-global-and-local-instructions" id="toc-configuration-files-global-and-local-instructions" class="nav-link" data-scroll-target="#configuration-files-global-and-local-instructions"><span class="header-section-number">5.4</span> Configuration Files: Global and Local Instructions</a>
   <ul class="collapse">
-  <li><a href="#global-vs.-local-instructions" id="toc-global-vs.-local-instructions" class="nav-link" data-scroll-target="#global-vs.-local-instructions"><span class="header-section-number">5.3.1</span> Global vs.&nbsp;Local Instructions</a></li>
+  <li><a href="#global-vs.-local-instructions" id="toc-global-vs.-local-instructions" class="nav-link" data-scroll-target="#global-vs.-local-instructions"><span class="header-section-number">5.4.1</span> Global vs.&nbsp;Local Instructions</a></li>
   </ul></li>
-  <li><a href="#prompt-layering-architecture" id="toc-prompt-layering-architecture" class="nav-link" data-scroll-target="#prompt-layering-architecture"><span class="header-section-number">5.4</span> Prompt Layering Architecture</a></li>
+  <li><a href="#prompt-layering-architecture" id="toc-prompt-layering-architecture" class="nav-link" data-scroll-target="#prompt-layering-architecture"><span class="header-section-number">5.5</span> Prompt Layering Architecture</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/30-core-mechanics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -521,20 +522,24 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>The most fundamental part of any coding agent is the <strong>Model</strong>—the “brain” that processes your requests. However, the model doesn’t work in a vacuum; it is wrapped in an <strong>Agent Harness</strong> (e.g.&nbsp;OpenCode, Claude Code, Codex, Google Antigravity CLI, many others).</p>
-<section id="models" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="models"><span class="header-section-number">5.1</span> Models</h2>
+<section id="slides" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="slides"><span class="header-section-number">5.1</span> Slides</h2>
+<p></p><div><object data="slides/intro.pdf" type="application/pdf" width="100%" height="450"><a href="slides/intro.pdf" download=""><img src="media/slides/intro-preview.png" width="100%"></a></object><br><a href="slides/intro.pdf" download="" style="display:inline-block; padding:10px 18px; background-color:#007acc; color:white; font-size:15px; border:none; border-radius:6px; cursor:pointer; text-decoration:none; transition:background-color 0.2s ease;" onmouseover="this.style.backgroundColor='#005fa3';" onmouseout="this.style.backgroundColor='#007acc';">Download Slides (PDF)</a></div><p></p>
+</section>
+<section id="models" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="models"><span class="header-section-number">5.2</span> Models</h2>
 <p>In this workshop we are going to use a variety of models, at the link below you can see a comparison of the characteristics, performance, and costs of the models we will be using, as well as some other popular models that you can try on your own.</p>
 <p><a href="https://artificialanalysis.ai/?cost=cost-breakdown&amp;output-tokens=intelligence-vs-output-tokens&amp;models=gpt-5-5-high%2Cgemini-3-pro-low%2Cgemini-3-5-flash%2Cgemini-3-1-pro-preview%2Cclaude-opus-4-7%2Cclaude-sonnet-4-6-adaptive%2Cdeepseek-v4-flash-high%2Cminimax-m2-7%2Cnvidia-nemotron-3-super-120b-a12b%2Cqwen3-5-397b-a17b%2Cqwen3-5-122b-a10b%2Cqwen3-6-35b-a3b%2Cqwen3-6-27b%2Cqwen3-6-plus%2Cgemini-3-pro%2Cminimax-m2-5%2Cglm-4-5-air">See models comparison</a></p>
 </section>
-<section id="model-vs.-agent-system-prompts" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="model-vs.-agent-system-prompts"><span class="header-section-number">5.2</span> Model vs.&nbsp;Agent System Prompts</h2>
+<section id="model-vs.-agent-system-prompts" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="model-vs.-agent-system-prompts"><span class="header-section-number">5.3</span> Model vs.&nbsp;Agent System Prompts</h2>
 <p>An agent’s behavior is governed by layers of instructions. It is helpful to distinguish between the instructions given to the model and those that define the agent harness.</p>
-<section id="the-model-system-prompt" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="the-model-system-prompt"><span class="header-section-number">5.2.1</span> The Model System Prompt</h3>
+<section id="the-model-system-prompt" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="the-model-system-prompt"><span class="header-section-number">5.3.1</span> The Model System Prompt</h3>
 <p>This is the base set of rules provided by the model provider (e.g., OpenAI, Anthropic, Google). It typically contains safety guidelines and a persona like <em>“You are a helpful AI assistant.”</em> These instructions are often “hard-coded” or pre-configured by the provider before the agent harness adds its own layer.</p>
 </section>
-<section id="the-agent-system-prompt" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="the-agent-system-prompt"><span class="header-section-number">5.2.2</span> The Agent System Prompt</h3>
+<section id="the-agent-system-prompt" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="the-agent-system-prompt"><span class="header-section-number">5.3.2</span> The Agent System Prompt</h3>
 <p>The <strong>Agent Harness</strong> (the software you use to interact with the model) provides its own set of instructions. Depending on the harness, these might include:</p>
 <ul>
 <li><p>What it is (e.g.&nbsp;<em>“you are OpenCode, an agent that can read and write files, run code, and use tools to help users with coding tasks”</em>).</p></li>
@@ -553,11 +558,11 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="configuration-files-global-and-local-instructions" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="configuration-files-global-and-local-instructions"><span class="header-section-number">5.3</span> Configuration Files: Global and Local Instructions</h2>
+<section id="configuration-files-global-and-local-instructions" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="configuration-files-global-and-local-instructions"><span class="header-section-number">5.4</span> Configuration Files: Global and Local Instructions</h2>
 <p>The behavior of an agent harness is often guided by specific configuration files that provide context about you and your project. In our workshop, we focus on a hierarchy of <strong>Instruction Files</strong> (typically named <code>GEMINI.md</code> for Google’s models, <code>CLAUDE.md</code> for Anthropic’s models, and <code>AGENTS.md</code> for most other agents including OpenAI Codex).</p>
-<section id="global-vs.-local-instructions" class="level3" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="global-vs.-local-instructions"><span class="header-section-number">5.3.1</span> Global vs.&nbsp;Local Instructions</h3>
+<section id="global-vs.-local-instructions" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="global-vs.-local-instructions"><span class="header-section-number">5.4.1</span> Global vs.&nbsp;Local Instructions</h3>
 <p>Harnesses typically look for instructions at two levels:</p>
 <ol type="1">
 <li><p><strong>Global Instructions (<code>~/.gemini/GEMINI.md</code> or <code>~/.agents/AGENTS.md</code>)</strong>: These are your personal preferences that follow you across all projects. They might include your preferred coding style (e.g., “I always use the Tidyverse”), your language preferences, or general rules about how you want the agent to communicate.</p></li>
@@ -566,8 +571,8 @@ ul.task-list li input[type="checkbox"] {
 <p>This may differ from agent to agent, so refere to the documentation of the specific agent harness (<a href="https://opencode.ai/docs/rules/#precedence">OpenCode</a>, <a href="https://antigravity.google/docs/cli-best-practices#:~:text=Write%20a%20codebase%20rule%20file">Antigravity CLI</a>, <a href="https://geminicli.com/docs/cli/gemini-md/">Gemini CLI</a>, <a href="https://code.claude.com/docs/en/memory#claude-md-files">Claude Code</a>, <a href="https://developers.openai.com/codex/guides/agents-md">Codex</a>), or just as the agent itself.</p>
 </section>
 </section>
-<section id="prompt-layering-architecture" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="prompt-layering-architecture"><span class="header-section-number">5.4</span> Prompt Layering Architecture</h2>
+<section id="prompt-layering-architecture" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="prompt-layering-architecture"><span class="header-section-number">5.5</span> Prompt Layering Architecture</h2>
 <p>The final prompt sent to the LLM service is a “sandwich” of different instruction layers. Understanding this hierarchy helps you write better prompts and understand agent behavior.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
