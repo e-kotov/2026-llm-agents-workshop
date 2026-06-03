@@ -33,10 +33,17 @@ document.addEventListener("DOMContentLoaded", function() {
     if (marginSidebar && !marginSidebar.querySelector('.quarto-margin-pdf-link')) {
       const pdfLinkDiv = document.createElement('div');
       pdfLinkDiv.className = 'quarto-margin-pdf-link';
+      pdfLinkDiv.style.display = 'flex';
+      pdfLinkDiv.style.flexDirection = 'column';
+      pdfLinkDiv.style.gap = '10px';
       pdfLinkDiv.innerHTML = `
         <a href="assets/Beyond-the-Chatbox.pdf" target="_blank">
           <i class="bi bi-file-earmark-pdf-fill"></i>
           <span>Download full tutorial as PDF</span>
+        </a>
+        <a href="slides/slides.pdf" target="_blank">
+          <i class="bi bi-file-earmark-pdf-fill"></i>
+          <span>Download slides as PDF</span>
         </a>
       `;
       marginSidebar.insertBefore(pdfLinkDiv, marginSidebar.firstChild);
