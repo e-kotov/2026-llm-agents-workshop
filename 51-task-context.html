@@ -8,7 +8,7 @@
 
 <meta name="description" content="Beyond the Chatbox: LLM Coding and Research Agents for Academics">
 
-<title>10&nbsp; Task 2: Working with Tools and Skills – Beyond the Chatbox</title>
+<title>12&nbsp; Task 4: The Context Limit Challenge – Beyond the Chatbox</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -69,8 +69,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./50-context-memory.html" rel="next">
-<link href="./40-capabilities.html" rel="prev">
+<link href="./90-references.html" rel="next">
+<link href="./50-context-memory.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -336,7 +336,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./40-capabilities.html">Capabilities</a></li><li class="breadcrumb-item"><a href="./41-task-2-tools.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Task 2: Working with Tools and Skills</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./50-context-memory.html">State Management</a></li><li class="breadcrumb-item"><a href="./51-task-context.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Task 4: The Context Limit Challenge</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -403,7 +403,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./31-task-1-prompts.html" class="sidebar-item-text sidebar-link">
+  <a href="./31-task-prompts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Task 1: Exploring System Prompts</span></span></a>
   </div>
 </li>
@@ -449,8 +449,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./41-task-2-tools.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Task 2: Working with Tools and Skills</span></span></a>
+  <a href="./41-task-skills.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Task 3: Skills</span></span></a>
   </div>
 </li>
       </ul>
@@ -472,8 +472,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./51-task-3-context.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Task 3: The Context Limit Challenge</span></span></a>
+  <a href="./51-task-context.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Task 4: The Context Limit Challenge</span></span></a>
   </div>
 </li>
       </ul>
@@ -494,20 +494,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#setting-the-scene" id="toc-setting-the-scene" class="nav-link active" data-scroll-target="#setting-the-scene"><span class="header-section-number">10.1</span> Setting the Scene</a></li>
-  <li><a href="#step-1-exploratory-analysis" id="toc-step-1-exploratory-analysis" class="nav-link" data-scroll-target="#step-1-exploratory-analysis"><span class="header-section-number">10.2</span> Step 1: Exploratory Analysis</a></li>
-  <li><a href="#step-2-activating-a-skill" id="toc-step-2-activating-a-skill" class="nav-link" data-scroll-target="#step-2-activating-a-skill"><span class="header-section-number">10.3</span> Step 2: Activating a Skill</a></li>
-  <li><a href="#step-3-fixing-a-bug" id="toc-step-3-fixing-a-bug" class="nav-link" data-scroll-target="#step-3-fixing-a-bug"><span class="header-section-number">10.4</span> Step 3: Fixing a Bug</a></li>
+  <li><a href="#step-1-generating-the-large-file" id="toc-step-1-generating-the-large-file" class="nav-link active" data-scroll-target="#step-1-generating-the-large-file"><span class="header-section-number">12.1</span> Step 1: Generating the large file</a></li>
+  <li><a href="#step-2-the-naive-reality-check" id="toc-step-2-the-naive-reality-check" class="nav-link" data-scroll-target="#step-2-the-naive-reality-check"><span class="header-section-number">12.2</span> Step 2: The Naive Reality Check</a></li>
+  <li><a href="#step-3-the-agentic-solution" id="toc-step-3-the-agentic-solution" class="nav-link" data-scroll-target="#step-3-the-agentic-solution"><span class="header-section-number">12.3</span> Step 3: The Agentic Solution</a></li>
+  <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters"><span class="header-section-number">12.4</span> Why this matters</a></li>
+  <li><a href="#step-4-memory" id="toc-step-4-memory" class="nav-link" data-scroll-target="#step-4-memory"><span class="header-section-number">12.5</span> Step 4: Memory</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/41-task-2-tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/51-task-context.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./40-capabilities.html">Capabilities</a></li><li class="breadcrumb-item"><a href="./41-task-2-tools.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Task 2: Working with Tools and Skills</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./50-context-memory.html">State Management</a></li><li class="breadcrumb-item"><a href="./51-task-context.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Task 4: The Context Limit Challenge</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Task 2: Working with Tools and Skills</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Task 4: The Context Limit Challenge</span></h1>
 </div>
 
 
@@ -544,32 +545,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In this task, you will use the Gemini CLI agent to explore a project, run code, and apply your first automated fix. We will use the <code>task-03-demotools</code> project.</p>
-<section id="setting-the-scene" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="setting-the-scene"><span class="header-section-number">10.1</span> Setting the Scene</h2>
-<p>Navigate to the project folder in your terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> userspace/projects/task-03-demotools</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This folder contains a small R analysis and some sample data.</p>
+<p>In this task, we will simulate a real-world scenario where you have “too much information” for the model to handle at once. We’ll use the <code>rdocdump</code> tool to create a massive text file from an R package.</p>
+<section id="step-1-generating-the-large-file" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="step-1-generating-the-large-file"><span class="header-section-number">12.1</span> Step 1: Generating the large file</h2>
+<p>Open the <code>userspace/projects/task-02</code> folder in <code>VS Code</code> and open a terminal there. Start the agent harness there.</p>
+<p>Open agent in the workshop Codespace environment and prompt it:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>install 'rdocdump' R package, only use "https://p3m.dev/cran/__linux__/noble/latest"  repo as we are in a linux container and want fast binary package installs the run</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Rscript -e 'rdocdump::rdocdump("timriffe/DemoTools", out = "demotools_dump.txt")'</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Right now we are using this explicit crafted technical instruction to avoid any ambiguity in the results. You could as well have installed the package yourself, but we are in an agentic coding workshop, so let’s have the agent do it for us. Also notice, that the agent might struggle a bit with where exactly to install R packages.</p>
 </section>
-<section id="step-1-exploratory-analysis" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="step-1-exploratory-analysis"><span class="header-section-number">10.2</span> Step 1: Exploratory Analysis</h2>
-<p>Launch the agent and ask it to describe the project.</p>
-<p><strong>Prompt to try:</strong> &gt; “Explore this directory. What data is here, and what does the <code>analysis.R</code> script do?”</p>
-<p><strong>Observation:</strong> Watch the agent use <code>ls</code> and <code>read_file</code> to build its understanding. It should identify the CSV file and the R script’s purpose.</p>
+<section id="step-2-the-naive-reality-check" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="step-2-the-naive-reality-check"><span class="header-section-number">12.2</span> Step 2: The Naive Reality Check</h2>
+<p>Now that you have <code>demotools_dump.txt</code>, try the “Naive” approach:</p>
+<ol type="1">
+<li><p>Open the file in VS Code and copy <strong>all</strong> the text (it will be thousands of lines).</p></li>
+<li><p>Go to the <a href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a> and paste it. How many tokens is it? (and does it even fit into the tokenizer? Try it! If it doesn’t work, try pasting just the first 2000 lines and see how many tokens that is).</p></li>
+<li><p>Try pasting it into <a href="https://aistudio.google.com/">Google AI Studio</a> and then into your favorite LLM chat provider.</p>
+<ul>
+<li>Does it fit?</li>
+<li>Is it hard to scroll?</li>
+<li>Imagine doing this for every question you have!</li>
+</ul></li>
+</ol>
 </section>
-<section id="step-2-activating-a-skill" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="step-2-activating-a-skill"><span class="header-section-number">10.3</span> Step 2: Activating a Skill</h2>
-<p>Let’s ensure the agent is in the right “mindset” for R data analysis.</p>
-<p><strong>Prompt to try:</strong> &gt; “Activate the <code>r-data-analysis</code> skill and run the <code>analysis.R</code> script. Does it produce any output or errors?”</p>
-<p><strong>Observation:</strong> The agent will likely use <code>run_shell_command</code> to execute the R script. It might encounter an error if a package is missing or if there’s a bug in the code.</p>
+<section id="step-3-the-agentic-solution" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="step-3-the-agentic-solution"><span class="header-section-number">12.3</span> Step 3: The Agentic Solution</h2>
+<p>Now, let’s see how an agent handles this without blowing up the context window.</p>
+<p>Launch the Gemini CLI or OpenCode agent and give it a broad task.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>I have a file called <span class="in">`demotools_dump.txt`</span>. Read it and explain how the <span class="in">`DemoTools`</span> package handles life table calculations. Provide a code example based on what you find.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Observation:</strong></p>
+<p>The agent probably <strong>cannot</strong> read the entire file at once because it has a safety limit to prevent context overload. Watch how it pivots:</p>
+<ul>
+<li><p>It might use <code>grep_search</code> to find “life table”.</p></li>
+<li><p>It might read the file in small chunks using <code>start_line</code> and <code>end_line</code> or some sampling reads of random lines in the file.</p></li>
+</ul>
 </section>
-<section id="step-3-fixing-a-bug" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="step-3-fixing-a-bug"><span class="header-section-number">10.4</span> Step 3: Fixing a Bug</h2>
-<p>If the script failed (or even if it succeeded), let’s ask the agent to improve it.</p>
-<p><strong>Prompt to try:</strong> &gt; “The script needs to calculate the growth rate of the population by region. Can you modify <code>analysis.R</code> to add this calculation and save the result to a new file called <code>growth_rates.csv</code>?”</p>
-<p><strong>Action:</strong> Watch the agent: 1. Read the current script. 2. Formulate a plan to add the <code>dplyr</code> logic. 3. Use the <code>replace</code> or <code>write_file</code> tool to update the code. 4. Run the script again to verify the output exists.</p>
-<hr>
-<p><strong>Tip:</strong> You can check the new <code>growth_rates.csv</code> file in your VS Code file pane to verify the agent’s work!</p>
+<section id="why-this-matters" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="why-this-matters"><span class="header-section-number">12.4</span> Why this matters</h2>
+<p>By using an agent, you avoided:</p>
+<ol type="1">
+<li><p><strong>Wasting money/tokens</strong> on thousands of lines of irrelevant documentation.</p></li>
+<li><p><strong>Confusing the model</strong> with too much noise.</p></li>
+<li><p><strong>Manual effort</strong> of hunting through a giant text file.</p></li>
+</ol>
+</section>
+<section id="step-4-memory" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="step-4-memory"><span class="header-section-number">12.5</span> Step 4: Memory</h2>
+<p>Now ask the agent to create git repository and track changes. Also ask it to setup a sipmple yet efficient file-based memory of markdown files that would allow it to work on the project long term and recall at any point what was already done, what needs to be done in the next step, and why certain decisions were made (use of methods, packages, etc). Ask it to explain its decisions about how and why it chose to implement the memory system the way it did and how frequently it would make the git commit snapshots of the project.</p>
+<p>Go back to previous exercise and try to redo it with this new memory system in place.</p>
 
 
 </section>
@@ -997,13 +1020,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./40-capabilities.html" class="pagination-link" aria-label="Capabilities: Tools and Skills">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Capabilities: Tools and Skills</span></span>
+      <a href="./50-context-memory.html" class="pagination-link" aria-label="State Management: Context and Memory">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">State Management: Context and Memory</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./50-context-memory.html" class="pagination-link" aria-label="State Management: Context and Memory">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">State Management: Context and Memory</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./90-references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1021,7 +1044,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/41-task-2-tools.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/edit/main/51-task-context.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/e-kotov/2026-llm-agents-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

@@ -34,8 +34,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./51-task-3-context.html" rel="next">
-<link href="./41-task-2-tools.html" rel="prev">
+<link href="./51-task-context.html" rel="next">
+<link href="./41-task-skills.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -368,7 +368,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./31-task-1-prompts.html" class="sidebar-item-text sidebar-link">
+  <a href="./31-task-prompts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Task 1: Exploring System Prompts</span></span></a>
   </div>
 </li>
@@ -414,8 +414,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./41-task-2-tools.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Task 2: Working with Tools and Skills</span></span></a>
+  <a href="./41-task-skills.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Task 3: Skills</span></span></a>
   </div>
 </li>
       </ul>
@@ -437,8 +437,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./51-task-3-context.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Task 3: The Context Limit Challenge</span></span></a>
+  <a href="./51-task-context.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Task 4: The Context Limit Challenge</span></span></a>
   </div>
 </li>
       </ul>
@@ -511,15 +511,29 @@ ul.task-list li input[type="checkbox"] {
 <p>One of the biggest hurdles in working with LLMs is the <strong>Context Window</strong>. This is the limit on how much information (text, code, data) the model can process and reason over in a single pass.</p>
 <section id="the-context-window" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="the-context-window"><span class="header-section-number">11.1</span> The Context Window</h2>
-<p>Think of the context window as the agent’s “working memory.” - <strong>Tokens:</strong> Models don’t read words; they read “tokens” (chunks of characters). A context window might be 32,000 tokens or 2 million tokens depending on the model. Check out the <a href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a> to see how text is converted. - <strong>Context Bloat:</strong> If you try to paste an entire codebase or a massive dataset into a prompt, you will hit the context limit. Even if you don’t hit the limit, very large contexts can make the model slower, more expensive, and less accurate (it might miss details in the middle).</p>
+<p>Think of the context window as the agent’s “working memory.”</p>
+<ul>
+<li><p><strong>Tokens:</strong> Models don’t read words; they read “tokens” (chunks of characters). A context window might be 32,000 tokens or 2 million tokens depending on the model. Check out the <a href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a> to see how text is converted.</p></li>
+<li><p><strong>Context Bloat:</strong> If you try to paste an entire codebase or a massive dataset into a prompt, you will hit the context limit. Even if you don’t hit the limit, very large contexts can make the model slower, more expensive, and less accurate (it might miss details in the middle).</p></li>
+</ul>
 </section>
 <section id="memory-systems" class="level2" data-number="11.2">
 <h2 data-number="11.2" class="anchored" data-anchor-id="memory-systems"><span class="header-section-number">11.2</span> Memory Systems</h2>
-<p>To handle large projects, agents use <strong>Memory Systems</strong>. Instead of loading everything into the “working memory” at once, they: - <strong>Index</strong> your files (creating a searchable map of your project). - <strong>Search</strong> for relevant information only when needed. - <strong>Store</strong> past decisions and discoveries in a long-term memory file (like <code>MEMORY.md</code> or a local database) so they don’t have to re-learn things in the next session.</p>
+<p>To handle large projects, agents use <strong>Memory Systems</strong>. Instead of loading everything into the “working memory” at once, they:</p>
+<ul>
+<li><p><strong>Index</strong> your files (creating a searchable map of your project).</p></li>
+<li><p><strong>Search</strong> for relevant information only when needed.</p></li>
+<li><p><strong>Store</strong> past decisions and discoveries in a long-term memory file (like <code>MEMORY.md</code> or a local database) so they don’t have to re-learn things in the next session.</p></li>
+</ul>
+<p>There is a fierce competition in the space of memory systems for agents, but one effective approach for a small project could be to just ask the agent to create a system that would be efficient for it to work with and to use it to answer your questions about the decisions you or it made in the project.</p>
 </section>
 <section id="agentic-vs.-naive-approaches" class="level2" data-number="11.3">
 <h2 data-number="11.3" class="anchored" data-anchor-id="agentic-vs.-naive-approaches"><span class="header-section-number">11.3</span> Agentic vs.&nbsp;Naive Approaches</h2>
-<p>When faced with a massive file: - <strong>Naive User:</strong> Copies and pastes the whole file into ChatGPT. Result: “Message too long” or truncated response. - <strong>Agentic Tool:</strong> Uses tools like <code>grep_search</code> to find specific keywords or <code>read_file</code> with <code>start_line</code> and <code>end_line</code> to read only the relevant section.</p>
+<p>When faced with a massive file:</p>
+<ul>
+<li><p><strong>Naive User:</strong> Copies and pastes the whole file into ChatGPT. Result: “Message too long” or truncated response.</p></li>
+<li><p><strong>Agentic Tool:</strong> Uses tools like <code>grep_search</code> to find specific keywords or <code>read_file</code> with <code>start_line</code> and <code>end_line</code> to read only the relevant section.</p></li>
+</ul>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -959,13 +973,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./41-task-2-tools.html" class="pagination-link" aria-label="Task 2: Working with Tools and Skills">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Task 2: Working with Tools and Skills</span></span>
+      <a href="./41-task-skills.html" class="pagination-link" aria-label="Task 3: Skills">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Task 3: Skills</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./51-task-3-context.html" class="pagination-link" aria-label="Task 3: The Context Limit Challenge">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Task 3: The Context Limit Challenge</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./51-task-context.html" class="pagination-link" aria-label="Task 4: The Context Limit Challenge">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Task 4: The Context Limit Challenge</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
