@@ -4,11 +4,6 @@ title: "The Core Brain: Models and Prompts"
 
 The most fundamental part of any coding agent is the **Model**—the "brain" that processes your requests. However, the model doesn't work in a vacuum; it is wrapped in an **Agent Harness** (e.g. OpenCode, Claude Code, Codex, Google Antigravity CLI, many others).
 
-## Slides
-
-{{< pdf slides/intro.pdf width=100% height=450 image=media/slides/intro-preview.png image_width=100% button="Download Slides (PDF)" image_force=FALSE >}}
-
-
 
 
 ## Models
