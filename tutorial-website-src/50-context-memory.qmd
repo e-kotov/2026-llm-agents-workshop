@@ -7,20 +7,29 @@ One of the biggest hurdles in working with LLMs is the **Context Window**. This 
 ## The Context Window
 
 Think of the context window as the agent's "working memory." 
+
 - **Tokens:** Models don't read words; they read "tokens" (chunks of characters). A context window might be 32,000 tokens or 2 million tokens depending on the model. Check out the [OpenAI Tokenizer](https://platform.openai.com/tokenizer) to see how text is converted.
+
 - **Context Bloat:** If you try to paste an entire codebase or a massive dataset into a prompt, you will hit the context limit. Even if you don't hit the limit, very large contexts can make the model slower, more expensive, and less accurate (it might miss details in the middle).
 
 ## Memory Systems
 
 To handle large projects, agents use **Memory Systems**. Instead of loading everything into the "working memory" at once, they:
+
 - **Index** your files (creating a searchable map of your project).
+
 - **Search** for relevant information only when needed.
+
 - **Store** past decisions and discoveries in a long-term memory file (like `MEMORY.md` or a local database) so they don't have to re-learn things in the next session.
+
+There is a fierce competition in the space of memory systems for agents, but one effective approach for a small project could be to just ask the agent to create a system that would be efficient for it to work with and to use it to answer your questions about the decisions you or it made in the project.
 
 ## Agentic vs. Naive Approaches
 
 When faced with a massive file:
+
 - **Naive User:** Copies and pastes the whole file into ChatGPT. Result: "Message too long" or truncated response.
+
 - **Agentic Tool:** Uses tools like `grep_search` to find specific keywords or `read_file` with `start_line` and `end_line` to read only the relevant section.
 
 ::: {.callout-note}

@@ -48,7 +48,7 @@ book:
     - part: "The Brain"
       chapters:
         - 30-core-mechanics.qmd
-        - 31-task-1-prompts.qmd
+        - 31-task-prompts.qmd
     - part: "Safety"
       chapters:
         - 35-security-isolation.qmd
@@ -56,11 +56,11 @@ book:
     - part: "Capabilities"
       chapters:
         - 40-capabilities.qmd
-        - 41-task-2-tools.qmd
+        - 41-task-skills.qmd
     - part: "State Management"
       chapters:
         - 50-context-memory.qmd
-        - 51-task-3-context.qmd
+        - 51-task-context.qmd
     - 90-references.qmd
 
   page-footer:

@@ -1,0 +1,67 @@
+---
+title: "Task 4: The Context Limit Challenge"
+---
+
+In this task, we will simulate a real-world scenario where you have "too much information" for the model to handle at once. We'll use the `rdocdump` tool to create a massive text file from an R package.
+
+## Step 1: Generating the large file
+
+
+Open the `userspace/projects/task-02` folder in `VS Code` and open a terminal there. Start the agent harness there.
+
+Open agent in the workshop Codespace environment and prompt it:
+
+```md
+install 'rdocdump' R package, only use "https://p3m.dev/cran/__linux__/noble/latest"  repo as we are in a linux container and want fast binary package installs the run
+Rscript -e 'rdocdump::rdocdump("timriffe/DemoTools", out = "demotools_dump.txt")'
+```
+
+Right now we are using this explicit crafted technical instruction to avoid any ambiguity in the results. You could as well have installed the package yourself, but we are in an agentic coding workshop, so let's have the agent do it for us. Also notice, that the agent might struggle a bit with where exactly to install R packages.
+
+## Step 2: The Naive Reality Check
+
+Now that you have `demotools_dump.txt`, try the "Naive" approach:
+
+1. Open the file in VS Code and copy **all** the text (it will be thousands of lines).
+
+2. Go to the [OpenAI Tokenizer](https://platform.openai.com/tokenizer) and paste it. How many tokens is it? (and does it even fit into the tokenizer? Try it! If it doesn't work, try pasting just the first 2000 lines and see how many tokens that is).
+
+3. Try pasting it into [Google AI Studio](https://aistudio.google.com/) and then into your favorite LLM chat provider.
+   - Does it fit?
+   - Is it hard to scroll?
+   - Imagine doing this for every question you have!
+
+## Step 3: The Agentic Solution
+
+Now, let's see how an agent handles this without blowing up the context window.
+
+Launch the Gemini CLI or OpenCode agent and give it a broad task.
+
+```md
+I have a file called `demotools_dump.txt`. Read it and explain how the `DemoTools` package handles life table calculations. Provide a code example based on what you find.
+```
+
+**Observation:**
+
+The agent probably **cannot** read the entire file at once because it has a safety limit to prevent context overload. Watch how it pivots:
+
+- It might use `grep_search` to find "life table".
+
+- It might read the file in small chunks using `start_line` and `end_line` or some sampling reads of random lines in the file.
+
+## Why this matters
+
+By using an agent, you avoided:
+
+1. **Wasting money/tokens** on thousands of lines of irrelevant documentation.
+
+2. **Confusing the model** with too much noise.
+
+3. **Manual effort** of hunting through a giant text file.
+
+
+## Step 4: Memory
+
+Now ask the agent to create git repository and track changes. Also ask it to setup a sipmple yet efficient file-based memory of markdown files that would allow it to work on the project long term and recall at any point what was already done, what needs to be done in the next step, and why certain decisions were made (use of methods, packages, etc). Ask it to explain its decisions about how and why it chose to implement the memory system the way it did and how frequently it would make the git commit snapshots of the project.
+
+Go back to previous exercise and try to redo it with this new memory system in place.

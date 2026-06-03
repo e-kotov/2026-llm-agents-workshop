@@ -20,7 +20,7 @@ Main elements of VS Code interface.
 
 ## Using folders as projects
 
-### Open project in a new window
+### Open project in a new window {#open-project-new-window}
 
 In `VS Code` a folder is considered a project or workspace.
 

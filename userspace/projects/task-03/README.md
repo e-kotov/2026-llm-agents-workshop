@@ -1,0 +1,37 @@
+
+In this task you will work together with an agent to create new skills.
+
+
+Navigate to the project folder in your terminal (or open the project [in new VS Code Workbench](21-vscode-navigation.qmd#open-project-in-a-new-window)):
+```bash
+cd userspace/projects/task-03
+```
+
+## DemoTools install skill
+
+You will work with the [DemoTools](https://timriffe.github.io/DemoTools/) R package (but in fact choose any R package that you might be using for your work). It is not on CRAN R package repository and therefore cannot be installed as easily by the agent if you just tell it 'let's do some smoothing of population counts using DemoTools R package'. It is extremely likey to waste tokens to try to find the package, find out how to install it, and then fail to do so many times before it succeeds. Instead, you will give it instructions to create a new skill to install the package properly.
+
+
+First, tell the agent to figure our a way to install the 'https://github.com/anthropics/skills/tree/main/skills/skill-creator' skill for creating new skills in the current project folder. This is critical for the exercise, make sure the agent only installs skills in this specific project.
+
+
+Make sure to restart the agent when it is done and ask it if it has this skill.
+
+
+Now, go to [https://timriffe.github.io/DemoTools/index.html](https://timriffe.github.io/DemoTools/index.html) select everything on the page (`Ctrl+A` on Windows/Linux or `Cmd+A` on macOS) and copy it. Then paste right into the agent, add to it that `it is in the linux docker container and should only use the "https://p3m.dev/cran/__linux__/noble/latest" repo to install CRAN packages`. Ask it, based on this information, to create a new skill to install DemoTools package. Feel free to negotiate back and forth with it regarding the resulting skill.
+
+## DemoTools domain specific skills based on vignettes
+
+Now that you gave the agent a skill to install DemoTools, ask it to create more specific skills for working with this package. Go to [https://timriffe.github.io/DemoTools/index.html](https://timriffe.github.io/DemoTools/index.html). See `Short manuals` section. Pick any section, pass the link to the agent and ask to if the content there can be used to create a skill for working with DemoTools package. Create 1-2 skills this way.
+
+## DemoTools domain specific skills based on documentation
+
+Then prompt the agent:
+
+```md
+ensure DemoTools package is installed. Then use R built in tools to explore the package and its functions and their documentation. Based on this. suggest a list of skills to create to perform demogrpahic analysis with this package.
+```
+
+Now you have a list of skills that the agent thinks are useful for working with this package. Ask it to tell you if there is some data it can download without login/pass to analyse with DemoTools, alternatively if you have for example, [Human Mortality Database](https://www.mortality.org/) or similar account allow password restricted data too (recall how we set up password management in the previous task). Negotiate with the agent which data you will use and why. Then ask it to use the skills it created to perform some analysis with the package and the data.
+
+Alternatively, you can try the same tasks in a differnet project directory and ask the agent to do same analysis in a folder, where it will not have these skills and see if it performs better or worse than in the folder where it has the skills.
