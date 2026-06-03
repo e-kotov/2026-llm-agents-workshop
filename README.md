@@ -1,7 +1,5 @@
 # LLM Agents Workshop 2026: Beyond the Chatbox
 
-# THIS IS WORK IN PROGRESS
-
 ## Overview
 
 This repository contains the materials for the workshop **"Beyond the Chatbox: LLM Coding and Research Agents for Academics"**, held in Bologna, Italy, on June 03, 2026.
@@ -76,4 +74,3 @@ And also delete it after you are not planning to use it at [https://github.com/c
 ## Security Warning
 
 Coding agents can execute code on your behalf. Always use isolated environments (like the provided Docker container or Codespaces environment) when working with agents to mitigate security risks such as data leakage, unsafe code execution, or unintended modifications to analysis code.
-
