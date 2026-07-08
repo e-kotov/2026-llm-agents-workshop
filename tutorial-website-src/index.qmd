@@ -26,6 +26,8 @@ Unlike many educational materials in this field, this workshop will also address
 
 Participants will also see how the agents themselves can assist in setting up and using these protective tools to improve transparency and reproducibility. The workshop will combine short demonstrations with applied examples relevant to population research. Participants are encouraged to bring their own projects or ideas, which we will use to explore how LLM agents can be integrated into real research workflows. For those without a project, guided exercises and example tasks will be provided.
 
+You can find the original full announcement of the workshop at [MPIDR website](https://www.demogr.mpg.de/en/news_events_6123/calendar_1921/beyond_the_chatbox_llm_coding_and_research_agents_for_academics_15381).
+
 </details>
 
 
