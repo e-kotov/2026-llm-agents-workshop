@@ -11,7 +11,9 @@
 				"r.rterm.linux": "/home/vscode/.cargo/bin/arf",
 				"r.rterm.option": [],
 				"r.bracketedPaste": true,
-				"terminal.integrated.defaultProfile.linux": "fish"
+				"terminal.integrated.defaultProfile.linux": "fish",
+				"r.sessionWatcher": true,
+				"r.plot.useHttpgd": true
 			},
 			"extensions": [
 				"AbdulkaderSafi.file-explorer",

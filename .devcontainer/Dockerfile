@@ -142,6 +142,14 @@ RUN install2.r --error --skipmissing --skipinstalled -n "$NCPUS" \
     BiocManager \
     && rm -rf /tmp/downloaded_packages
 
+# Enable httpgd plot device automatically when running interactively in VS Code / Codespaces
+RUN echo 'if (interactive() && (Sys.getenv("TERM_PROGRAM") == "vscode" || Sys.getenv("CODESPACES") == "true")) {' >> /usr/local/lib/R/etc/Rprofile.site \
+    && echo '  if (requireNamespace("httpgd", quietly = TRUE)) {' >> /usr/local/lib/R/etc/Rprofile.site \
+    && echo '    options(vsc.plot = FALSE)' >> /usr/local/lib/R/etc/Rprofile.site \
+    && echo '    options(device = httpgd::hgd)' >> /usr/local/lib/R/etc/Rprofile.site \
+    && echo '  }' >> /usr/local/lib/R/etc/Rprofile.site \
+    && echo '}' >> /usr/local/lib/R/etc/Rprofile.site
+
 # 6. Switch to the non-root user to install Python and environment managers securely
 USER $USERNAME
 WORKDIR /home/$USERNAME

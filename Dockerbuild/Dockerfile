@@ -116,6 +116,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     chown -R ${NB_USER} /opt/share/code-server /home/${NB_USER}/.local /home/${NB_USER}/project && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# 1.1 Enable httpgd plot device automatically when running interactively in VS Code / Codespaces
+RUN echo 'if (interactive() && (Sys.getenv("TERM_PROGRAM") == "vscode" || Sys.getenv("CODESPACES") == "true")) {' >> /usr/lib/R/etc/Rprofile.site \
+    && echo '  if (requireNamespace("httpgd", quietly = TRUE)) {' >> /usr/lib/R/etc/Rprofile.site \
+    && echo '    options(vsc.plot = FALSE)' >> /usr/lib/R/etc/Rprofile.site \
+    && echo '    options(device = httpgd::hgd)' >> /usr/lib/R/etc/Rprofile.site \
+    && echo '  }' >> /usr/lib/R/etc/Rprofile.site \
+    && echo '}' >> /usr/lib/R/etc/Rprofile.site
+
 # Add a build argument to invalidate the cache for CLI tool installations
 ARG CACHE_BUSTER=1
 
